@@ -1,25 +1,25 @@
 
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Services from '../components/Services';
+import Header from '../components/layout/Header';
+import HeroSection from '../components/sections/HeroSection';
+import ServicesSection from '../components/sections/ServicesSection';
 import About from '../components/About';
 import Solutions from '../components/Solutions';
 import Training from '../components/Training';
-import Contact from '../components/Contact';
+import ContactSection from '../components/sections/ContactSection';
 import Footer from '../components/Footer';
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navbar />
+      <Header />
       <main>
-        <Hero />
-        <Services />
+        <HeroSection />
+        <ServicesSection />
         <About />
         <Solutions />
         <Training />
-        <Contact />
+        <ContactSection />
       </main>
       <Footer />
     </div>
