@@ -8,7 +8,6 @@ import Solutions from '../components/Solutions';
 import Training from '../components/Training';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import { Home } from 'lucide-react';
 
 const Index = () => {
   return (
@@ -16,7 +15,6 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <Home />
         <Services />
         <About />
         <Solutions />

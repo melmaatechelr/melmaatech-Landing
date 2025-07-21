@@ -9,18 +9,21 @@ const services = [
     title: "Website Development",
     description:
       "Responsive, fast-loading websites designed to engage visitors and drive conversions. From corporate sites to complex web applications, we deliver solutions tailored to your business needs.",
+    features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern UI/UX"]
   },
   {
     icon: Smartphone,
     title: "App Development",
     description:
       "Native and cross-platform mobile applications that provide seamless user experiences. Our mobile solutions help businesses extend their reach and engage customers on any device.",
+    features: ["iOS & Android", "Cross-platform", "Native Performance", "User-friendly"]
   },
   {
     icon: Code,
     title: "Custom Product Development",
     description:
       "Tailor-made software solutions designed to address your unique business challenges. We transform your ideas into innovative software products that streamline operations and drive growth.",
+    features: ["Custom Solutions", "Scalable Architecture", "API Integration", "Cloud Ready"]
   },
 ];
 
@@ -61,6 +64,16 @@ const Services = () => {
                   <p className="text-center text-gray-600 text-base leading-relaxed">
                     {service.description}
                   </p>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {service.features.map((feature, idx) => (
+                      <span 
+                        key={idx}
+                        className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>

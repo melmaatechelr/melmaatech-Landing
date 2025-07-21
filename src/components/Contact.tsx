@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 const contactMethods = [
   {
@@ -11,27 +11,39 @@ const contactMethods = [
     title: "Email",
     details: "support@melmaa.com",
     description: "For general inquiries",
+    href: "mailto:support@melmaa.com"
   },
   {
     icon: Phone,
     title: "Phone",
     details: "+91 7997280049",
     description: "Mon-Fri from 9am to 6pm",
+    href: "tel:+917997280049"
   },
   {
     icon: MapPin,
     title: "Office",
     details: "3D-5-1/6,Western Street,Near LBC School,Eluru,West Godavari",
     description: "Andhra Pradesh,534001,India",
+    href: "https://maps.google.com/?q=Eluru,West+Godavari,Andhra+Pradesh,India"
   },
 ];
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form handling logic would go here
-    // For now, just show an alert
-    alert("Message sent! We'll get back to you soon.");
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message')
+    };
+    
+    // Here you would typically send the data to your backend
+    console.log('Form submitted:', data);
+    alert("Thank you for your message! We'll get back to you soon.");
+    (e.target as HTMLFormElement).reset();
   };
 
   return (
@@ -46,14 +58,20 @@ const Contact = () => {
         
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {contactMethods.map((method, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-sm text-center">
+            <a 
+              key={index} 
+              href={method.href}
+              target={method.href.startsWith('http') ? '_blank' : '_self'}
+              rel={method.href.startsWith('http') ? 'noopener noreferrer' : ''}
+              className="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow group"
+            >
               <div className="mx-auto h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <method.icon size={24} className="text-primary" />
+                <method.icon size={24} className="text-primary group-hover:scale-110 transition-transform" />
               </div>
               <h3 className="font-bold text-lg mb-2">{method.title}</h3>
               <p className="font-medium">{method.details}</p>
               <p className="text-sm text-gray-500">{method.description}</p>
-            </div>
+            </a>
           ))}
         </div>
         
@@ -66,13 +84,13 @@ const Contact = () => {
                 <label htmlFor="name" className="block mb-2 text-sm font-medium">
                   Your Name
                 </label>
-                <Input id="name" placeholder="your Name" required />
+                <Input id="name" name="name" placeholder="Your Name" required />
               </div>
               <div>
                 <label htmlFor="email" className="block mb-2 text-sm font-medium">
                   Email Address
                 </label>
-                <Input id="email" type="email" placeholder="yourname@example.com" required />
+                <Input id="email" name="email" type="email" placeholder="yourname@example.com" required />
               </div>
             </div>
             
@@ -80,7 +98,7 @@ const Contact = () => {
               <label htmlFor="subject" className="block mb-2 text-sm font-medium">
                 Subject
               </label>
-              <Input id="subject" placeholder="How can we help you?" required />
+              <Input id="subject" name="subject" placeholder="How can we help you?" required />
             </div>
             
             <div className="mb-6">
@@ -89,13 +107,15 @@ const Contact = () => {
               </label>
               <Textarea 
                 id="message" 
+                name="message"
                 placeholder="Tell us about your project or query..."
                 rows={5}
                 required
               />
             </div>
             
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full gap-2">
+              <Send size={16} />
               Send Message
             </Button>
           </form>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Users, Award, Clock, Target } from "lucide-react";
 
 const aboutPoints = [
   "Expert team of designers and developers",
@@ -9,10 +9,30 @@ const aboutPoints = [
   "Commitment to quality and client satisfaction",
 ];
 
+const stats = [
+  { icon: Users, label: "Happy Clients", value: "500+" },
+  { icon: Award, label: "Projects Completed", value: "1000+" },
+  { icon: Clock, label: "Years Experience", value: "5+" },
+  { icon: Target, label: "Success Rate", value: "98%" },
+];
+
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50">
+    <section id="about" className="py-24 bg-gradient-to-b from-white via-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Stats Section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
+                <stat.icon className="w-6 h-6 text-primary" />
+              </div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+              <div className="text-gray-600">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
         <div className="grid md:grid-cols-2 gap-16 items-center">
           
           {/* Image / Visual Side */}

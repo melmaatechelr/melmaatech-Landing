@@ -4,8 +4,15 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="pt-32 pb-20 md:pb-32 relative overflow-hidden">
+    <section id="home" className="pt-32 pb-20 md:pb-32 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-0 w-72 h-72 bg-blue-300 rounded-full filter blur-3xl opacity-20"></div>
@@ -14,10 +21,6 @@ const Hero = () => {
       
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
-            <div className="flex justify-center mb-8">
-            
-            </div>
-            
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 animate-fade-in">
             <span className="block">Empowering Digital</span> 
             <span className="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
@@ -34,10 +37,19 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-            <Button size="lg" className="bg-blue-500 hover:bg-blue-600">
+            <Button 
+              size="lg" 
+              className="bg-blue-500 hover:bg-blue-600"
+              onClick={() => scrollToSection('contact')}
+            >
               Get Started
             </Button>
-            <Button size="lg" variant="outline" className="gap-2">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="gap-2"
+              onClick={() => scrollToSection('about')}
+            >
               Learn More <ArrowRight size={16} />
             </Button>
           </div>
