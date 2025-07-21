@@ -193,7 +193,7 @@ const Training = () => {
                 <h3 className="text-2xl font-bold mb-4">Partner with {partnerInfo.name}</h3>
                 <p className="text-slate-600 mb-6">{partnerInfo.description}</p>
                 <div className="relative w-full aspect-video overflow-hidden rounded-xl group">
-                  <img src={`/lovable-uploads/${images[currentSlide]}`} alt={`Slide ${currentSlide + 1}`} className="w-full h-full object-cover transition-opacity duration-500" loading="lazy" />
+                  <img src={`/assets/${images[currentSlide]}`} alt={`Slide ${currentSlide + 1}`} className="w-full h-full object-cover transition-opacity duration-500" loading="lazy" />
                   <button onClick={prevSlide} className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-1">
                     <ChevronLeft />
                   </button>

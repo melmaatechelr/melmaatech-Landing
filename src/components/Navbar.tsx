@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="container flex items-center justify-between">
         <a href="/" className="flex items-center gap-2">
           <img 
-            src="/lovable-uploads/MelmaatechLogo.PNG" 
+            src="/assets/MelmaatechLogo.PNG" 
             alt="Melmaa Tech Logo" 
             className="h-20 w-auto"
           />

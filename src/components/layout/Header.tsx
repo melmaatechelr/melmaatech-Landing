@@ -77,7 +77,7 @@ export default function Header() {
             className="flex items-center"
           >
             <img 
-              src="/lovable-uploads/MelmaatechLogo.PNG" 
+              src="/assets/MelmaatechLogo.PNG" 
               alt="Melmaa Tech" 
               className="h-12 lg:h-16 w-auto"
             />
