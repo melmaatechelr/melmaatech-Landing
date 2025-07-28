@@ -99,14 +99,14 @@ export default function ServicesSection() {
             variants={fadeInUp}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            Comprehensive Digital Solutions
+            Software Development Services
           </motion.h2>
           
           <motion.p
             variants={fadeInUp}
             className="text-xl text-muted-foreground max-w-3xl mx-auto"
           >
-            We provide end-to-end digital solutions to help your business thrive in the modern world.
+            We deliver cutting-edge software solutions tailored to your business needs and objectives.
           </motion.p>
         </motion.div>
 

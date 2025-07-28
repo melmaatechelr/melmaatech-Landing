@@ -8,22 +8,22 @@ const services = [
     icon: Globe,
     title: "Website Development",
     description:
-      "Responsive, fast-loading websites designed to engage visitors and drive conversions. From corporate sites to complex web applications, we deliver solutions tailored to your business needs.",
-    features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern UI/UX"]
+      "Professional web applications and websites built with modern technologies. From corporate sites to complex web platforms, we create scalable solutions that drive business growth.",
+    features: ["React/Next.js", "Node.js Backend", "Database Integration", "Cloud Deployment"]
   },
   {
     icon: Smartphone,
     title: "App Development",
     description:
-      "Native and cross-platform mobile applications that provide seamless user experiences. Our mobile solutions help businesses extend their reach and engage customers on any device.",
-    features: ["iOS & Android", "Cross-platform", "Native Performance", "User-friendly"]
+      "Native and cross-platform mobile applications with seamless performance. We build apps that enhance user engagement and provide exceptional mobile experiences.",
+    features: ["React Native", "Flutter", "iOS & Android", "API Integration"]
   },
   {
     icon: Code,
     title: "Custom Product Development",
     description:
-      "Tailor-made software solutions designed to address your unique business challenges. We transform your ideas into innovative software products that streamline operations and drive growth.",
-    features: ["Custom Solutions", "Scalable Architecture", "API Integration", "Cloud Ready"]
+      "End-to-end software product development from concept to deployment. We build scalable, maintainable software that solves real business problems and drives innovation.",
+    features: ["Full-Stack Development", "Microservices", "DevOps", "Agile Methodology"]
   },
 ];
 

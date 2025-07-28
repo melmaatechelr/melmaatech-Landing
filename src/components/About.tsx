@@ -2,18 +2,18 @@ import React from 'react';
 import { CheckCircle, Users, Award, Clock, Target } from "lucide-react";
 
 const aboutPoints = [
-  "Expert team of designers and developers",
-  "Tailored solutions for businesses of all sizes",
-  "Collaborative approach to project development",
-  "Focus on innovation and emerging technologies",
-  "Commitment to quality and client satisfaction",
+  "Expert software development team with 5+ years experience",
+  "Custom software solutions for startups to enterprises",
+  "Agile development methodology with continuous delivery",
+  "Modern tech stack: React, Node.js, Python, Cloud platforms",
+  "End-to-end development from MVP to enterprise scale",
 ];
 
 const stats = [
   { icon: Users, label: "Happy Clients", value: "500+" },
-  { icon: Award, label: "Projects Completed", value: "1000+" },
+  { icon: Award, label: "Software Projects", value: "1000+" },
   { icon: Clock, label: "Years Experience", value: "5+" },
-  { icon: Target, label: "Success Rate", value: "98%" },
+  { icon: Target, label: "Project Success", value: "98%" },
 ];
 
 const About = () => {
@@ -48,13 +48,13 @@ const About = () => {
           {/* Content Side */}
           <div className="relative z-10">
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-              Transforming Ideas into <br /> Powerful Digital Solutions
+              Building Software That <br /> Powers Your Business
             </h2>
 
             <p className="text-gray-700 text-lg mb-8">
               At <span className="font-semibold text-primary">Melmaa Tech</span>, we believe in the power of technology to transform businesses. 
-              Founded with a vision to make cutting-edge technology accessible to all, 
-              we've helped numerous clients achieve their digital transformation goals.
+              We specialize in building custom software solutions that solve real business problems and drive growth. 
+              Our team delivers scalable, maintainable software using modern development practices.
             </p>
 
             <ul className="space-y-4">

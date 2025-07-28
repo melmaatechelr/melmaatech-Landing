@@ -56,9 +56,9 @@ export default function HeroSection() {
             variants={fadeInUp}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
           >
-            <span className="block">Empowering Digital</span>
+            <span className="block">Custom Software</span>
             <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-              Transformation
+              Development
             </span>
           </motion.h1>
 
@@ -67,8 +67,8 @@ export default function HeroSection() {
             variants={fadeInUp}
             className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            Your trusted technology partner for building future-ready digital solutions. 
-            We specialize in crafting high-performance websites, mobile applications, and custom software products.
+            We build innovative software solutions that drive business growth. 
+            Specializing in web applications, mobile apps, and enterprise software development.
           </motion.p>
 
           {/* CTA Buttons */}
