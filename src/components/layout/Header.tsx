@@ -76,15 +76,22 @@ export default function Header() {
             whileHover={{ scale: 1.05 }}
             className="flex items-center"
           >
-            <img 
-              src="/assets/MelmaatechLogo.PNG" 
-              alt="Melmaa Tech" 
-              className="h-12 lg:h-16 w-auto"
-            />
+            <button
+              onClick={() => scrollToSection('home')}
+              className="flex items-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg"
+              aria-label="Go to homepage"
+            >
+              <img 
+                src="/assets/MelmaatechLogo.PNG" 
+                alt="Melmaa Tech - Software Development Company" 
+                className="h-12 lg:h-16 w-auto"
+                loading="eager"
+              />
+            </button>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
             {navigation.map((item) => (
               <motion.button
                 key={item.name}
@@ -97,6 +104,7 @@ export default function Header() {
                 )}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                aria-current={activeSection === item.href.substring(1) ? 'page' : undefined}
               >
                 {item.name}
               </motion.button>
@@ -108,6 +116,7 @@ export default function Header() {
             <Button
               onClick={() => scrollToSection('contact')}
               className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
+              aria-label="Contact us to get started"
             >
               Get Started
             </Button>
@@ -116,11 +125,11 @@ export default function Header() {
           {/* Mobile Menu */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" aria-label="Open mobile menu">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-80">
+            <SheetContent side="right" className="w-80" aria-label="Mobile navigation menu">
               <div className="flex flex-col space-y-6 mt-8">
                 {navigation.map((item) => (
                   <motion.button
@@ -133,6 +142,7 @@ export default function Header() {
                         : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     )}
                     whileHover={{ x: 10 }}
+                    aria-current={activeSection === item.href.substring(1) ? 'page' : undefined}
                   >
                     {item.name}
                   </motion.button>
@@ -141,6 +151,7 @@ export default function Header() {
                   onClick={() => scrollToSection('contact')}
                   className="mt-6 bg-gradient-to-r from-primary to-primary/80"
                   size="lg"
+                  aria-label="Contact us to get started"
                 >
                   Get Started
                 </Button>

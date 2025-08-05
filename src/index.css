@@ -78,10 +78,29 @@
     @apply bg-background text-foreground font-inter;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-poppins font-bold;
+    line-height: 1.2;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Reduced motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 
   /* Improved scrollbar */
@@ -100,6 +119,13 @@
 
   ::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--primary) / 0.8);
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .bg-gradient-to-r {
+      background: hsl(var(--primary)) !important;
+    }
   }
 }
 
@@ -125,6 +151,16 @@
   /* Modern button styles */
   .btn-modern {
     @apply relative overflow-hidden transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    @apply absolute -top-40 left-6 bg-primary text-primary-foreground px-4 py-2 rounded-md z-50 focus:top-6 transition-all;
+  }
+
+  /* Image optimization */
+  img {
+    @apply max-w-full h-auto;
   }
 
 /* Modern animations */

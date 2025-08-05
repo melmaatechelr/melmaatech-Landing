@@ -11,6 +11,11 @@ export const COMPANY_INFO = {
   social: {
     website: 'https://melmaa.tech',
     training: 'https://shift.melmaa.tech/'
+  },
+  seo: {
+    title: 'Melmaa Tech - Custom Software Development & Digital Solutions',
+    description: 'Professional software development company specializing in custom web applications, mobile apps, and enterprise solutions. Expert React, Node.js, Python development with 5+ years experience.',
+    keywords: 'software development, web development, mobile app development, custom software, React development, Node.js, Python, enterprise software, digital solutions'
   }
 };
 

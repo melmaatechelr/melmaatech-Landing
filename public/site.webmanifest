@@ -1,0 +1,22 @@
+{
+  "name": "Melmaa Tech - Software Development",
+  "short_name": "Melmaa Tech",
+  "description": "Professional software development company specializing in custom applications and digital solutions",
+  "icons": [
+    {
+      "src": "/assets/MelmaatechLogo.PNG",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/MelmaatechLogo.PNG",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#6366f1",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}

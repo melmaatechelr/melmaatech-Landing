@@ -200,6 +200,8 @@ export default function ContactSection() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-8"
+                    role="status"
+                    aria-live="polite"
                   >
                     <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold mb-2">Thank you!</h3>
@@ -209,7 +211,7 @@ export default function ContactSection() {
                   </motion.div>
                 ) : (
                   <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" noValidate>
                       <div className="grid sm:grid-cols-2 gap-4">
                         <FormField
                           control={form.control}
@@ -222,6 +224,8 @@ export default function ContactSection() {
                                   placeholder="John Doe"
                                   {...field}
                                   className="h-12"
+                                  autoComplete="name"
+                                  aria-describedby="name-error"
                                 />
                               </FormControl>
                               <FormMessage />
@@ -241,6 +245,8 @@ export default function ContactSection() {
                                   placeholder="john@example.com"
                                   {...field}
                                   className="h-12"
+                                  autoComplete="email"
+                                  aria-describedby="email-error"
                                 />
                               </FormControl>
                               <FormMessage />
@@ -260,6 +266,7 @@ export default function ContactSection() {
                                 placeholder="How can we help you?"
                                 {...field}
                                 className="h-12"
+                                aria-describedby="subject-error"
                               />
                             </FormControl>
                             <FormMessage />
@@ -279,6 +286,7 @@ export default function ContactSection() {
                                 rows={6}
                                 {...field}
                                 className="resize-none"
+                                aria-describedby="message-error"
                               />
                             </FormControl>
                             <FormMessage />
@@ -290,10 +298,11 @@ export default function ContactSection() {
                         type="submit"
                         disabled={isSubmitting}
                         className="w-full h-12 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-lg font-semibold"
+                        aria-label={isSubmitting ? "Sending message..." : "Send message"}
                       >
                         {isSubmitting ? (
                           <>
-                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2" />
+                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2" role="status" aria-label="Loading" />
                             Sending...
                           </>
                         ) : (

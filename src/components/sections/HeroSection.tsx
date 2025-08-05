@@ -67,8 +67,8 @@ export default function HeroSection() {
             variants={fadeInUp}
             className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            We build innovative software solutions that drive business growth. 
-            Specializing in web applications, mobile apps, and enterprise software development.
+            We build innovative software solutions that drive business growth and digital transformation. 
+            Specializing in custom web applications, mobile apps, enterprise software, and scalable digital platforms.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -80,6 +80,7 @@ export default function HeroSection() {
               size="lg"
               onClick={() => scrollToSection('contact')}
               className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              aria-label="Start your software development project"
             >
               <Zap className="w-5 h-5 mr-2" />
               Get Started Today
@@ -89,6 +90,7 @@ export default function HeroSection() {
               variant="outline"
               onClick={() => scrollToSection('about')}
               className="px-8 py-6 text-lg font-semibold rounded-xl border-2 hover:bg-muted/50 transition-all duration-300 group"
+              aria-label="Learn more about our software development services"
             >
               Learn More
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -102,9 +104,9 @@ export default function HeroSection() {
           >
             {[
               { number: "500+", label: "Happy Clients" },
-              { number: "1000+", label: "Projects Completed" },
+              { number: "1000+", label: "Software Projects" },
               { number: "5+", label: "Years Experience" },
-              { number: "98%", label: "Success Rate" },
+              { number: "98%", label: "Project Success" },
             ].map((stat, index) => (
               <motion.div
                 key={index}

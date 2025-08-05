@@ -13,40 +13,40 @@ const services = [
   {
     icon: Globe,
     title: "Website Development",
-    description: "Responsive, fast-loading websites designed to engage visitors and drive conversions. From corporate sites to complex web applications.",
+    description: "Professional web applications and responsive websites built with modern technologies. From corporate sites to complex SaaS platforms.",
     features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern UI/UX"],
     color: "from-blue-500 to-cyan-500",
     benefits: [
-      "Increase online visibility",
-      "Improve user engagement",
-      "Drive more conversions",
-      "Mobile-first approach"
+      "React/Next.js development",
+      "Progressive Web Apps (PWA)",
+      "E-commerce platforms",
+      "Content management systems"
     ]
   },
   {
     icon: Smartphone,
-    title: "App Development",
-    description: "Native and cross-platform mobile applications that provide seamless user experiences across all devices.",
+    title: "Mobile App Development",
+    description: "Native and cross-platform mobile applications with seamless performance. iOS and Android apps that enhance user engagement.",
     features: ["iOS & Android", "Cross-platform", "Native Performance", "User-friendly"],
     color: "from-purple-500 to-pink-500",
     benefits: [
-      "Reach mobile audience",
-      "Enhance user experience",
-      "Increase brand loyalty",
-      "Real-time notifications"
+      "React Native development",
+      "Flutter applications",
+      "Native iOS & Android",
+      "API integrations"
     ]
   },
   {
     icon: Code,
-    title: "Custom Product Development",
-    description: "Tailor-made software solutions designed to address your unique business challenges and streamline operations.",
+    title: "Enterprise Software Development",
+    description: "End-to-end software product development from concept to deployment. Scalable, maintainable software that solves real business problems.",
     features: ["Custom Solutions", "Scalable Architecture", "API Integration", "Cloud Ready"],
     color: "from-green-500 to-emerald-500",
     benefits: [
-      "Solve unique challenges",
-      "Improve efficiency",
-      "Reduce manual work",
-      "Scale with growth"
+      "Full-stack development",
+      "Microservices architecture",
+      "DevOps & deployment",
+      "Database design"
     ]
   },
 ];

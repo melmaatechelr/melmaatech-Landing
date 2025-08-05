@@ -23,9 +23,9 @@ const About = () => {
         {/* Stats Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
+            <div key={index} className="text-center" role="group" aria-label={`${stat.label}: ${stat.value}`}>
               <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
-                <stat.icon className="w-6 h-6 text-primary" />
+                <stat.icon className="w-6 h-6 text-primary" aria-hidden="true" />
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
               <div className="text-gray-600">{stat.label}</div>
@@ -37,7 +37,7 @@ const About = () => {
           
           {/* Image / Visual Side */}
           <div className="relative p-6 rounded-3xl overflow-hidden shadow-lg bg-gradient-to-tr from-purple-600 via-purple-500 to-primary/90">
-            <div className="aspect-square flex items-center justify-center">
+            <div className="aspect-square flex items-center justify-center" role="img" aria-label="Melmaa Tech brand visualization">
               <div className="text-white text-4xl font-bold tracking-tight drop-shadow-lg">
                 Melmaa Tech
               </div>
@@ -48,19 +48,19 @@ const About = () => {
           {/* Content Side */}
           <div className="relative z-10">
             <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-              Building Software That <br /> Powers Your Business
+              Building Software That <br className="hidden sm:block" /> Powers Your Business
             </h2>
 
             <p className="text-gray-700 text-lg mb-8">
-              At <span className="font-semibold text-primary">Melmaa Tech</span>, we believe in the power of technology to transform businesses. 
-              We specialize in building custom software solutions that solve real business problems and drive growth. 
-              Our team delivers scalable, maintainable software using modern development practices.
+              At <span className="font-semibold text-primary">Melmaa Tech</span>, we transform businesses through innovative software development. 
+              We specialize in building custom applications, enterprise software, and digital platforms that solve complex business challenges. 
+              Our expert team delivers scalable, secure, and maintainable solutions using cutting-edge technologies.
             </p>
 
-            <ul className="space-y-4">
+            <ul className="space-y-4" role="list">
               {aboutPoints.map((point, index) => (
-                <li key={index} className="flex items-start group">
-                  <CheckCircle size={24} className="text-primary mt-1 mr-3 group-hover:scale-110 transition-transform" />
+                <li key={index} className="flex items-start group" role="listitem">
+                  <CheckCircle size={24} className="text-primary mt-1 mr-3 group-hover:scale-110 transition-transform flex-shrink-0" aria-hidden="true" />
                   <span className="text-gray-700 leading-relaxed">{point}</span>
                 </li>
               ))}
