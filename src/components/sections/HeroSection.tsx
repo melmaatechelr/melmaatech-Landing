@@ -67,9 +67,14 @@ export default function HeroSection() {
             variants={fadeInUp}
             className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            We build innovative software solutions that drive business growth and digital transformation. 
-                 Your trusted technology partner for building future-ready digital solutions. We specialize in crafting high-performance websites, mobile applications, and custom software products.
-                </motion.p>
+          <p className="text-lg md:text-xl text-gray-600 mb-8 animate-fade-in">
+            Innovate. Build. Transform.
+          </p>
+          
+          <p className="text-gray-600 mb-10 animate-fade-in">
+            Your trusted technology partner for building future-ready digital solutions. We specialize in crafting high-performance websites, mobile applications, and custom software products.
+          </p>
+            </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
