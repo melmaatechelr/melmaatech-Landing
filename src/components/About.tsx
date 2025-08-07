@@ -36,13 +36,25 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           
           {/* Image / Visual Side */}
-          <div className="relative p-6 rounded-3xl overflow-hidden shadow-lg bg-gradient-to-tr from-purple-600 via-purple-500 to-primary/90">
-            <div className="aspect-square flex items-center justify-center" role="img" aria-label="Melmaa Tech brand visualization">
-              <div className="text-white text-4xl font-bold tracking-tight drop-shadow-lg">
-                Melmaa Tech
+          <div className="relative rounded-3xl overflow-hidden shadow-lg">
+            <div className="aspect-square relative" role="img" aria-label="Melmaa Tech about us">
+              <img 
+                src="/assets/aboutbgm.jpeg" 
+                alt="Melmaa Tech - About Us" 
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width="600"
+                height="600"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/80 via-secondary/60 to-primary/80 flex items-center justify-center">
+                <div className="text-white text-4xl font-bold tracking-tight drop-shadow-2xl text-center">
+                  Melmaa Tech
+                  <div className="text-lg font-medium mt-2 opacity-90">
+                    Building Digital Excellence
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="absolute inset-0 bg-black/10 backdrop-blur-md rounded-3xl" />
           </div>
 
           {/* Content Side */}
