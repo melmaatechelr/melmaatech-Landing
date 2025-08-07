@@ -61,7 +61,7 @@ const trainingCategories = [
 
 const partnerInfo = {
   name: "ShiftEduTech",
-  description: "Our trusted training partner, ShiftEduTech, brings industry expertise and practical knowledge to our programs.",
+  description: "At Melmaa Tech We Aim to create  Techie's so we started shift edutech wing to empower NextGen Techie's to build world class products.",
   website: "https://shift.melmaa.tech/"
 };
 
