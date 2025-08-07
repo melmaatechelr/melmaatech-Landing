@@ -142,7 +142,41 @@ export default function ServicesSection() {
             variants={fadeInUp}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-Everything from Development to Branding  Under One Roof
+            <span className="relative inline-block">
+              <span className="bg-gradient-to-r from-primary via-secondary to-purple-600 bg-clip-text text-transparent">
+                Everything from Development
+              </span>
+              <motion.div
+                className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                transition={{ duration: 1, delay: 0.5 }}
+              />
+            </span>
+            <br />
+            <span className="relative inline-block mt-2">
+              to{" "}
+              <span className="relative">
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent font-extrabold">
+                  Branding
+                </span>
+                <motion.div
+                  className="absolute -top-1 -right-1"
+                  animate={{
+                    rotate: [0, 10, -10, 0],
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  ✨
+                </motion.div>
+              </span>
+              {" "}Under One Roof
+            </span>
           </motion.h2>
           
           <motion.p
