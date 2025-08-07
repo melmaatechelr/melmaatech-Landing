@@ -113,8 +113,8 @@ const Training = () => {
 
   useEffect(() => {
     setStats({
-      students: 700,
-      courses: 20,
+      students: 730,
+      courses: 22,
       successRate: 98
     });
   }, []);
