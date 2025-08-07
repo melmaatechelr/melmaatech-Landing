@@ -253,7 +253,7 @@ const Training = () => {
             <img src="https://i0.wp.com/sjbit.edu.in/wp-content/uploads/2021/07/AICTE-Logo-250x250-1.png?w=250&ssl=1" alt="AICTE" className="h-16 object-contain" />
             <img src="https://apsche.smartinternz.com/assets/2023/assets/apsche_logo.png" alt="apsche" className="h-16 object-contain" />
             <img src="https://www.education.gov.in/sites/upload_files/mhrd/files/logo_2.png" alt="msme" className="h-16 object-contain" />
-            <img src="https://nirudyogabruthi.in/wp-content/uploads/2024/07/National-Internship-Portal-2024.jpg" alt="NIP" className="h-16 object-contain" />
+            <img src="https://internship.aicte-india.org//images/new_logo/logo_internship_new.jpg" alt="NIP" className="h-16 object-contain" />
            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/ISO_9001-2015.svg/595px-ISO_9001-2015.svg.png" alt="iso" className="h-16 object-contain" />
          
           </div>
