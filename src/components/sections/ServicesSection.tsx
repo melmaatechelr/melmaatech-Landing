@@ -88,7 +88,7 @@ const services = [
       "Accelerate Time-to-Market",
       "Make Smarter Business Decisions",
       "Build a Scalable Business Foundation",
-      "Content management systems"
+      "Gain a Competitive Edge"
     ]
   }
   
