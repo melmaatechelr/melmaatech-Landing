@@ -3,15 +3,9 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   ArrowRight,
-  Users,
   BookOpen,
   Briefcase,
   Star,
-  Laptop,
-  FileCode,
-  Building2,
-  School,
-  UsersRound,
   ChevronLeft,
   ChevronRight
 } from 'lucide-react';
@@ -68,31 +62,31 @@ const partnerInfo = {
 const additionalPrograms = [
   {
     title: "IT Courses Training",
-    icon: Laptop,
+    icon: BookOpen,
     description:
       "Gain expertise in high-demand IT skills with our structured courses. We offer hands-on training in programming, web development, cloud computing, cybersecurity, and more, designed by industry experts."
   },
   {
     title: "Long-Term & Short-Term Internships",
-    icon: FileCode,
+    icon: Briefcase,
     description:
       "Enhance your resume with real-world experience. Work on live projects under professional mentorship, learn industry best practices, and boost your career potential with our internship programs."
   },
   {
     title: "Industrial Training",
-    icon: Building2,
+    icon: Star,
     description:
       "Bridge the gap between academia and the industry with our immersive training programs. Gain exposure to real-world challenges and develop technical proficiency through expert-led mentorship."
   },
   {
     title: "Campus Recruitment Training",
-    icon: School,
+    icon: BookOpen,
     description:
       "Ace your campus placements with our specialized training. Get comprehensive coaching in aptitude, technical subjects, group discussions, resume building, and interview preparation."
   },
   {
     title: "Soft Skill Development",
-    icon: UsersRound,
+    icon: Star,
     description:
       "Master the art of communication, leadership, and teamwork. Our soft skills training empowers you with confidence, professionalism, and interpersonal effectiveness."
   }
@@ -134,7 +128,7 @@ const Training = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {[{ label: "Active Students", value: stats.students, icon: Users }, { label: "Available Courses", value: stats.courses, icon: BookOpen }, { label: "Success Rate", value: `${stats.successRate}%`, icon: Star }].map((stat, index) => (
+            {[{ label: "Active Students", value: stats.students, icon: BookOpen }, { label: "Available Courses", value: stats.courses, icon: BookOpen }, { label: "Success Rate", value: `${stats.successRate}%`, icon: Star }].map((stat, index) => (
               <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <stat.icon className="w-12 h-12 mx-auto text-primary mb-4" />

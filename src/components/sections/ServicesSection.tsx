@@ -7,7 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Globe, Smartphone, Code, ArrowRight, CheckCircle, Megaphone, Palette, Handshake } from "lucide-react";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
-import { ServiceCardSkeleton } from "@/components/ui/loading-states";
 
 const services = [
   {
@@ -95,30 +94,11 @@ const services = [
 ];
 
 export default function ServicesSection() {
-  const [loading, setLoading] = useState(false);
   const [selectedService, setSelectedService] = useState<number | null>(null);
 
   const handleServiceClick = (index: number) => {
     setSelectedService(selectedService === index ? null : index);
   };
-
-  if (loading) {
-    return (
-      <section className="py-24 bg-gradient-to-b from-background to-muted/20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="h-12 w-64 bg-muted rounded-lg mx-auto mb-4" />
-            <div className="h-6 w-96 bg-muted rounded-lg mx-auto" />
-          </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((i) => (
-              <ServiceCardSkeleton key={i} />
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section id="services" className="py-24 bg-gradient-to-b from-background to-muted/20">

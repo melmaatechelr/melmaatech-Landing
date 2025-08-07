@@ -13,7 +13,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Mail, Phone, MapPin, Send, Clock, CheckCircle } from "lucide-react";
 import { fadeInUp, staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
 import { toast } from "@/lib/toast";
-import { ContactFormSkeleton } from "@/components/ui/loading-states";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -54,7 +53,6 @@ const contactMethods = [
 export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -86,25 +84,6 @@ export default function ContactSection() {
       setIsSubmitting(false);
     }
   };
-
-  if (loading) {
-    return (
-      <section className="py-24 bg-gradient-to-b from-muted/20 to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="h-12 w-64 bg-muted rounded-lg mx-auto mb-4" />
-            <div className="h-6 w-96 bg-muted rounded-lg mx-auto" />
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="h-32 bg-muted rounded-lg" />
-            ))}
-          </div>
-          <ContactFormSkeleton />
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section id="contact" className="py-24 bg-gradient-to-b from-muted/20 to-background">
