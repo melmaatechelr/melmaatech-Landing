@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -137,6 +139,13 @@ const officeHours = [
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({"namespace":"30min"});
+      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    })();
+  }, [])
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -531,7 +540,9 @@ const Contact = () => {
                   <Button
                     variant="outline"
                     className="w-full justify-between"
-                    onClick={() => window.open('https://calendly.com/melmaatech', '_blank')}
+                    data-cal-namespace="30min"
+                    data-cal-link="melmaatech/30min"
+                    data-cal-config='{"layout":"month_view"}'
                   >
                     <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4" />

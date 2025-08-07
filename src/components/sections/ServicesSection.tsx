@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
+import { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -95,6 +97,13 @@ const services = [
 
 export default function ServicesSection() {
   const [selectedService, setSelectedService] = useState<number | null>(null);
+  
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({"namespace":"30min"});
+      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    })();
+  }, [])
 
   const handleServiceClick = (index: number) => {
     setSelectedService(selectedService === index ? null : index);
@@ -225,9 +234,9 @@ Everything from Development to Branding  Under One Roof
               </p>
               <Button
                 size="lg"
-                onClick={() => {
-                  window.location.href = '/contact';
-                }}
+                data-cal-namespace="30min"
+                data-cal-link="melmaatech/30min"
+                data-cal-config='{"layout":"month_view"}'
                 className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90"
               >
                 Start Your Project

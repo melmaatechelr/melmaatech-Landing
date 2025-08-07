@@ -1,12 +1,21 @@
 "use client";
 
 import React from 'react';
+import { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Zap } from "lucide-react";
 import { fadeInUp, staggerContainer, floatingAnimation } from "@/lib/animations";
 
 export default function HeroSection() {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({"namespace":"30min"});
+      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    })();
+  }, [])
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -83,7 +92,9 @@ export default function HeroSection() {
           >
             <Button
               size="lg"
-              onClick={() => window.location.href = '/contact'}
+              data-cal-namespace="30min"
+              data-cal-link="melmaatech/30min"
+              data-cal-config='{"layout":"month_view"}'
               className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               aria-label="Start your software development project"
             >

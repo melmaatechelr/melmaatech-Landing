@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { getCalApi } from "@calcom/embed-react";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -20,6 +21,13 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({"namespace":"30min"});
+      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    })();
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -216,7 +224,9 @@ export default function Header() {
               whileTap={{ scale: 0.95 }}
             >
               <Button
-                onClick={() => scrollToSection('/contact')}
+                data-cal-namespace="30min"
+                data-cal-link="melmaatech/30min"
+                data-cal-config='{"layout":"month_view"}'
                 className="relative bg-gradient-to-r from-primary via-secondary to-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden group"
                 aria-label="Contact us to get started"
               >
@@ -348,7 +358,9 @@ export default function Header() {
                   className="pt-6"
                 >
                   <Button
-                    onClick={() => scrollToSection('/contact')}
+                    data-cal-namespace="30min"
+                    data-cal-link="melmaatech/30min"
+                    data-cal-config='{"layout":"month_view"}'
                     className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white py-4 rounded-xl font-semibold shadow-lg"
                     size="lg"
                     aria-label="Contact us to get started"
