@@ -103,8 +103,8 @@ export default function HeroSection() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto"
           >
             {[
-              { number: "500+", label: "Happy Clients" },
-              { number: "1000+", label: "Software Projects" },
+              { number: "56+", label: "Happy Clients" },
+              { number: "109+", label: "Software Projects" },
               { number: "5+", label: "Years Experience" },
               { number: "98%", label: "Project Success" },
             ].map((stat, index) => (
