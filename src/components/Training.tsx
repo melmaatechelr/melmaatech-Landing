@@ -251,7 +251,7 @@ const Training = () => {
           <h2 className="text-4xl font-bold text-gray-800 mb-6">We Approved By</h2>
           <div className="flex justify-center items-center gap-10 flex-wrap">
             <img src="https://i0.wp.com/sjbit.edu.in/wp-content/uploads/2021/07/AICTE-Logo-250x250-1.png?w=250&ssl=1" alt="AICTE" className="h-16 object-contain" />
-            <img src="https://www.andhraloyolacollege.ac.in/images/Funding_Agencies/APSCHE%20logo1.jpg" alt="apsche" className="h-16 object-contain" />
+            <img src="https://apsche.smartinternz.com/assets/2023/assets/apsche_logo.png" alt="apsche" className="h-16 object-contain" />
             <img src="https://www.education.gov.in/sites/upload_files/mhrd/files/logo_2.png" alt="msme" className="h-16 object-contain" />
             <img src="https://internship.aicte-india.org//images/new_logo/logo_internship_new.jpg" alt="NIP" className="h-16 object-contain" />
            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/ISO_9001-2015.svg/595px-ISO_9001-2015.svg.png" alt="iso" className="h-16 object-contain" />
