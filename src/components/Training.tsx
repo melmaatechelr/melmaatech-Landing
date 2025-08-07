@@ -188,50 +188,55 @@ const Training = () => {
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-3xl blur-xl opacity-75 animate-pulse"></div>
               
               {/* Main Highlight Box */}
-              <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-primary/20 shadow-2xl">
+              <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-primary/20 shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 rounded-2xl"></div>
                 
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  <h3 className="text-xl lg:text-2xl font-bold mb-4 lg:mb-6 text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                     Training Categories
                   </h3>
                   
-              <Tabs defaultValue="fundamentals" className="mb-8">
-                <TabsList className="mb-6">
+                  <Tabs defaultValue="fundamentals" className="mb-6 lg:mb-8">
+                    <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 mb-4 lg:mb-6 h-auto">
                   {trainingCategories.map(category => (
-                    <TabsTrigger key={category.id} value={category.id} className="flex items-center gap-2">
+                        <TabsTrigger 
+                          key={category.id} 
+                          value={category.id} 
+                          className="flex items-center justify-center gap-2 p-3 text-xs sm:text-sm whitespace-nowrap"
+                        >
                       <category.icon className="w-4 h-4" />
-                      {category.title}
+                          <span className="hidden sm:inline">{category.title}</span>
+                          <span className="sm:hidden">{category.title.split(' ')[0]}</span>
                     </TabsTrigger>
                   ))}
-                </TabsList>
+                    </TabsList>
 
-                {trainingCategories.map(category => (
-                  <TabsContent key={category.id} value={category.id}>
-                    <Card>
-                      <CardContent className="pt-6">
-                        <p className="text-gray-600 mb-4">{category.content}</p>
-                        <ul className="space-y-2">
-                          {category.features.map((feature, index) => (
-                            <li key={index} className="flex items-center gap-2">
-                              <ArrowRight className="w-4 h-4 text-primary" />
-                              <span>{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </TabsContent>
-                ))}
-              </Tabs>
+                    {trainingCategories.map(category => (
+                      <TabsContent key={category.id} value={category.id}>
+                        <Card className="border-0 shadow-sm">
+                          <CardContent className="p-4 lg:p-6">
+                            <p className="text-gray-600 mb-4 text-sm lg:text-base leading-relaxed">{category.content}</p>
+                            <ul className="space-y-2 lg:space-y-3">
+                              {category.features.map((feature, index) => (
+                                <li key={index} className="flex items-start gap-2 lg:gap-3">
+                                  <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                  <span className="text-sm lg:text-base">{feature}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </CardContent>
+                        </Card>
+                      </TabsContent>
+                    ))}
+                  </Tabs>
                   
-                  <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                  <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 mt-6 lg:mt-8">
                     <Button className="gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90" asChild>
                       <a href={partnerInfo.website} target="_blank" rel="noopener noreferrer">
                         Visit {partnerInfo.name} <ArrowRight size={16} />
                       </a>
                     </Button>
-                    <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10" asChild>
+                    <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10">
                       <a href="#contact">Contact for Training</a>
                     </Button>
                   </div>
