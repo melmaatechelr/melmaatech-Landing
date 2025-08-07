@@ -331,7 +331,7 @@ export default function ContactSection() {
               <h3 className="text-2xl font-bold mb-4">Why Choose Melmaa Tech?</h3>
               <div className="space-y-4">
                 {[
-                  "Expert team with 5+ years of experience",
+                  "Expert team with 6+ years of experience",
                   "Custom solutions tailored to your needs",
                   "24/7 support and maintenance",
                   "Agile development methodology",
