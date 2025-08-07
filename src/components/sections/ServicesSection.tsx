@@ -72,9 +72,9 @@ const services = [
     color: "from-blue-500 to-cyan-500",
     benefits: [
       "Understanding Your Brand",
-      "Progressive Web Apps (PWA)",
-      "E-commerce platforms",
-      "Content management systems"
+      "Color and Typography Selection",
+      "Concept Development",
+      ""
     ]
   },
   
