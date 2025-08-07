@@ -54,10 +54,10 @@ const services = [
     icon: Globe,
     title: "Digital Marketing",
     description: "We empower brands all over the world to create stronger connections with their customers and build lifelong loyalty.",
-    features: ["Branding", "Identify Traget Coustmer", "Strategy", "Add Makeing"],
+    features: ["Branding", "Identify Traget Coustmer", "Strategy", "Add Makeing","Campaning"],
     color: "from-blue-500 to-cyan-500",
     benefits: [
-      "React/Next.js development",
+      "Personalization",
       "Progressive Web Apps (PWA)",
       "E-commerce platforms",
       "Content management systems"
