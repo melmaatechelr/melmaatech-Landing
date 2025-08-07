@@ -53,7 +53,7 @@ const services = [
 {
     icon: Globe,
     title: "Digital Marketing",
-    description: "Professional web applications and responsive websites built with modern technologies. From corporate sites to complex SaaS platforms.",
+    description: "We empower brands all over the world to create stronger connections with their customers and build lifelong loyalty.",
     features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern UI/UX"],
     color: "from-blue-500 to-cyan-500",
     benefits: [
@@ -82,7 +82,7 @@ const services = [
     icon: Globe,
     title: "Partner With Us",
     description: "Have a promising software product idea? Let's bring it to life together. We invest in and develop innovative ideas through strategic collaboration",
-    features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern UI/UX"],
+    features: ["AI Products", "", "Fast Loading", "Modern UI/UX"],
     color: "from-blue-500 to-cyan-500",
     benefits: [
       "React/Next.js development",
