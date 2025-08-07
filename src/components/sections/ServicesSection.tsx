@@ -67,7 +67,7 @@ const services = [
   {
     icon: Globe,
     title: "Logo Designing",
-    description: "Professional web applications and responsive websites built with modern technologies. From corporate sites to complex SaaS platforms.",
+    description: "Crafting unique, memorable logos that capture your brand’s identity and leave a lasting impression.",
     features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern UI/UX"],
     color: "from-blue-500 to-cyan-500",
     benefits: [
