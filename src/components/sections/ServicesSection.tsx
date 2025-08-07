@@ -81,7 +81,7 @@ const services = [
   {
     icon: Globe,
     title: "Partner with Us",
-    description: "Professional web applications and responsive websites built with modern technologies. From corporate sites to complex SaaS platforms.",
+    description: "Have a promising software product idea? Let's bring it to life together. We invest in and develop innovative ideas through strategic collaboration",
     features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern UI/UX"],
     color: "from-blue-500 to-cyan-500",
     benefits: [
