@@ -287,7 +287,7 @@ export default function Header() {
                     {/* Hover effect */}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      layoutId={activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) ? "activeMobileTab" : undefined}
+                      layoutId={activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) ? "activeTab" : undefined}
                     />
                     
                     <span className="relative z-10 flex items-center justify-between">
