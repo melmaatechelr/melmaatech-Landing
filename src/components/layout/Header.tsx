@@ -119,26 +119,6 @@ export default function Header() {
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
               </div>
-              
-              {/* Company name with gradient */}
-              <div className="hidden sm:block">
-                <motion.h1 
-                  className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent group-hover:from-secondary group-hover:to-primary transition-all duration-500"
-                  animate={{
-                    backgroundPosition: ['0%', '100%', '0%'],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  Melmaa Tech
-                </motion.h1>
-                <p className="text-xs text-muted-foreground group-hover:text-primary/70 transition-colors duration-300">
-                  Empowering Digital Transformation
-                </p>
-              </div>
             </button>
           </motion.div>
 
