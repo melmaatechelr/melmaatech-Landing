@@ -68,7 +68,7 @@ const services = [
     icon: Globe,
     title: "Logo Designing",
     description: "Crafting unique, memorable logos that capture your brand’s identity and leave a lasting impression.",
-    features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern UI/UX"],
+    features: ["Custom Logo Concepts", "Multiple Design Options", "Scalable Vector Formats", "Brand Consistency","Revisions & Refinements"],
     color: "from-blue-500 to-cyan-500",
     benefits: [
       "React/Next.js development",
