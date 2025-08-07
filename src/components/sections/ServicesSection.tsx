@@ -74,7 +74,7 @@ const services = [
       "Understanding Your Brand",
       "Color and Typography Selection",
       "Concept Development",
-      ""
+      "Revision and Feedback"
     ]
   },
   
