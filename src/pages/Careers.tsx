@@ -674,25 +674,7 @@ const Careers = () => {
                         )}
                       />
 
-                      <FormField
-                        control={form.control}
-                        name="coverLetter"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel className="text-base font-semibold">Cover Letter *</FormLabel>
-                            <FormControl>
-                              <Textarea
-                                placeholder="Tell us why you're interested in this position and what makes you a great fit for our team. Share your passion for technology and how you can contribute to our mission..."
-                                rows={6}
-                                {...field}
-                                className="resize-none text-base"
-                              />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
+                   
                       <div className="flex items-center gap-4 p-6 bg-muted/30 rounded-xl border border-muted">
                         <Upload className="w-6 h-6 text-primary" />
                         <div className="flex-1">
