@@ -80,7 +80,7 @@ const services = [
   
   {
     icon: Globe,
-    title: "AI Product Development",
+    title: "Partner with Us",
     description: "Professional web applications and responsive websites built with modern technologies. From corporate sites to complex SaaS platforms.",
     features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern UI/UX"],
     color: "from-blue-500 to-cyan-500",
