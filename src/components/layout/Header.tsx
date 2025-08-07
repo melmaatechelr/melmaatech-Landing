@@ -58,8 +58,24 @@ export default function Header() {
       window.location.href = href;
     } else if (href.startsWith('#')) {
       // Scroll to section on current page
+     const sectionId = href.substring(1);
+     
+     // Special handling for home section
+     if (sectionId === 'home') {
+       if (window.location.pathname !== '/') {
+         window.location.href = '/';
+       } else {
+         const element = document.getElementById('home');
+         if (element) {
+           element.scrollIntoView({ behavior: 'smooth' });
+         }
+       }
+       setMobileMenuOpen(false);
+       return;
+     }
+     
       if (window.location.pathname === '/') {
-        const element = document.getElementById(href.substring(1));
+       const element = document.getElementById(sectionId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
