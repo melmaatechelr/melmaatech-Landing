@@ -679,7 +679,7 @@ const Careers = () => {
                         <Upload className="w-6 h-6 text-primary" />
                         <div className="flex-1">
                           <p className="text-base font-medium">Resume Upload</p>
-                          <p className="text-sm text-muted-foreground">Please email your resume to careers@melmaa.com along with your application</p>
+                          <p className="text-sm text-muted-foreground">Please email your resume to support@melmaa.com along with your application</p>
                         </div>
                       </div>
 
