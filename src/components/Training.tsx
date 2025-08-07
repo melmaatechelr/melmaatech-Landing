@@ -115,7 +115,7 @@ const Training = () => {
     setStats({
       students: 700,
       courses: 20,
-      successRate: 97
+      successRate: 98
     });
   }, []);
 
