@@ -122,8 +122,7 @@ const Training = () => {
               Software Training & Career Development
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              At Melmaa Tech, in partnership with {partnerInfo.name}, we empower students 
-              with industry-relevant training and real-world experience.
+              At Melmaa Tech, working alongside ShiftEduTech, we empower students with industry-relevant training and real-world experience.
             </p>
           </div>
 
