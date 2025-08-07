@@ -293,7 +293,13 @@ export default function Header() {
                     <span className="relative z-10 flex items-center justify-between">
                       {item.name}
                      {activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) && (
-                     {activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) && (
+                        <motion.div
+                          initial={{ scale: 0, rotate: 0 }}
+                          animate={{ scale: 1, rotate: 360 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <Sparkles className="w-4 h-4" />
+                        </motion.div>
                       )}
                     </span>
                   </motion.button>
