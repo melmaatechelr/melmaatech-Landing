@@ -68,7 +68,7 @@ export default function HeroSection() {
             className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
           >
           <p className="text-lg md:text-xl text-gray-600 mb-8 animate-fade-in">
-            Innovate- Build- Transform.
+            Innovate - Build - Transform.
           </p>
           
           <p className="text-gray-600 mb-10 animate-fade-in">
