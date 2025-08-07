@@ -399,7 +399,10 @@ const Careers = () => {
                         <Button
                           onClick={() => {
                             form.setValue("position", job.title);
-                            document.getElementById("application-form")?.scrollIntoView({ behavior: "smooth" });
+                            const element = document.getElementById("application-form");
+                            if (element) {
+                              element.scrollIntoView({ behavior: "smooth" });
+                            }
                           }}
                           className="w-full lg:w-auto bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90"
                         >

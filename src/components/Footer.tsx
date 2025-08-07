@@ -60,9 +60,10 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: 'About Us', href: '#about' },
-    { name: 'Training Programs', href: '#training' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About Us', href: '/#about' },
+    { name: 'Training Programs', href: '/#training' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Careers', href: '/careers' },
     { name: 'Privacy Policy', href: '#' },
     { name: 'Terms of Service', href: '#' }
   ];
@@ -216,7 +217,17 @@ const Footer = () => {
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                     >
                       <a 
-                        href={link.href} 
+                        href={link.href}
+                        onClick={(e) => {
+                          if (link.href.startsWith('/#')) {
+                            e.preventDefault();
+                            const sectionId = link.href.substring(2);
+                            const element = document.getElementById(sectionId);
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth' });
+                            }
+                          }
+                        }}
                         className="text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center gap-2 group"
                       >
                         <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />

@@ -543,7 +543,7 @@ const Contact = () => {
                   <Button
                     variant="outline"
                     className="w-full justify-between"
-                    onClick={() => window.open('/careers', '_self')}
+                    onClick={() => window.location.href = '/careers'}
                   >
                     <div className="flex items-center gap-2">
                       <Users className="w-4 h-4" />
