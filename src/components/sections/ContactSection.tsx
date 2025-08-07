@@ -352,7 +352,7 @@ export default function ContactSection() {
                   <h4 className="text-lg font-semibold">Response Time</h4>
                 </div>
                 <p className="text-muted-foreground">
-                  We typically respond to all inquiries within 2-4 hours during business hours. 
+                  We typically respond to all inquiries within 1-3 hours during business hours. 
                   For urgent matters, please call us directly.
                 </p>
               </CardContent>
