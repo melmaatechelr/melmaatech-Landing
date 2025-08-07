@@ -146,7 +146,42 @@ const Training = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div>
+            <div className="space-y-8">
+              {/* Partner Info and Photos - Left Side */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg">
+                <h3 className="text-2xl font-bold mb-4">A vision to create the next generation of techies</h3>
+                <p className="text-slate-600 mb-6">{partnerInfo.description}</p>
+                <div className="relative w-full aspect-video overflow-hidden rounded-xl group">
+                  <img src={`/assets/${images[currentSlide]}`} alt={`Slide ${currentSlide + 1}`} className="w-full h-full object-cover transition-opacity duration-500" loading="lazy" />
+                  <button onClick={prevSlide} className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-1">
+                    <ChevronLeft />
+                  </button>
+                  <button onClick={nextSlide} className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-1">
+                    <ChevronRight />
+                  </button>
+                  <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    {images.map((_, idx) => (
+                      <div key={idx} className={`w-2 h-2 rounded-full ${idx === currentSlide ? 'bg-primary' : 'bg-gray-300'}`}></div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Training Categories - Right Side with Highlight Box */}
+            <div className="relative">
+              {/* Glow Effect Background */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-3xl blur-xl opacity-75 animate-pulse"></div>
+              
+              {/* Main Highlight Box */}
+              <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-primary/20 shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 rounded-2xl"></div>
+                
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    Training Categories
+                  </h3>
+                  
               <Tabs defaultValue="fundamentals" className="mb-8">
                 <TabsList className="mb-6">
                   {trainingCategories.map(category => (
@@ -175,35 +210,16 @@ const Training = () => {
                   </TabsContent>
                 ))}
               </Tabs>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="gap-2" asChild>
-                  <a href={partnerInfo.website} target="_blank" rel="noopener noreferrer">
-                    Visit {partnerInfo.name} <ArrowRight size={16} />
-                  </a>
-                </Button>
-                <Button variant="outline" className="gap-2" asChild>
-                  <a href="#contact">Contact for Training</a>
-                </Button>
-              </div>
-            </div>
-
-            <div className="space-y-8">
-              <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <h3 className="text-2xl font-bold mb-4">A vision to create the next generation of techies</h3>
-                <p className="text-slate-600 mb-6">{partnerInfo.description}</p>
-                <div className="relative w-full aspect-video overflow-hidden rounded-xl group">
-                  <img src={`/assets/${images[currentSlide]}`} alt={`Slide ${currentSlide + 1}`} className="w-full h-full object-cover transition-opacity duration-500" loading="lazy" />
-                  <button onClick={prevSlide} className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-1">
-                    <ChevronLeft />
-                  </button>
-                  <button onClick={nextSlide} className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-1">
-                    <ChevronRight />
-                  </button>
-                  <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-2">
-                    {images.map((_, idx) => (
-                      <div key={idx} className={`w-2 h-2 rounded-full ${idx === currentSlide ? 'bg-primary' : 'bg-gray-300'}`}></div>
-                    ))}
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                    <Button className="gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90" asChild>
+                      <a href={partnerInfo.website} target="_blank" rel="noopener noreferrer">
+                        Visit {partnerInfo.name} <ArrowRight size={16} />
+                      </a>
+                    </Button>
+                    <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10" asChild>
+                      <a href="#contact">Contact for Training</a>
+                    </Button>
                   </div>
                 </div>
               </div>
