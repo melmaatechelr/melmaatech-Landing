@@ -173,13 +173,13 @@ export default function Header() {
 
           {/* Enhanced Desktop Navigation */}
           <nav className="hidden lg:flex items-center" role="navigation" aria-label="Main navigation">
-            <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-md rounded-2xl p-2 border border-white/20">
+            <div className="flex items-center space-x-1 bg-white/10 backdrop-blur-md rounded-2xl p-2 border border-white/20">
               {navigation.map((item, index) => (
                 <motion.button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
                   className={cn(
-                    "relative px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 overflow-hidden group",
+                    "relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 overflow-hidden group touch-target focus-ring",
                     (window.location.pathname === item.href) || 
                     (window.location.pathname === '/' && activeSection === item.href.substring(1))
                       ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
@@ -229,7 +229,7 @@ export default function Header() {
                 data-cal-namespace="30min"
                 data-cal-link="melmaatech/30min"
                 data-cal-config='{"layout":"month_view"}'
-                className="relative bg-gradient-to-r from-primary via-secondary to-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden group"
+                className="relative bg-gradient-to-r from-primary via-secondary to-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden group touch-target focus-ring"
                 aria-label="Contact us to get started"
               >
                 {/* Animated background */}
@@ -263,7 +263,7 @@ export default function Header() {
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="relative bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20"
+                  className="relative bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 touch-target focus-ring"
                   aria-label="Open mobile menu"
                 >
                   <AnimatePresence mode="wait">
@@ -319,7 +319,7 @@ export default function Header() {
                     key={item.name}
                     onClick={() => scrollToSection(item.href)}
                     className={cn(
-                      "text-left px-6 py-4 rounded-xl text-lg font-medium transition-all duration-300 group relative overflow-hidden",
+                      "text-left px-6 py-4 rounded-xl text-lg font-medium transition-all duration-300 group relative overflow-hidden touch-target focus-ring",
                       activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1))
                         ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
                         : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
@@ -363,7 +363,7 @@ export default function Header() {
                     data-cal-namespace="30min"
                     data-cal-link="melmaatech/30min"
                     data-cal-config='{"layout":"month_view"}'
-                    className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white py-4 rounded-xl font-semibold shadow-lg"
+                    className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white py-4 rounded-xl font-semibold shadow-lg touch-target focus-ring"
                     size="lg"
                     aria-label="Contact us to get started"
                   >

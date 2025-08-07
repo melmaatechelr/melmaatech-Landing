@@ -95,6 +95,9 @@ const Footer = () => {
                     src="/assets/MelmaatechLogo.PNG" 
                     alt="Melmaa Tech Logo" 
                     className="h-16 w-auto drop-shadow-2xl"
+                    width="64"
+                    height="64"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl"></div>
                 </div>
@@ -119,10 +122,10 @@ const Footer = () => {
                     href={contact.href}
                     target={contact.href.startsWith('http') ? '_blank' : '_self'}
                     rel={contact.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                    className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-all duration-300 group"
+                    className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-all duration-300 group touch-target focus-ring"
                     whileHover={{ x: 5 }}
                   >
-                    <div className="p-2 bg-slate-800/50 rounded-lg group-hover:bg-blue-500/20 transition-colors">
+                    <div className="p-3 bg-slate-800/50 rounded-lg group-hover:bg-blue-500/20 transition-colors">
                       <contact.icon className="w-4 h-4" />
                     </div>
                     <div>
@@ -143,7 +146,7 @@ const Footer = () => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative"
+                      className="group relative touch-target focus-ring"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       whileTap={{ scale: 0.95 }}
                       initial={{ opacity: 0, y: 20 }}
@@ -186,7 +189,7 @@ const Footer = () => {
                     >
                       <a 
                         href="#services" 
-                        className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center gap-2 group"
+                        className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center gap-2 group py-2 focus-ring"
                       >
                         <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                         <span className="group-hover:translate-x-2 transition-transform duration-300">{service}</span>
@@ -228,7 +231,7 @@ const Footer = () => {
                             }
                           }
                         }}
-                        className="text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center gap-2 group"
+                        className="text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center gap-2 group py-2 focus-ring"
                       >
                         <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                         <span className="group-hover:translate-x-2 transition-transform duration-300">{link.name}</span>
@@ -246,9 +249,13 @@ const Footer = () => {
                   <input 
                     type="email" 
                     placeholder="Enter your email"
-                    className="flex-1 px-3 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="flex-1 px-3 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 min-h-[44px]"
+                    aria-label="Email address for newsletter"
                   />
-                  <button className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                  <button 
+                    className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 touch-target focus-ring"
+                    aria-label="Subscribe to newsletter"
+                  >
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>

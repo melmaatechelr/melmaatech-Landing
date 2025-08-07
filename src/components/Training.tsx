@@ -146,16 +146,36 @@ const Training = () => {
                 <h3 className="text-2xl font-bold mb-4">A vision to create the next generation of techies</h3>
                 <p className="text-slate-600 mb-6">{partnerInfo.description}</p>
                 <div className="relative w-full aspect-video overflow-hidden rounded-xl group">
-                  <img src={`/assets/${images[currentSlide]}`} alt={`Slide ${currentSlide + 1}`} className="w-full h-full object-cover transition-opacity duration-500" loading="lazy" />
-                  <button onClick={prevSlide} className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-1">
+                  <img 
+                    src={`/assets/${images[currentSlide]}`} 
+                    alt={`Training program showcase ${currentSlide + 1}`} 
+                    className="w-full h-full object-cover transition-opacity duration-500" 
+                    loading="lazy"
+                    width="600"
+                    height="400"
+                  />
+                  <button 
+                    onClick={prevSlide} 
+                    className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 touch-target focus-ring"
+                    aria-label="Previous image"
+                  >
                     <ChevronLeft />
                   </button>
-                  <button onClick={nextSlide} className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-1">
+                  <button 
+                    onClick={nextSlide} 
+                    className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 touch-target focus-ring"
+                    aria-label="Next image"
+                  >
                     <ChevronRight />
                   </button>
                   <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-2">
                     {images.map((_, idx) => (
-                      <div key={idx} className={`w-2 h-2 rounded-full ${idx === currentSlide ? 'bg-primary' : 'bg-gray-300'}`}></div>
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentSlide(idx)}
+                        className={`w-3 h-3 rounded-full transition-colors ${idx === currentSlide ? 'bg-primary' : 'bg-gray-300'} focus-ring`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
                     ))}
                   </div>
                 </div>

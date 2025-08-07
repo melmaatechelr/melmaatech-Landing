@@ -63,7 +63,7 @@ export default function HeroSection() {
           {/* Main Heading */}
           <motion.h1
             variants={fadeInUp}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight heading-responsive"
           >
             <span className="block">Empowering Digital</span>
             <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
@@ -74,28 +74,28 @@ export default function HeroSection() {
           {/* Subtitle */}
           <motion.p
             variants={fadeInUp}
-            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed text-responsive"
           >
-          <p className="text-lg md:text-xl text-gray-600 mb-8 animate-fade-in">
+          <span className="block mb-4 font-medium text-primary">
             Innovate - Build - Transform.
-          </p>
+          </span>
           
-          <p className="text-gray-600 mb-10 animate-fade-in">
+          <span className="block">
             Your trusted technology partner for building future-ready digital solutions. We specialize in crafting high-performance websites, mobile applications, and custom software products.
-          </p>
-            </motion.p>
+          </span>
+          </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
             variants={fadeInUp}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 px-4"
           >
             <Button
               size="lg"
               data-cal-namespace="30min"
               data-cal-link="melmaatech/30min"
               data-cal-config='{"layout":"month_view"}'
-              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto touch-target focus-ring"
               aria-label="Start your software development project"
             >
               <Zap className="w-5 h-5 mr-2" />
@@ -105,7 +105,7 @@ export default function HeroSection() {
               size="lg"
               variant="outline"
               onClick={() => scrollToSection('about')}
-              className="px-8 py-6 text-lg font-semibold rounded-xl border-2 hover:bg-muted/50 transition-all duration-300 group"
+              className="px-8 py-6 text-lg font-semibold rounded-xl border-2 hover:bg-muted/50 transition-all duration-300 group w-full sm:w-auto touch-target focus-ring"
               aria-label="Learn more about our software development services"
             >
               Learn More
@@ -116,7 +116,7 @@ export default function HeroSection() {
           {/* Stats */}
           <motion.div
             variants={fadeInUp}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-2xl mx-auto px-4"
           >
             {[
               { number: "56+", label: "Happy Clients" },
@@ -127,12 +127,12 @@ export default function HeroSection() {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.05 }}
-                className="text-center"
+                className="text-center p-2"
               >
-                <div className="text-2xl md:text-3xl font-bold text-primary mb-1">
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary mb-1">
                   {stat.number}
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-xs md:text-sm text-muted-foreground">
                   {stat.label}
                 </div>
               </motion.div>
