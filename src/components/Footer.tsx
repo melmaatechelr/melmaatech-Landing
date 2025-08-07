@@ -27,7 +27,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12" role="contentinfo">
+    <footer className="bg-gradient-to-br from-slate-800 via-slate-900 to-gray-900 text-gray-100 py-12" role="contentinfo">
       <div className="container">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
@@ -35,18 +35,18 @@ const Footer = () => {
               <img 
                 src="/assets/MelmaatechLogo.PNG" 
                 alt="Melmaa Tech Logo" 
-                className="h-16 w-auto"
+                className="h-16 w-auto drop-shadow-lg"
               />
               <h3 className="text-3xl font-bold text-white">Melmaa Tech</h3>
             </div>
-            <p className="mb-4 max-w-md">
+            <p className="mb-4 max-w-md text-gray-200">
               Professional software development company specializing in custom applications, 
               enterprise solutions, and digital transformation services.
             </p>
             
             {/* Social Media Icons */}
             <div className="flex items-center gap-4 mt-6">
-              <span className="text-sm font-medium text-gray-400">Follow us:</span>
+              <span className="text-sm font-medium text-gray-300">Follow us:</span>
               <div className="flex gap-3">
                 {socialLinks.map((social) => (
                   <a
@@ -54,15 +54,15 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group relative p-3 bg-gray-800 rounded-full transition-all duration-300 hover:bg-gray-700 hover:scale-110 hover:shadow-lg ${social.color}`}
+                    className={`group relative p-3 bg-slate-700/50 backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-slate-600/70 hover:scale-110 hover:shadow-xl border border-slate-600/30 ${social.color}`}
                     aria-label={`Follow us on ${social.name}`}
                   >
                     <social.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
                     
                     {/* Tooltip */}
-                    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
+                    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-slate-700 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-lg">
                       {social.name}
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-700"></div>
                     </div>
                   </a>
                 ))}
@@ -75,13 +75,13 @@ const Footer = () => {
             <nav aria-label="Services navigation">
               <ul className="space-y-2" role="list">
                 <li>
-                  <a href="#services" className="hover:text-primary transition-colors">Custom Software Development</a>
+                  <a href="#services" className="text-gray-200 hover:text-primary transition-colors">Custom Software Development</a>
                 </li>
                 <li>
-                  <a href="#services" className="hover:text-primary transition-colors">Web Application Development</a>
+                  <a href="#services" className="text-gray-200 hover:text-primary transition-colors">Web Application Development</a>
                 </li>
                 <li>
-                  <a href="#services" className="hover:text-primary transition-colors">Mobile App Development</a>
+                  <a href="#services" className="text-gray-200 hover:text-primary transition-colors">Mobile App Development</a>
                 </li>
               </ul>
             </nav>
@@ -92,32 +92,32 @@ const Footer = () => {
             <nav aria-label="Company navigation">
               <ul className="space-y-2" role="list">
                 <li>
-                  <a href="#about" className="hover:text-primary transition-colors">About Us</a>
+                  <a href="#about" className="text-gray-200 hover:text-primary transition-colors">About Us</a>
                 </li>
                 <li>
-                  <a href="#training" className="hover:text-primary transition-colors">Training Programs</a>
+                  <a href="#training" className="text-gray-200 hover:text-primary transition-colors">Training Programs</a>
                 </li>
                 <li>
-                  <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+                  <a href="#contact" className="text-gray-200 hover:text-primary transition-colors">Contact</a>
                 </li>
               </ul>
             </nav>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-400">© {currentYear} Melmaa Tech. All rights reserved.</p>
+        <div className="border-t border-slate-700/50 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-gray-300">© {currentYear} Melmaa Tech. All rights reserved.</p>
           
           <div className="mt-4 sm:mt-0">
             <nav aria-label="Legal navigation">
               <ul className="flex space-x-6" role="list">
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">
+                  <a href="#" className="text-gray-300 hover:text-primary transition-colors duration-300">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">
+                  <a href="#" className="text-gray-300 hover:text-primary transition-colors duration-300">
                     Terms of Service
                   </a>
                 </li>
