@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Globe, Smartphone, Code, ArrowRight, CheckCircle } from "lucide-react";
+import { Globe, Smartphone, Code, ArrowRight, CheckCircle, Megaphone, Palette, Handshake } from "lucide-react";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { ServiceCardSkeleton } from "@/components/ui/loading-states";
 
@@ -51,11 +51,11 @@ const services = [
   },
 
 {
-    icon: Globe,
+    icon: Megaphone,
     title: "Digital Marketing",
     description: "We empower brands all over the world to create stronger connections with their customers and build lifelong loyalty.",
     features: ["Branding", "Identify Traget Coustmer", "Strategy", "Add Makeing","Campaning"],
-    color: "from-blue-500 to-cyan-500",
+    color: "from-orange-500 to-red-500",
     benefits: [
       "Personalization",
       "Engagement",
@@ -65,11 +65,11 @@ const services = [
   },
 
   {
-    icon: Globe,
+    icon: Palette,
     title: "Logo Designing",
     description: "Crafting unique, memorable logos that capture your brand’s identity and leave a lasting impression.",
     features: ["Custom Logo Concepts", "Multiple Design Options", "Scalable Vector Formats", "Brand Consistency","Revisions & Refinements"],
-    color: "from-blue-500 to-cyan-500",
+    color: "from-pink-500 to-purple-500",
     benefits: [
       "Understanding Your Brand",
       "Color and Typography Selection",
@@ -79,11 +79,11 @@ const services = [
   },
   
   {
-    icon: Globe,
+    icon: Handshake,
     title: "Partner With Us",
     description: "Have a promising software product idea? Let's bring it to life together. We invest in and develop innovative ideas through strategic collaboration",
     features: ["AI Products", "Idea analysis", "Business model creation", "Strategy Building"],
-    color: "from-blue-500 to-cyan-500",
+    color: "from-teal-500 to-green-500",
     benefits: [
       "Accelerate Time-to-Market",
       "Make Smarter Business Decisions",
