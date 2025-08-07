@@ -58,9 +58,9 @@ const services = [
     color: "from-blue-500 to-cyan-500",
     benefits: [
       "Personalization",
-      "Progressive Web Apps (PWA)",
-      "E-commerce platforms",
-      "Content management systems"
+      "Engagement",
+      "Optimization",
+      "SEO"
     ]
   },
 
