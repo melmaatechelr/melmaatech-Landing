@@ -82,7 +82,7 @@ const services = [
     icon: Globe,
     title: "Partner With Us",
     description: "Have a promising software product idea? Let's bring it to life together. We invest in and develop innovative ideas through strategic collaboration",
-    features: ["AI Products", "", "Fast Loading", "Modern UI/UX"],
+    features: ["AI Products", "Idea analysis", "Business model creation", "Modern UI/UX"],
     color: "from-blue-500 to-cyan-500",
     benefits: [
       "React/Next.js development",
