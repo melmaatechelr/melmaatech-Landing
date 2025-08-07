@@ -270,17 +270,6 @@ const Footer = () => {
                 © {currentYear} Melmaa Tech. Made with <Heart className="w-4 h-4 inline text-red-500 mx-1" /> in India. All rights reserved.
               </motion.p>
               
-              <motion.div 
-                className="flex items-center gap-6"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <div className="flex items-center gap-2 text-gray-400 text-sm">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span>Available for new projects</span>
-                </div>
-              </motion.div>
             </div>
           </div>
         </div>
