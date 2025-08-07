@@ -13,7 +13,7 @@ const stats = [
   { icon: Users, label: "Happy Clients", value: "56+" },
   { icon: Award, label: "Software Projects", value: "109+" },
   { icon: Clock, label: "Years Experience", value: "6+" },
-  { icon: Target, label: "Project Success", value: "99%" },
+  { icon: Target, label: "On Time Delivery", value: "97%" },
 ];
 
 const About = () => {
