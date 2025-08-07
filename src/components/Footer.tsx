@@ -83,9 +83,6 @@ const Footer = () => {
                 <li>
                   <a href="#services" className="hover:text-primary transition-colors">Mobile App Development</a>
                 </li>
-                <li>
-                  <a href="#solutions" className="hover:text-primary transition-colors">Enterprise Solutions</a>
-                </li>
               </ul>
             </nav>
           </div>
