@@ -2,7 +2,7 @@ import React from 'react';
 import { CheckCircle, Users, Award, Clock, Target } from "lucide-react";
 
 const aboutPoints = [
-  "Expert software development team with 6+ years experience",
+  "15+ Expert Software development team with 6+ years experience",
   "Custom software solutions for startups to enterprises",
   "Agile development methodology with continuous delivery",
   "Modern tech stack: React, Node.js, Python, Cloud platforms",
