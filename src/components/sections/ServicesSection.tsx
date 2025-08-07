@@ -85,9 +85,9 @@ const services = [
     features: ["AI Products", "Idea analysis", "Business model creation", "Strategy Building"],
     color: "from-blue-500 to-cyan-500",
     benefits: [
-      "React/Next.js development",
-      "Progressive Web Apps (PWA)",
-      "E-commerce platforms",
+      "Accelerate Time-to-Market",
+      "Make Smarter Business Decisions",
+      "Build a Scalable Business Foundation",
       "Content management systems"
     ]
   }
