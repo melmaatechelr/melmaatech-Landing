@@ -55,18 +55,29 @@ export default function Header() {
     // Handle different types of navigation
     if (href.startsWith('/')) {
       // Page navigation (careers, contact)
-      window.location.href = href;
+      if (window.location.pathname !== href) {
+        window.location.href = href;
+      }
     } else if (href.startsWith('#')) {
       // Scroll to section on current page
-      const element = document.getElementById(href.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      if (window.location.pathname === '/') {
+        const element = document.getElementById(href.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // Navigate to home page first, then scroll
+        window.location.href = '/' + href;
       }
     } else {
       // Handle section names without #
-      const element = document.getElementById(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      if (window.location.pathname === '/') {
+        const element = document.getElementById(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        window.location.href = '/#' + href;
       }
     }
     setMobileMenuOpen(false);
@@ -189,6 +200,7 @@ export default function Header() {
             >
               <Button
                 onClick={() => scrollToSection('#contact')}
+                onClick={() => scrollToSection('/contact')}
                 className="relative bg-gradient-to-r from-primary via-secondary to-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden group"
                 aria-label="Contact us to get started"
               >
@@ -321,6 +333,7 @@ export default function Header() {
                 >
                   <Button
                     onClick={() => scrollToSection('#contact')}
+                    onClick={() => scrollToSection('/contact')}
                     className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white py-4 rounded-xl font-semibold shadow-lg"
                     size="lg"
                     aria-label="Contact us to get started"

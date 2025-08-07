@@ -226,8 +226,7 @@ Everything from Development to Branding  Under One Roof
               <Button
                 size="lg"
                 onClick={() => {
-                  const element = document.getElementById('contact');
-                  element?.scrollIntoView({ behavior: 'smooth' });
+                  window.location.href = '/contact';
                 }}
                 className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90"
               >

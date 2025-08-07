@@ -83,7 +83,7 @@ export default function HeroSection() {
           >
             <Button
               size="lg"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => window.location.href = '/contact'}
               className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               aria-label="Start your software development project"
             >
