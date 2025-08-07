@@ -142,14 +142,14 @@ export default function ServicesSection() {
             variants={fadeInUp}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-Everything from Development to Branding </br> Under One Roof
+Everything from Development to Branding  Under One Roof
           </motion.h2>
           
           <motion.p
             variants={fadeInUp}
             className="text-xl text-muted-foreground max-w-3xl mx-auto"
           >
-            We deliver cutting-edge software solutions tailored to your business needs and objectives.
+            We deliver cutting-edge software & Branding solutions tailored to your business needs and objectives.
           </motion.p>
         </motion.div>
 
