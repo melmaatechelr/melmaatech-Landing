@@ -156,7 +156,6 @@ export default function Header() {
                     "relative px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 overflow-hidden group",
                     (window.location.pathname === item.href) || 
                     (window.location.pathname === '/' && activeSection === item.href.substring(1))
-                    (window.location.pathname === '/' && activeSection === item.href.substring(1))
                       ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
                       : "text-muted-foreground hover:text-foreground hover:bg-white/50"
                   )}
@@ -166,13 +165,11 @@ export default function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   aria-current={(window.location.pathname === item.href) || 
-                  aria-current={(window.location.pathname === item.href) || 
                     (window.location.pathname === '/' && activeSection === item.href.substring(1)) ? 'page' : undefined}
                 >
                   {/* Animated background */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    layoutId={(window.location.pathname === item.href) || 
                     layoutId={(window.location.pathname === item.href) || 
                       (window.location.pathname === '/' && activeSection === item.href.substring(1)) ? "activeTab" : undefined}
                   />
@@ -181,7 +178,6 @@ export default function Header() {
                   <span className="relative z-10 flex items-center gap-2">
                     {item.name}
                     {((window.location.pathname === item.href) || 
-                      (window.location.pathname === '/' && activeSection === item.href.substring(1))) && (
                       (window.location.pathname === '/' && activeSection === item.href.substring(1))) && (
                       <motion.div
                         initial={{ scale: 0, rotate: 0 }}
