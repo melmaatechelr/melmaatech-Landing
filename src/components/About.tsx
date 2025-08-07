@@ -10,10 +10,10 @@ const aboutPoints = [
 ];
 
 const stats = [
-  { icon: Users, label: "Happy Clients", value: "500+" },
-  { icon: Award, label: "Software Projects", value: "1000+" },
-  { icon: Clock, label: "Years Experience", value: "5+" },
-  { icon: Target, label: "Project Success", value: "98%" },
+  { icon: Users, label: "Happy Clients", value: "56+" },
+  { icon: Award, label: "Software Projects", value: "109+" },
+  { icon: Clock, label: "Years Experience", value: "6+" },
+  { icon: Target, label: "Project Success", value: "99%" },
 ];
 
 const About = () => {
