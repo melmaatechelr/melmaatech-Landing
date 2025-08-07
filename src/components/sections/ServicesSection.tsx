@@ -142,7 +142,7 @@ export default function ServicesSection() {
             variants={fadeInUp}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-Everything from Development to Branding </break> Under One Roof
+Everything from Development to Branding  Under One Roof
           </motion.h2>
           
           <motion.p
