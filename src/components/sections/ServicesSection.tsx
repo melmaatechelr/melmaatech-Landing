@@ -49,6 +49,37 @@ const services = [
       "Database design"
     ]
   },
+
+{
+    icon: Globe,
+    title: "Digital Marketing",
+    description: "Professional web applications and responsive websites built with modern technologies. From corporate sites to complex SaaS platforms.",
+    features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern UI/UX"],
+    color: "from-blue-500 to-cyan-500",
+    benefits: [
+      "React/Next.js development",
+      "Progressive Web Apps (PWA)",
+      "E-commerce platforms",
+      "Content management systems"
+    ]
+  },
+
+  {
+    icon: Globe,
+    title: "Logo Designing",
+    description: "Professional web applications and responsive websites built with modern technologies. From corporate sites to complex SaaS platforms.",
+    features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Modern UI/UX"],
+    color: "from-blue-500 to-cyan-500",
+    benefits: [
+      "React/Next.js development",
+      "Progressive Web Apps (PWA)",
+      "E-commerce platforms",
+      "Content management systems"
+    ]
+  },
+  
+  
+  
 ];
 
 export default function ServicesSection() {
