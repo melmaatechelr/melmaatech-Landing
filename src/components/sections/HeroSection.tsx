@@ -106,7 +106,7 @@ export default function HeroSection() {
               { number: "56+", label: "Happy Clients" },
               { number: "109+", label: "Software Projects" },
               { number: "6+", label: "Years Experience" },
-              { number: "99%", label: "Project Success" },
+              { number: "97%", label: "On Time Delivery" },
             ].map((stat, index) => (
               <motion.div
                 key={index}
