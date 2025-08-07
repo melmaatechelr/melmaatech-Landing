@@ -71,7 +71,7 @@ const services = [
     features: ["Custom Logo Concepts", "Multiple Design Options", "Scalable Vector Formats", "Brand Consistency","Revisions & Refinements"],
     color: "from-blue-500 to-cyan-500",
     benefits: [
-      "React/Next.js development",
+      "Understanding Your Brand",
       "Progressive Web Apps (PWA)",
       "E-commerce platforms",
       "Content management systems"
