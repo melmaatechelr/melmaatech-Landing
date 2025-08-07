@@ -63,7 +63,9 @@ export default function Header() {
     // Handle different types of navigation
     if (href.startsWith('/')) {
       // Page navigation (careers, contact)
-      window.location.href = href;
+      if (window.location.pathname !== href) {
+        window.location.href = href;
+      }
     } else if (href.startsWith('#')) {
       // Scroll to section on current page
      const sectionId = href.substring(1);
