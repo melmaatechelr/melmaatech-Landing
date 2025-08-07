@@ -51,14 +51,14 @@ export default function Header() {
     };
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (href: string) => {
     // Handle page navigation for careers and contact
-    if (sectionId === '/careers' || sectionId === '/contact') {
-      window.location.href = sectionId;
+    if (href === '/careers' || href === '/contact') {
+      window.location.href = href;
       return;
     }
     
-    const element = document.getElementById(sectionId);
+    const element = document.getElementById(href.substring(1));
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -270,10 +270,10 @@ export default function Header() {
                 {navigation.map((item, index) => (
                   <motion.button
                     key={item.name}
-                   onClick={() => scrollToSection(item.href.startsWith('/') ? item.href : item.href.substring(1))}
+                    onClick={() => scrollToSection(item.href)}
                     className={cn(
                       "text-left px-6 py-4 rounded-xl text-lg font-medium transition-all duration-300 group relative overflow-hidden",
-                     activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1))
+                      activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1))
                         ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
                         : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
                     )}
@@ -282,18 +282,18 @@ export default function Header() {
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     whileHover={{ x: 10, scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                   aria-current={activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) ? 'page' : undefined}
+                    aria-current={activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) ? 'page' : undefined}
                   >
                     {/* Hover effect */}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                     layoutId={activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) ? "activeMobileTab" : undefined}
+                      layoutId={activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) ? "activeMobileTab" : undefined}
                     />
                     
                     <span className="relative z-10 flex items-center justify-between">
                       {item.name}
-                     {activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) && (
-                        <motion.div
+                      {activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) && (
+                      {activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) && (
                           initial={{ scale: 0, rotate: 0 }}
                           animate={{ scale: 1, rotate: 360 }}
                           transition={{ duration: 0.5 }}
