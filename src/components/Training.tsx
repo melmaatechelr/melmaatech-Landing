@@ -142,7 +142,7 @@ const Training = () => {
             <div className="space-y-8">
               {/* Partner Info and Photos - Left Side */}
               <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <h3 className="text-2xl font-bold mb-4">A vision to create the next generation of techies</h3>
+                <h3 className="text-2xl font-bold mb-4">A Vision To Create The Next Generation of Techies</h3>
                 <p className="text-slate-600 mb-6">{partnerInfo.description}</p>
                 <div className="relative w-full aspect-video overflow-hidden rounded-xl group">
                   <img 
