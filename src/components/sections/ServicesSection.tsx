@@ -149,7 +149,7 @@ Everything from Development to Branding  Under One Roof
             variants={fadeInUp}
             className="text-xl text-muted-foreground max-w-3xl mx-auto"
           >
-            We deliver cutting-edge software solutions tailored to your business needs and objectives.
+            We deliver cutting-edge software & branding solutions tailored to your business needs and objectives.
           </motion.p>
         </motion.div>
 
