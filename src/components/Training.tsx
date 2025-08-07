@@ -190,7 +190,7 @@ const Training = () => {
 
             <div className="space-y-8">
               <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <h3 className="text-2xl font-bold mb-4">Partner with {partnerInfo.name}</h3>
+                <h3 className="text-2xl font-bold mb-4">A vision to create the next generation of techies</h3>
                 <p className="text-slate-600 mb-6">{partnerInfo.description}</p>
                 <div className="relative w-full aspect-video overflow-hidden rounded-xl group">
                   <img src={`/assets/${images[currentSlide]}`} alt={`Slide ${currentSlide + 1}`} className="w-full h-full object-cover transition-opacity duration-500" loading="lazy" />
