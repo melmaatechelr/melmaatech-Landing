@@ -13,8 +13,7 @@ import {
   School,
   UsersRound,
   ChevronLeft,
-  ChevronRight,
-  Rocket
+  ChevronRight
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -183,61 +182,43 @@ const Training = () => {
                     Training Categories
                   </h3>
                   
-                  <Tabs defaultValue="fundamentals" className="mb-8">
-                    <TabsList className="grid w-full grid-cols-3 mb-6">
-                      {trainingCategories.map(category => (
-                        <TabsTrigger 
-                          key={category.id} 
-                          value={category.id} 
-                          className="flex items-center justify-center gap-2 text-xs sm:text-sm px-2 py-2"
-                        >
-                          <category.icon className="w-4 h-4 flex-shrink-0" />
-                          <span className="hidden sm:inline">{category.title}</span>
-                          <span className="sm:hidden">{category.title.split(' ')[0]}</span>
-                        </TabsTrigger>
-                      ))}
-                    </TabsList>
+              <Tabs defaultValue="fundamentals" className="mb-8">
+                <TabsList className="mb-6">
+                  {trainingCategories.map(category => (
+                    <TabsTrigger key={category.id} value={category.id} className="flex items-center gap-2">
+                      <category.icon className="w-4 h-4" />
+                      {category.title}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
 
-                    {trainingCategories.map(category => (
-                      <TabsContent key={category.id} value={category.id} className="mt-6">
-                        <Card className="border-0 shadow-md bg-white/80 backdrop-blur-sm">
-                          <CardContent className="pt-6">
-                            <div className="flex items-center gap-3 mb-4">
-                              <div className="p-2 bg-primary/10 rounded-lg">
-                                <category.icon className="w-5 h-5 text-primary" />
-                              </div>
-                              <h4 className="text-lg font-semibold text-gray-800">{category.title}</h4>
-                            </div>
-                            <p className="text-gray-600 mb-6 leading-relaxed">{category.content}</p>
-                            <div className="space-y-3">
-                              <h5 className="font-medium text-gray-800 mb-3">Key Features:</h5>
-                              <ul className="grid gap-2">
-                                {category.features.map((feature, index) => (
-                                  <li key={index} className="flex items-start gap-3 p-2 rounded-lg hover:bg-primary/5 transition-colors">
-                                    <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                    <span className="text-sm text-gray-700">{feature}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </TabsContent>
-                    ))}
-                  </Tabs>
+                {trainingCategories.map(category => (
+                  <TabsContent key={category.id} value={category.id}>
+                    <Card>
+                      <CardContent className="pt-6">
+                        <p className="text-gray-600 mb-4">{category.content}</p>
+                        <ul className="space-y-2">
+                          {category.features.map((feature, index) => (
+                            <li key={index} className="flex items-center gap-2">
+                              <ArrowRight className="w-4 h-4 text-primary" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                ))}
+              </Tabs>
                   
-                  <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-6 border-t border-gray-200">
-                    <Button className="flex-1 gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 h-12" asChild>
+                  <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                    <Button className="gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90" asChild>
                       <a href={partnerInfo.website} target="_blank" rel="noopener noreferrer">
-                        <Rocket className="w-4 h-4" />
                         Visit {partnerInfo.name} <ArrowRight size={16} />
                       </a>
                     </Button>
-                    <Button variant="outline" className="flex-1 gap-2 border-primary/30 hover:bg-primary/10 h-12" asChild>
-                      <a href="#contact">
-                        <Users className="w-4 h-4" />
-                        Contact for Training
-                      </a>
+                    <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10" asChild>
+                      <a href="#contact">Contact for Training</a>
                     </Button>
                   </div>
                 </div>
