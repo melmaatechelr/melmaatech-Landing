@@ -51,12 +51,6 @@ const About = () => {
               Building Software That <br className="hidden sm:block" /> Powers Your Business
             </h2>
 
-            <p className="text-gray-700 text-lg mb-8">
-              At <span className="font-semibold text-primary">Melmaa Tech</span>, we transform businesses through innovative software development. 
-              We specialize in building custom applications, enterprise software, and digital platforms that solve complex business challenges. 
-              Our expert team delivers scalable, secure, and maintainable solutions using cutting-edge technologies.
-            </p>
-
             <ul className="space-y-4" role="list">
               {aboutPoints.map((point, index) => (
                 <li key={index} className="flex items-start group" role="listitem">
