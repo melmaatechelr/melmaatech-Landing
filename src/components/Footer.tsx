@@ -93,7 +93,8 @@ const Footer = () => {
                   </div>
                   <div className="flex items-center gap-3 text-gray-600">
                     <MapPin className="w-4 h-4 text-primary" />
-                    <span>Eluru, West Godavari, AP</span>
+                    <span>3D-5-1/6,Westren Street,1-Town,Eluru,West Godavari,Andhra Pradesh,534001,India.
+</span>
                   </div>
                 </div>
 
