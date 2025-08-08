@@ -72,7 +72,7 @@ const contactMethods = [
     title: "Visit Us",
     details: "3D-5-1/6, Western Street, Near LBC School",
     description: "Eluru, West Godavari, AP, India",
-    href: "https://maps.google.com/?q=Eluru,West+Godavari,Andhra+Pradesh,India",
+    href: "https://maps.app.goo.gl/9GxTZC8V6DE4WKvM6",
     color: "from-purple-500 to-pink-500",
     available: "By Appointment"
   },
