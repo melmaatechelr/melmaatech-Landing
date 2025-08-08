@@ -73,8 +73,8 @@ const Footer = () => {
 
                 {/* Description */}
                 <p className="text-gray-600 mb-8 leading-relaxed max-w-md">
-                  Transforming businesses through innovative software solutions, 
-                  cutting-edge technology, and exceptional digital experiences.
+                  Empowering businesses with custom software solutions, advanced technology,
+                  and outstanding digital experiences that drive growth.
                 </p>
 
                 {/* Contact Info - Compact */}
