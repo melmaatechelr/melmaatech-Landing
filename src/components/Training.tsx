@@ -192,6 +192,7 @@ const Training = () => {
     </div>
   </div>
 </div>
+            </div>
 
             {/* Training Categories - Right Side with Highlight Box */}
             <div className="relative">
