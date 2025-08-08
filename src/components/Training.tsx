@@ -141,7 +141,7 @@ const Training = () => {
 
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-start">
             <div className="space-y-6 sm:space-y-8">
-{/* Partner Info and Photos - Left Side */}
+   {/* Partner Info and Photos - Left Side */}
 <div className="bg-gradient-to-br from-white to-slate-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl border border-slate-100">
   <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
     A Vision To Create The Next Generation of Techies
