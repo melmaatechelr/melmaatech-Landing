@@ -236,7 +236,7 @@ const Training = () => {
                       </a>
                     </Button>
                     <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10">
-                      <a href="https://shift.melmaa.tech/#contactus">Contact for Training</a>
+                      <a href={partnerInfo.website}>Contact for Training</a>
                     </Button>
                   </div>
                 </div>
