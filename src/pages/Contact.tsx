@@ -370,7 +370,7 @@ const Contact = () => {
                               <FormItem>
                                 <FormLabel>Company Name</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="Your Company" {...field} className="h-12" />
+                                  <Input placeholder="Your Company Name" {...field} className="h-12" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
