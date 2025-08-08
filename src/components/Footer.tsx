@@ -65,7 +65,7 @@ const Footer = () => {
                   <img 
                     src="/assets/MelmaatechLogo.PNG" 
                     alt="Melmaa Tech" 
-                    className="h-22 w-auto"
+                    className="h-20 w-auto"
                     loading="lazy"
                   />
 
