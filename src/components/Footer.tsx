@@ -1,6 +1,9 @@
 import React from 'react';
-import { Instagram, Linkedin, MessageCircle, Mail, Phone, MapPin, ArrowRight, Heart } from 'lucide-react';
+import { Instagram, Linkedin, MessageCircle, Mail, Phone, MapPin, ArrowRight, Heart, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Separator } from '@/components/ui/separator';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,226 +13,122 @@ const Footer = () => {
       name: 'Instagram',
       url: 'https://www.instagram.com/melmaatech?igsh=YmJwaHRiZHJrcXBt',
       icon: Instagram,
-      color: 'hover:text-pink-400',
-      bgGradient: 'from-pink-500 to-purple-600'
+      color: 'hover:text-pink-500'
     },
     {
       name: 'LinkedIn',
       url: 'https://in.linkedin.com/company/melmaa-tech',
       icon: Linkedin,
-      color: 'hover:text-blue-400',
-      bgGradient: 'from-blue-500 to-blue-700'
+      color: 'hover:text-blue-500'
     },
     {
       name: 'WhatsApp',
       url: 'https://wa.me/message/OOSBDBV3X7ZNM1',
       icon: MessageCircle,
-      color: 'hover:text-green-400',
-      bgGradient: 'from-green-500 to-green-600'
+      color: 'hover:text-green-500'
     }
-  ];
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'support@melmaa.com',
-      href: 'mailto:support@melmaa.com'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+91 7997280049',
-      href: 'tel:+917997280049'
-    },
-    {
-      icon: MapPin,
-      label: 'Address',
-      value: 'Eluru, West Godavari, AP',
-      href: 'https://maps.google.com/?q=Eluru,West+Godavari,Andhra+Pradesh,India'
-    }
-  ];
-
-  const services = [
-    'Custom Software Development',
-    'Web Application Development',
-    'Mobile App Development',
-    'Digital Marketing',
-    'Logo Designing',
-    'Partnership Programs'
   ];
 
   const quickLinks = [
-    { name: 'About Us', href: '/#about' },
-    { name: 'Training Programs', href: '/#training' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'About', href: '/#about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Training', href: '/#training' },
     { name: 'Careers', href: '/careers' },
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Terms of Service', href: '#' }
+    { name: 'Contact', href: '/contact' }
+  ];
+
+  const services = [
+    'Web Development',
+    'Mobile Apps',
+    'Enterprise Software',
+    'Digital Marketing',
+    'Logo Design'
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 text-white overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-purple-900/30 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-800/20 to-transparent rounded-full blur-2xl"></div>
-      </div>
-
-      <div className="relative z-10">
+    <footer className="bg-white border-t border-gray-100">
+      <div className="container mx-auto px-4">
+        
         {/* Main Footer Content */}
-        <div className="container mx-auto px-4 py-16">
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="py-16">
+          <div className="grid lg:grid-cols-12 gap-8">
             
-            {/* Company Info */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-1 md:col-span-2"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="relative">
+            {/* Company Info - Takes more space */}
+            <div className="lg:col-span-5">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                {/* Logo and Company Name */}
+                <div className="flex items-center gap-3 mb-6">
                   <img 
                     src="/assets/MelmaatechLogo.PNG" 
-                    alt="Melmaa Tech Logo" 
-                    className="h-12 w-auto drop-shadow-2xl"
-                    width="48"
-                    height="48"
+                    alt="Melmaa Tech" 
+                    className="h-10 w-auto"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl"></div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900">Melmaa Tech</h3>
+                    <p className="text-sm text-gray-500">Digital Innovation Partner</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                    Melmaa Tech
-                  </h3>
-                  <p className="text-gray-400 text-sm">Empowering Digital Transformation</p>
+
+                {/* Description */}
+                <p className="text-gray-600 mb-8 leading-relaxed max-w-md">
+                  Transforming businesses through innovative software solutions, 
+                  cutting-edge technology, and exceptional digital experiences.
+                </p>
+
+                {/* Contact Info - Compact */}
+                <div className="space-y-3 mb-8">
+                  <div className="flex items-center gap-3 text-gray-600">
+                    <Mail className="w-4 h-4 text-primary" />
+                    <a href="mailto:support@melmaa.com" className="hover:text-primary transition-colors">
+                      support@melmaa.com
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-600">
+                    <Phone className="w-4 h-4 text-primary" />
+                    <a href="tel:+917997280049" className="hover:text-primary transition-colors">
+                      +91 7997280049
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-600">
+                    <MapPin className="w-4 h-4 text-primary" />
+                    <span>Eluru, West Godavari, AP</span>
+                  </div>
                 </div>
-              </div>
-              
-              <p className="text-gray-300 mb-6 leading-relaxed text-sm">
-                Professional software development company specializing in custom applications, 
-                enterprise solutions, and digital transformation services. Building the future, one line of code at a time.
-              </p>
-              
-              {/* Social Media */}
-              <div className="space-y-3">
-                <h4 className="text-base font-semibold text-white">Connect With Us</h4>
-                <div className="flex gap-3">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
+
+                {/* Social Links */}
+                <div className="flex gap-4">
+                  {socialLinks.map((social) => (
+                    <a
                       key={social.name}
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative touch-target focus-ring"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      className={`p-2 rounded-full bg-gray-100 text-gray-600 ${social.color} transition-all duration-300 hover:bg-gray-200`}
                     >
-                      <div className={`p-3 bg-gradient-to-br ${social.bgGradient} rounded-xl shadow-lg group-hover:shadow-2xl transition-all duration-300`}>
-                        <social.icon className="w-5 h-5 text-white" />
-                      </div>
-                      
-                      {/* Tooltip */}
-                      <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-xl border border-slate-700">
-                        Follow us on {social.name}
-                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800"></div>
-                      </div>
-                    </motion.a>
+                      <social.icon className="w-5 h-5" />
+                    </a>
                   ))}
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
-            {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <h4 className="text-xl font-bold text-white mb-6 relative">
-                Contact Info
-                <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-              </h4>
-              <div className="space-y-4">
-                {contactInfo.map((contact, index) => (
-                  <motion.a
-                    key={index}
-                    href={contact.href}
-                    target={contact.href.startsWith('http') ? '_blank' : '_self'}
-                    rel={contact.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                    className="flex items-start gap-3 text-gray-300 hover:text-blue-400 transition-all duration-300 group touch-target focus-ring"
-                    whileHover={{ x: 5 }}
-                  >
-                    <div className="p-2 bg-slate-800/50 rounded-lg group-hover:bg-blue-500/20 transition-colors flex-shrink-0 mt-1">
-                      <contact.icon className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500 uppercase tracking-wide">{contact.label}</p>
-                      <p className="text-sm leading-relaxed">{contact.value}</p>
-                    </div>
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
-            
-            {/* Services */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <h4 className="text-xl font-bold text-white mb-6 relative">
-                Our Services
-                <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-              </h4>
-              <nav aria-label="Services navigation">
-                <ul className="space-y-3" role="list">
-                  {services.map((service, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
-                    >
-                      <a 
-                        href="#services" 
-                        className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center gap-2 group py-2 focus-ring"
-                      >
-                        <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
-                        <span className="group-hover:translate-x-2 transition-transform duration-300">{service}</span>
-                      </a>
-                    </motion.li>
-                  ))}
-                </ul>
-              </nav>
-            </motion.div>
-            
             {/* Quick Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <h4 className="text-xl font-bold text-white mb-6 relative">
-                Quick Links
-                <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-              </h4>
-              <nav aria-label="Quick links navigation">
-                <ul className="space-y-3" role="list">
-                  {quickLinks.map((link, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
-                    >
-                      <a 
+            <div className="lg:col-span-2">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <h4 className="font-semibold text-gray-900 mb-6">Quick Links</h4>
+                <ul className="space-y-3">
+                  {quickLinks.map((link) => (
+                    <li key={link.name}>
+                      <a
                         href={link.href}
                         onClick={(e) => {
                           if (link.href.startsWith('/#')) {
@@ -241,52 +140,84 @@ const Footer = () => {
                             }
                           }
                         }}
-                        className="text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center gap-2 group py-2 focus-ring"
+                        className="text-gray-600 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
                       >
-                        <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
-                        <span className="group-hover:translate-x-2 transition-transform duration-300">{link.name}</span>
+                        <span>{link.name}</span>
+                        <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
-              </nav>
+              </motion.div>
+            </div>
 
-              {/* Newsletter Signup */}
-              <div className="mt-6 p-4 bg-gradient-to-br from-slate-800/50 to-slate-700/30 rounded-xl border border-slate-600/30 backdrop-blur-sm">
-                <h5 className="text-lg font-semibold text-white mb-3">Stay Updated</h5>
-                <p className="text-gray-400 text-sm mb-4">Get the latest updates on our services and training programs.</p>
+            {/* Services */}
+            <div className="lg:col-span-2">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <h4 className="font-semibold text-gray-900 mb-6">Services</h4>
+                <ul className="space-y-3">
+                  {services.map((service) => (
+                    <li key={service}>
+                      <a
+                        href="#services"
+                        className="text-gray-600 hover:text-primary transition-colors duration-300"
+                      >
+                        {service}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+
+            {/* Newsletter */}
+            <div className="lg:col-span-3">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <h4 className="font-semibold text-gray-900 mb-6">Stay Updated</h4>
+                <p className="text-gray-600 mb-4">
+                  Get the latest updates on our services and tech insights.
+                </p>
                 <div className="flex gap-2">
-                  <input 
-                    type="email" 
+                  <Input
+                    type="email"
                     placeholder="Enter your email"
-                    className="flex-1 px-3 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 min-h-[44px]"
-                    aria-label="Email address for newsletter"
+                    className="flex-1"
                   />
-                  <button 
-                    className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 touch-target focus-ring"
-                    aria-label="Subscribe to newsletter"
-                  >
+                  <Button className="bg-primary hover:bg-primary/90">
                     <ArrowRight className="w-4 h-4" />
-                  </button>
+                  </Button>
                 </div>
-              </div>
-            </motion.div>
+                <p className="text-xs text-gray-500 mt-2">
+                  We respect your privacy. Unsubscribe at any time.
+                </p>
+              </motion.div>
+            </div>
           </div>
         </div>
-        
+
+        <Separator />
+
         {/* Bottom Bar */}
-        <div className="border-t border-slate-700/50 bg-slate-900/50 backdrop-blur-sm">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <motion.p 
-                className="text-gray-400 text-center md:text-left"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
-              >
-                © {currentYear} Melmaa Tech. Made with <Heart className="w-4 h-4 inline text-red-500 mx-1" /> in India. All rights reserved.
-              </motion.p>
-              
+        <div className="py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-600 text-sm">
+              © {currentYear} Melmaa Tech. Made with <Heart className="w-4 h-4 inline text-red-500 mx-1" /> in India.
+            </p>
+            <div className="flex gap-6 text-sm">
+              <a href="#" className="text-gray-600 hover:text-primary transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-gray-600 hover:text-primary transition-colors">
+                Terms of Service
+              </a>
             </div>
           </div>
         </div>
