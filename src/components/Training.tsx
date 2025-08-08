@@ -235,20 +235,10 @@ const Training = () => {
                         Visit {partnerInfo.name} <ArrowRight size={16} />
                       </a>
                     </Button>
-
-<Button
-                    variant="outline"
-                    className="w-full justify-between"
-                    onClick={() => window.open('https://shift.melmaa.tech', '_blank')}
-                  >
-                    <div className="flex items-center gap-2">
-                      <Building2 className="w-4 h-4" />
-                      Contact for Training
-                    </div>
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-
-
+                    <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10">
+                      <a href={partnerInfo.website} target="_blank" rel="noopener noreferrer">
+Contact for Training</a>
+                    </Button>
                   </div>
                 </div>
               </div>
