@@ -22,8 +22,11 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Journey Section */}
         <div className="text-center mb-16">
+           <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-8 leading-tight">
+            Our Journey
+          </h1>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-8 leading-tight">
-            Our Journey: From Nature to Nation through Innovation
+            From Nature to Nation through Innovation
           </h2>
           <div className="max-w-4xl mx-auto space-y-6 text-lg text-gray-700 leading-relaxed">
             <p>
