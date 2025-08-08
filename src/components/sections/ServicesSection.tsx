@@ -220,32 +220,38 @@ export default function ServicesSection() {
         </motion.div>
 
         {/* CTA Section */}
-        <motion.div
-          variants={fadeInUp}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          className="text-center mt-12 sm:mt-16"
+{/* CTA Section */}
+<motion.div
+  variants={fadeInUp}
+  initial="initial"
+  whileInView="animate"
+  viewport={{ once: true }}
+  className="flex justify-center items-center text-center mt-12 sm:mt-16"
+>
+  <Card className="max-w-2xl w-full mx-auto bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
+    <CardContent className="p-6 sm:p-8">
+      <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+        Ready to Get Started?
+      </h3>
+      <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
+        Let's discuss how we can help transform your business with our digital solutions.
+      </p>
+      <div className="flex justify-center">
+        <Button
+          size="default"
+          data-cal-namespace="30min"
+          data-cal-link="melmaatech/30min"
+          data-cal-config='{"layout":"month_view"}'
+          className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 min-h-[44px] px-6 py-3"
         >
-          <Card className="max-w-2xl mx-auto bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20 mx-4">
-            <CardContent className="p-6 sm:p-8">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Ready to Get Started?</h3>
-              <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
-                Let's discuss how we can help transform your business with our digital solutions.
-              </p>
-              <Button
-                size="default"
-                data-cal-namespace="30min"
-                data-cal-link="melmaatech/30min"
-                data-cal-config='{"layout":"month_view"}'
-                className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 w-full sm:w-auto min-h-[44px] px-6 py-3"
-              >
-                Start Your Project
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </CardContent>
-          </Card>
-        </motion.div>
+          Start Your Project
+          <ArrowRight className="w-4 h-4 ml-2" />
+        </Button>
+      </div>
+    </CardContent>
+  </Card>
+</motion.div>
+
       </div>
     </section>
   );
