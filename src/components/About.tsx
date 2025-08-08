@@ -223,10 +223,7 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-center mb-12"
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30 text-primary text-sm font-semibold mb-6">
-                  <Users className="w-4 h-4" />
-                  Leadership
-                </div>
+               
                 <h3 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-slate-200 to-white bg-clip-text text-transparent">
                   Founder's Vision
                 </h3>
