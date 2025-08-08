@@ -247,11 +247,7 @@ const About = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
                   </div>
-                  
-                  {/* Floating Badge */}
-                  <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
-                    Founder & CEO
-                  </div>
+                
                 </motion.div>
 
                 {/* Enhanced Content */}
