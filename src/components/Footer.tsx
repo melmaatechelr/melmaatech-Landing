@@ -68,11 +68,7 @@ const Footer = () => {
                     className="h-10 w-auto"
                     loading="lazy"
                   />
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">Melmaa Tech</h3>
-                    <p className="text-sm text-gray-500">Digital Innovation Partner</p>
-                  </div>
-                </div>
+              
 
                 {/* Description */}
                 <p className="text-gray-600 mb-8 leading-relaxed max-w-md">
