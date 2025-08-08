@@ -226,9 +226,9 @@ export default function ServicesSection() {
   initial="initial"
   whileInView="animate"
   viewport={{ once: true }}
-  className="min-h-screen flex justify-center items-center text-center px-4"
+  className="flex justify-center items-center text-center mt-12 sm:mt-16"
 >
-  <Card className="max-w-2xl w-full bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
+  <Card className="max-w-2xl w-full mx-auto bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
     <CardContent className="p-6 sm:p-8">
       <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
         Ready to Get Started?
