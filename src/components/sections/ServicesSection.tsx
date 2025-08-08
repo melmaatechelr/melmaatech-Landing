@@ -117,11 +117,11 @@ export default function ServicesSection() {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <motion.div
             variants={fadeInUp}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium mb-4 sm:mb-6"
           >
             <Code className="w-4 h-4" />
             Our Services
@@ -129,14 +129,15 @@ export default function ServicesSection() {
           
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl md:text-5xl font-bold mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-4"
           >
-Everything from Development to Branding  Under One Roof
+            <span className="block sm:hidden">Development to Branding Under One Roof</span>
+            <span className="hidden sm:block">Everything from Development to Branding Under One Roof</span>
           </motion.h2>
           
           <motion.p
             variants={fadeInUp}
-            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4"
           >
             We deliver cutting-edge software & branding solutions tailored to your business needs and objectives.
           </motion.p>
@@ -147,7 +148,7 @@ Everything from Development to Branding  Under One Roof
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
           {services.map((service, index) => (
             <motion.div
@@ -157,28 +158,28 @@ Everything from Development to Branding  Under One Roof
               className="group"
             >
               <Card className="h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/50 backdrop-blur-sm">
-                <CardHeader className="pb-4">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon className="w-8 h-8 text-white" />
+                <CardHeader className="pb-3 sm:pb-4 p-4 sm:p-6">
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
                   
-                  <CardTitle className="text-2xl mb-2 group-hover:text-primary transition-colors">
+                  <CardTitle className="text-lg sm:text-xl md:text-2xl mb-2 group-hover:text-primary transition-colors leading-tight">
                     {service.title}
                   </CardTitle>
                   
-                  <CardDescription className="text-base leading-relaxed">
+                  <CardDescription className="text-sm sm:text-base leading-relaxed">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6 pt-0">
                   {/* Features */}
                   <div className="flex flex-wrap gap-2">
                     {service.features.map((feature, idx) => (
                       <Badge
                         key={idx}
                         variant="secondary"
-                        className="bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                        className="bg-primary/10 text-primary hover:bg-primary/20 transition-colors text-xs sm:text-sm"
                       >
                         {feature}
                       </Badge>
@@ -186,14 +187,14 @@ Everything from Development to Branding  Under One Roof
                   </div>
 
                   {/* Benefits - Expandable */}
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     <Button
                       variant="ghost"
                       onClick={() => handleServiceClick(index)}
-                      className="w-full justify-between p-0 h-auto font-medium text-primary hover:text-primary/80"
+                      className="w-full justify-between p-0 h-auto font-medium text-primary hover:text-primary/80 text-sm sm:text-base min-h-[44px]"
                     >
                       Key Benefits
-                      <ArrowRight className={`w-4 h-4 transition-transform ${selectedService === index ? 'rotate-90' : ''}`} />
+                      <ArrowRight className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform ${selectedService === index ? 'rotate-90' : ''}`} />
                     </Button>
                     
                     {selectedService === index && (
@@ -204,9 +205,9 @@ Everything from Development to Branding  Under One Roof
                         className="space-y-2"
                       >
                         {service.benefits.map((benefit, idx) => (
-                          <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <CheckCircle className="w-4 h-4 text-green-500" />
-                            {benefit}
+                          <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-muted-foreground">
+                            <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                            <span>{benefit}</span>
                           </div>
                         ))}
                       </motion.div>
@@ -224,23 +225,23 @@ Everything from Development to Branding  Under One Roof
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-12 sm:mt-16"
         >
-          <Card className="max-w-2xl mx-auto bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
-              <p className="text-muted-foreground mb-6">
+          <Card className="max-w-2xl mx-auto bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20 mx-4">
+            <CardContent className="p-6 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Ready to Get Started?</h3>
+              <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
                 Let's discuss how we can help transform your business with our digital solutions.
               </p>
               <Button
-                size="lg"
+                size="default"
                 data-cal-namespace="30min"
                 data-cal-link="melmaatech/30min"
                 data-cal-config='{"layout":"month_view"}'
-                className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90"
+                className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 w-full sm:w-auto min-h-[44px] px-6 py-3"
               >
                 Start Your Project
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </CardContent>
           </Card>

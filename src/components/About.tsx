@@ -22,22 +22,22 @@ const About = () => {
     <section id="about" className="py-24 bg-gradient-to-b from-white via-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center" role="group" aria-label={`${stat.label}: ${stat.value}`}>
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
-                <stat.icon className="w-6 h-6 text-primary" aria-hidden="true" />
+            <div key={index} className="text-center p-2 sm:p-4" role="group" aria-label={`${stat.label}: ${stat.value}`}>
+              <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full mb-3 sm:mb-4">
+                <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" aria-hidden="true" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-              <div className="text-gray-600">{stat.label}</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">{stat.value}</div>
+              <div className="text-xs sm:text-sm md:text-base text-gray-600 leading-tight">{stat.label}</div>
             </div>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
           
           {/* Image / Visual Side */}
-          <div className="relative rounded-3xl overflow-hidden shadow-lg">
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg">
             <div className="aspect-square relative" role="img" aria-label="Melmaa Tech about us">
               <img 
                 src="/assets/aboutbgm.jpeg" 
@@ -48,9 +48,9 @@ const About = () => {
                 height="600"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/80 via-secondary/60 to-primary/80 flex items-center justify-center">
-                <div className="text-white text-4xl font-bold tracking-tight drop-shadow-2xl text-center">
+                <div className="text-white text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight drop-shadow-2xl text-center px-4">
                   Melmaa Tech
-                  <div className="text-lg font-medium mt-2 opacity-90">
+                  <div className="text-sm sm:text-base md:text-lg font-medium mt-1 sm:mt-2 opacity-90">
                     Building Digital Excellence
                   </div>
                 </div>
@@ -60,15 +60,16 @@ const About = () => {
 
           {/* Content Side */}
           <div className="relative z-10">
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-              Building Software That <br className="hidden sm:block" /> Powers Your Business
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6 leading-tight">
+              <span className="block sm:hidden">Building Software That Powers Your Business</span>
+              <span className="hidden sm:block">Building Software That <br className="hidden lg:block" /> Powers Your Business</span>
             </h2>
 
             <ul className="space-y-4" role="list">
               {aboutPoints.map((point, index) => (
                 <li key={index} className="flex items-start group" role="listitem">
-                  <CheckCircle size={24} className="text-primary mt-1 mr-3 group-hover:scale-110 transition-transform flex-shrink-0" aria-hidden="true" />
-                  <span className="text-gray-700 leading-relaxed">{point}</span>
+                  <CheckCircle size={20} className="text-primary mt-1 mr-3 group-hover:scale-110 transition-transform flex-shrink-0 sm:w-6 sm:h-6" aria-hidden="true" />
+                  <span className="text-sm sm:text-base text-gray-700 leading-relaxed">{point}</span>
                 </li>
               ))}
             </ul>
@@ -79,19 +80,19 @@ const About = () => {
 
 
     {/* Journey Section */}
-        <div className="relative mb-20 overflow-hidden">
+        <div className="relative mb-16 sm:mb-20 overflow-hidden">
           {/* Background Elements */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5 rounded-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5 rounded-2xl sm:rounded-3xl" />
           <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-2xl animate-pulse" />
           <div className="absolute bottom-10 right-10 w-40 h-40 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
           
-          <div className="relative z-10 text-center py-16 px-8">
+          <div className="relative z-10 text-center py-12 sm:py-16 px-4 sm:px-8">
             {/* Animated Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 text-primary text-sm font-semibold mb-8 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 text-primary text-xs sm:text-sm font-semibold mb-6 sm:mb-8 backdrop-blur-sm"
             >
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               Our Story
@@ -102,20 +103,20 @@ const About = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-4 sm:mb-6 leading-tight"
             >
-              <span className="block text-gray-900 mb-4">Our Journey</span>
+              <span className="block text-gray-900 mb-2 sm:mb-4">Our Journey</span>
               <span className="block bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient-x">
                 From Nature to Nation
               </span>
-              <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-6xl mt-4">
+              <span className="block text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mt-2 sm:mt-4">
                 through Innovation
               </span>
             </motion.h1>
 
             {/* Journey Timeline */}
-            <div className="max-w-5xl mx-auto mt-16">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="max-w-5xl mx-auto mt-12 sm:mt-16">
+              <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
                 
                 {/* 2019 - Herbal Cosmetics */}
                 <motion.div
@@ -124,7 +125,7 @@ const About = () => {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="relative"
                 >
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-primary/10 hover:shadow-2xl transition-all duration-500 group">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl border border-primary/10 hover:shadow-2xl transition-all duration-500 group">
                     <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
                       1
                     </div>
@@ -132,16 +133,16 @@ const About = () => {
                       <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                       <span className="text-green-600 font-bold text-lg">2019 - Present</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-primary transition-colors">
                       Herbal Cosmetics Excellence
                     </h3>
-                    <p className="text-gray-700 leading-relaxed mb-4">
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4">
                       Since 2019, we've proudly built our presence in the <strong className="text-green-600">herbal cosmetics industry</strong>, backed by our own manufacturing unit.
                     </p>
-                    <div className="flex items-center gap-4 mb-4">
+                    <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
                       <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                          <span className="text-green-600 font-bold text-sm">94%</span>
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 bg-green-100 rounded-full flex items-center justify-center">
+                          <span className="text-green-600 font-bold text-xs sm:text-sm">94%</span>
                         </div>
                         <span className="text-sm text-gray-600">Customer Satisfaction</span>
                       </div>
@@ -153,7 +154,7 @@ const About = () => {
                       className="inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors font-semibold group-hover:translate-x-2 transition-transform duration-300"
                     >
                       Visit Our Shop
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
                     </a>
                   </div>
                 </motion.div>
@@ -165,7 +166,7 @@ const About = () => {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="relative"
                 >
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-secondary/10 hover:shadow-2xl transition-all duration-500 group">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl border border-secondary/10 hover:shadow-2xl transition-all duration-500 group">
                     <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
                       2
                     </div>
@@ -173,24 +174,24 @@ const About = () => {
                       <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
                       <span className="text-primary font-bold text-lg">Digital Evolution</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-secondary transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-secondary transition-colors">
                       Melmaa Tech Launch
                     </h3>
-                    <p className="text-gray-700 leading-relaxed mb-4">
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4">
                       Driven by a vision to serve customers across the nation, we embraced <strong className="text-primary">digital transformation</strong> and launched <strong className="text-secondary">Melmaa Tech</strong>.
                     </p>
-                    <div className="grid grid-cols-3 gap-4 mb-4">
+                    <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-3 sm:mb-4">
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-primary">15+</div>
-                        <div className="text-xs text-gray-600">Developers</div>
+                        <div className="text-lg sm:text-2xl font-bold text-primary">15+</div>
+                        <div className="text-xs sm:text-sm text-gray-600">Developers</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-secondary">6+</div>
-                        <div className="text-xs text-gray-600">SaaS Apps</div>
+                        <div className="text-lg sm:text-2xl font-bold text-secondary">6+</div>
+                        <div className="text-xs sm:text-sm text-gray-600">SaaS Apps</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-green-600">50+</div>
-                        <div className="text-xs text-gray-600">Clients</div>
+                        <div className="text-lg sm:text-2xl font-bold text-green-600">50+</div>
+                        <div className="text-xs sm:text-sm text-gray-600">Clients</div>
                       </div>
                     </div>
                   </div>
@@ -205,31 +206,31 @@ const About = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-20 relative"
+          className="mb-16 sm:mb-20 relative"
         >
           {/* Background Glow Effects */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-3xl blur-2xl opacity-30 animate-pulse" />
+          <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-2xl sm:rounded-3xl blur-2xl opacity-30 animate-pulse" />
           
-          <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100 rounded-3xl shadow-2xl overflow-hidden max-w-6xl mx-auto">
+          <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden max-w-6xl mx-auto">
             {/* Decorative Elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-secondary/10 to-transparent rounded-full blur-3xl" />
             
-            <div className="relative z-10 p-10 lg:p-12">
+            <div className="relative z-10 p-6 sm:p-8 lg:p-12">
               {/* Header */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-center mb-12"
+                className="text-center mb-8 sm:mb-12"
               >
                
-                <h3 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-slate-200 to-white bg-clip-text text-transparent">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-white via-slate-200 to-white bg-clip-text text-transparent">
                   Founder's Vision
                 </h3>
               </motion.div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-[280px,1fr] gap-12 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-[280px,1fr] gap-8 sm:gap-12 items-start">
                 {/* Enhanced Profile Image */}
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -238,7 +239,7 @@ const About = () => {
                   className="mx-auto lg:mx-0 relative group"
                 >
                   <div className="absolute -inset-2 bg-gradient-to-r from-primary via-secondary to-primary rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500 animate-pulse" />
-                  <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-slate-600 shadow-2xl bg-gradient-to-br from-slate-800 to-slate-900">
+                  <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-slate-600 shadow-2xl bg-gradient-to-br from-slate-800 to-slate-900">
                     <img 
                       src="/assets/shaikcharuk.jpg" 
                       alt="Shaik Charuk - Founder, Melmaa Group" 
@@ -255,28 +256,28 @@ const About = () => {
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="text-center lg:text-left space-y-6"
+                  className="text-center lg:text-left space-y-4 sm:space-y-6"
                 >
                   {/* Name and Title */}
-                  <div className="space-y-2">
-                    <h4 className="text-3xl lg:text-4xl font-bold text-white">
+                  <div className="space-y-1 sm:space-y-2">
+                    <h4 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
                       Shaik Charuk
                     </h4>
-                    <p className="text-xl text-sky-400 font-semibold">
+                    <p className="text-lg sm:text-xl text-sky-400 font-semibold">
                       Founder & CEO, Melmaa Group
                     </p>
-                    <div className="flex items-center justify-center lg:justify-start gap-2 text-slate-400">
+                    <div className="flex items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-slate-400">
                       <MapPin className="w-4 h-4" />
                       <span>Eluru, Andhra Pradesh, India</span>
                     </div>
                   </div>
 
                   {/* Bio */}
-                  <div className="space-y-4">
-                    <p className="text-slate-200 text-lg leading-relaxed">
+                  <div className="space-y-3 sm:space-y-4">
+                    <p className="text-slate-200 text-sm sm:text-base md:text-lg leading-relaxed">
                       I'm <strong className="text-white">Shaik Charuk</strong>, founder of the Melmaa Group. My journey spans multiple ventures, all driven by one core principle — doing business with <strong className="text-primary">integrity and purpose</strong>.
                     </p>
-                    <p className="text-slate-300 leading-relaxed">
+                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
                       I believe technology is a tool, not a solution in itself. My focus is on identifying the right problems and creating innovative, process-driven solutions — using whatever technology best fits the need.
                     </p>
                   </div>
@@ -286,18 +287,18 @@ const About = () => {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.8 }}
-                    className="relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border-l-4 border-gradient-to-b from-sky-400 to-blue-500"
+                    className="relative bg-slate-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border-l-4 border-gradient-to-b from-sky-400 to-blue-500"
                   >
-                    <div className="absolute -top-2 -left-2 w-8 h-8 bg-sky-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                    <div className="absolute -top-2 -left-2 w-6 h-6 sm:w-8 sm:h-8 bg-sky-500 rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold">
                       "
                     </div>
-                    <p className="text-slate-300 italic text-lg leading-relaxed pl-4">
+                    <p className="text-slate-300 italic text-sm sm:text-base md:text-lg leading-relaxed pl-3 sm:pl-4">
                       We don't chase the newest tool — we focus on solving the right problem with the right process, then pick the technology that fits.
                     </p>
                   </motion.blockquote>
 
                   {/* Enhanced Social Links */}
-                  <div className="flex gap-4 justify-center lg:justify-start pt-4">
+                  <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start pt-3 sm:pt-4">
                     {[
                       { icon: Linkedin, href: "https://linkedin.com/in/shaik-charuk-637376146", color: "hover:bg-blue-600", label: "LinkedIn" },
                       { icon: Twitter, href: "https://twitter.com/shaikcharuk", color: "hover:bg-sky-500", label: "Twitter" },
@@ -310,15 +311,15 @@ const About = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${social.label} Profile`}
-                        className={`group relative p-3 rounded-xl bg-slate-700/50 backdrop-blur-sm border border-slate-600 text-slate-300 ${social.color} transition-all duration-300 hover:scale-110 hover:text-white hover:shadow-lg`}
+                        className={`group relative p-2 sm:p-3 rounded-lg sm:rounded-xl bg-slate-700/50 backdrop-blur-sm border border-slate-600 text-slate-300 ${social.color} transition-all duration-300 hover:scale-110 hover:text-white hover:shadow-lg min-w-[44px] min-h-[44px] flex items-center justify-center`}
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.95 }}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
                       >
-                        <social.icon className="w-6 h-6" />
-                        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        <social.icon className="w-5 h-5 sm:w-6 sm:h-6" />
+                        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
                           {social.label}
                         </div>
                       </motion.a>

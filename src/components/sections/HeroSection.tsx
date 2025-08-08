@@ -63,9 +63,9 @@ export default function HeroSection() {
           {/* Main Heading */}
           <motion.h1
             variants={fadeInUp}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight heading-responsive"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
           >
-            <span className="block">Empowering Digital</span>
+            <span className="block mb-2">Empowering Digital</span>
             <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
              Transformation
             </span>
@@ -74,13 +74,13 @@ export default function HeroSection() {
           {/* Subtitle */}
           <motion.p
             variants={fadeInUp}
-            className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed text-responsive"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
           >
-          <span className="block mb-4 font-medium text-primary">
+          <span className="block mb-2 sm:mb-4 font-medium text-primary text-sm sm:text-base md:text-lg">
             Innovate - Build - Transform.
           </span>
           
-          <span className="block">
+          <span className="block text-sm sm:text-base md:text-lg lg:text-xl">
             Your trusted technology partner for building future-ready digital solutions. We specialize in crafting high-performance websites, mobile applications, and custom software products.
           </span>
           </motion.p>
@@ -88,35 +88,35 @@ export default function HeroSection() {
           {/* CTA Buttons */}
           <motion.div
             variants={fadeInUp}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 px-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4"
           >
             <Button
-              size="lg"
+              size="default"
               data-cal-namespace="30min"
               data-cal-link="melmaatech/30min"
               data-cal-config='{"layout":"month_view"}'
-              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto touch-target focus-ring"
+              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto min-h-[44px]"
               aria-label="Start your software development project"
             >
-              <Zap className="w-5 h-5 mr-2" />
+              <Zap className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Get Started Today
             </Button>
             <Button
-              size="lg"
+              size="default"
               variant="outline"
               onClick={() => scrollToSection('about')}
-              className="px-8 py-6 text-lg font-semibold rounded-xl border-2 hover:bg-muted/50 transition-all duration-300 group w-full sm:w-auto touch-target focus-ring"
+              className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg sm:rounded-xl border-2 hover:bg-muted/50 transition-all duration-300 group w-full sm:w-auto min-h-[44px]"
               aria-label="Learn more about our software development services"
             >
               Learn More
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </motion.div>
 
           {/* Stats */}
           <motion.div
             variants={fadeInUp}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-2xl mx-auto px-4"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-8 max-w-2xl mx-auto px-4"
           >
             {[
               { number: "56+", label: "Happy Clients" },
@@ -127,12 +127,12 @@ export default function HeroSection() {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.05 }}
-                className="text-center p-2"
+                className="text-center p-2 sm:p-3"
               >
-                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-primary mb-1">
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-primary mb-1">
                   {stat.number}
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground">
+                <div className="text-xs sm:text-sm text-muted-foreground leading-tight">
                   {stat.label}
                 </div>
               </motion.div>
@@ -146,17 +146,17 @@ export default function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center"
+          className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-primary/30 rounded-full flex justify-center"
         >
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-primary rounded-full mt-2"
+            className="w-1 h-2 sm:h-3 bg-primary rounded-full mt-1 sm:mt-2"
           />
         </motion.div>
       </motion.div>

@@ -146,7 +146,7 @@ export default function Header() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex items-center justify-between h-20 lg:h-24">
+        <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
           {/* Enhanced Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -162,7 +162,7 @@ export default function Header() {
                 <img 
                   src="/assets/MelmaatechLogo.PNG" 
                   alt="Melmaa Tech - Software Development Company" 
-                  className="h-16 lg:h-20 w-auto transition-all duration-300 group-hover:drop-shadow-2xl"
+                  className="h-12 sm:h-16 lg:h-20 w-auto transition-all duration-300 group-hover:drop-shadow-2xl"
                   loading="eager"
                 />
                 {/* Glow effect */}
@@ -173,13 +173,13 @@ export default function Header() {
 
           {/* Enhanced Desktop Navigation */}
           <nav className="hidden lg:flex items-center" role="navigation" aria-label="Main navigation">
-            <div className="flex items-center space-x-1 bg-white/10 backdrop-blur-md rounded-2xl p-2 border border-white/20">
+            <div className="flex items-center space-x-1 bg-white/10 backdrop-blur-md rounded-xl lg:rounded-2xl p-1.5 lg:p-2 border border-white/20">
               {navigation.map((item, index) => (
                 <motion.button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
                   className={cn(
-                    "relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 overflow-hidden group touch-target focus-ring",
+                    "relative px-3 lg:px-4 py-2 rounded-lg lg:rounded-xl text-sm font-medium transition-all duration-300 overflow-hidden group min-h-[44px] flex items-center justify-center",
                     (window.location.pathname === item.href) || 
                     (window.location.pathname === '/' && activeSection === item.href.substring(1))
                       ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
@@ -229,7 +229,7 @@ export default function Header() {
                 data-cal-namespace="30min"
                 data-cal-link="melmaatech/30min"
                 data-cal-config='{"layout":"month_view"}'
-                className="relative bg-gradient-to-r from-primary via-secondary to-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden group touch-target focus-ring"
+                className="relative bg-gradient-to-r from-primary via-secondary to-primary bg-size-200 bg-pos-0 hover:bg-pos-100 text-white px-4 lg:px-6 py-2 lg:py-3 rounded-lg lg:rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden group min-h-[44px]"
                 aria-label="Contact us to get started"
               >
                 {/* Animated background */}
@@ -263,7 +263,7 @@ export default function Header() {
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="relative bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 touch-target focus-ring"
+                  className="relative bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 min-w-[44px] min-h-[44px]"
                   aria-label="Open mobile menu"
                 >
                   <AnimatePresence mode="wait">
@@ -294,22 +294,22 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent 
               side="right" 
-              className="w-80 bg-gradient-to-br from-white via-white to-primary/5 backdrop-blur-xl border-l border-primary/10" 
+              className="w-72 sm:w-80 bg-gradient-to-br from-white via-white to-primary/5 backdrop-blur-xl border-l border-primary/10" 
               aria-label="Mobile navigation menu"
             >
-              <div className="flex flex-col space-y-8 mt-12">
+              <div className="flex flex-col space-y-6 sm:space-y-8 mt-8 sm:mt-12">
                 {/* Mobile Logo */}
-                <div className="flex items-center gap-3 pb-6 border-b border-primary/10">
+                <div className="flex items-center gap-3 pb-4 sm:pb-6 border-b border-primary/10">
                   <img 
                     src="/assets/MelmaatechLogo.PNG" 
                     alt="Melmaa Tech Logo" 
-                    className="h-12 w-auto"
+                    className="h-10 sm:h-12 w-auto"
                   />
                   <div>
-                    <h2 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    <h2 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                       Melmaa Tech
                     </h2>
-                    <p className="text-xs text-muted-foreground">Digital Transformation</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">Digital Transformation</p>
                   </div>
                 </div>
 
@@ -319,7 +319,7 @@ export default function Header() {
                     key={item.name}
                     onClick={() => scrollToSection(item.href)}
                     className={cn(
-                      "text-left px-6 py-4 rounded-xl text-lg font-medium transition-all duration-300 group relative overflow-hidden touch-target focus-ring",
+                      "text-left px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl text-base sm:text-lg font-medium transition-all duration-300 group relative overflow-hidden min-h-[44px] flex items-center",
                       activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1))
                         ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
                         : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
@@ -357,17 +357,17 @@ export default function Header() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.5 }}
-                  className="pt-6"
+                  className="pt-4 sm:pt-6"
                 >
                   <Button
                     data-cal-namespace="30min"
                     data-cal-link="melmaatech/30min"
                     data-cal-config='{"layout":"month_view"}'
-                    className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white py-4 rounded-xl font-semibold shadow-lg touch-target focus-ring"
+                    className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold shadow-lg min-h-[44px]"
                     size="lg"
                     aria-label="Contact us to get started"
                   >
-                    <Zap className="w-5 h-5 mr-2" />
+                    <Zap className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                     Get Started Today
                   </Button>
                 </motion.div>
