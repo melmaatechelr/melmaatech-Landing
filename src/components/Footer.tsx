@@ -68,7 +68,8 @@ const Footer = () => {
                     className="h-10 w-auto"
                     loading="lazy"
                   />
-              
+
+                </div>
 
                 {/* Description */}
                 <p className="text-gray-600 mb-8 leading-relaxed max-w-md">
