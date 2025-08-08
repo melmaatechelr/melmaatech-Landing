@@ -74,7 +74,7 @@ const Footer = () => {
                     <img 
                       src="/assets/MelmaatechLogo.PNG" 
                       alt="Melmaa Tech" 
-                      className="h-20 w-auto drop-shadow-lg mx-auto"
+                      className="h-22 w-auto drop-shadow-lg mx-auto"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl opacity-50" />
