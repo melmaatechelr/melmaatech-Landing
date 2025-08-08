@@ -340,7 +340,7 @@ const Contact = () => {
                               <FormItem>
                                 <FormLabel>Email Address *</FormLabel>
                                 <FormControl>
-                                  <Input type="email" placeholder="john@example.com" {...field} className="h-12" />
+                                  <Input type="email" placeholder="johnbabu@example.com" {...field} className="h-12" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
