@@ -80,66 +80,44 @@ const Footer = () => {
       <div className="relative z-10">
         {/* Main Footer Content */}
         <div className="container mx-auto px-4 py-16">
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 lg:gap-12">
             
             {/* Company Info */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-2"
+              className="lg:col-span-1 md:col-span-2"
             >
-              <div className="flex items-center gap-4 mb-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="relative">
                   <img 
                     src="/assets/MelmaatechLogo.PNG" 
                     alt="Melmaa Tech Logo" 
-                    className="h-16 w-auto drop-shadow-2xl"
-                    width="64"
-                    height="64"
+                    className="h-12 w-auto drop-shadow-2xl"
+                    width="48"
+                    height="48"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl"></div>
                 </div>
                 <div>
-                  <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                     Melmaa Tech
                   </h3>
                   <p className="text-gray-400 text-sm">Empowering Digital Transformation</p>
                 </div>
               </div>
               
-              <p className="text-gray-300 mb-8 max-w-md leading-relaxed">
+              <p className="text-gray-300 mb-6 leading-relaxed text-sm">
                 Professional software development company specializing in custom applications, 
                 enterprise solutions, and digital transformation services. Building the future, one line of code at a time.
               </p>
               
-              {/* Contact Info */}
-              <div className="space-y-4 mb-8">
-                {contactInfo.map((contact, index) => (
-                  <motion.a
-                    key={index}
-                    href={contact.href}
-                    target={contact.href.startsWith('http') ? '_blank' : '_self'}
-                    rel={contact.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                    className="flex items-center gap-3 text-gray-300 hover:text-blue-400 transition-all duration-300 group touch-target focus-ring"
-                    whileHover={{ x: 5 }}
-                  >
-                    <div className="p-3 bg-slate-800/50 rounded-lg group-hover:bg-blue-500/20 transition-colors">
-                      <contact.icon className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-500 uppercase tracking-wide">{contact.label}</p>
-                      <p className="text-sm">{contact.value}</p>
-                    </div>
-                  </motion.a>
-                ))}
-              </div>
-
               {/* Social Media */}
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-white">Connect With Us</h4>
-                <div className="flex gap-4">
+              <div className="space-y-3">
+                <h4 className="text-base font-semibold text-white">Connect With Us</h4>
+                <div className="flex gap-3">
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={social.name}
@@ -153,8 +131,8 @@ const Footer = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                     >
-                      <div className={`p-4 bg-gradient-to-br ${social.bgGradient} rounded-xl shadow-lg group-hover:shadow-2xl transition-all duration-300`}>
-                        <social.icon className="w-6 h-6 text-white" />
+                      <div className={`p-3 bg-gradient-to-br ${social.bgGradient} rounded-xl shadow-lg group-hover:shadow-2xl transition-all duration-300`}>
+                        <social.icon className="w-5 h-5 text-white" />
                       </div>
                       
                       {/* Tooltip */}
@@ -165,6 +143,38 @@ const Footer = () => {
                     </motion.a>
                   ))}
                 </div>
+              </div>
+            </motion.div>
+
+            {/* Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <h4 className="text-xl font-bold text-white mb-6 relative">
+                Contact Info
+                <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+              </h4>
+              <div className="space-y-4">
+                {contactInfo.map((contact, index) => (
+                  <motion.a
+                    key={index}
+                    href={contact.href}
+                    target={contact.href.startsWith('http') ? '_blank' : '_self'}
+                    rel={contact.href.startsWith('http') ? 'noopener noreferrer' : ''}
+                    className="flex items-start gap-3 text-gray-300 hover:text-blue-400 transition-all duration-300 group touch-target focus-ring"
+                    whileHover={{ x: 5 }}
+                  >
+                    <div className="p-2 bg-slate-800/50 rounded-lg group-hover:bg-blue-500/20 transition-colors flex-shrink-0 mt-1">
+                      <contact.icon className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500 uppercase tracking-wide">{contact.label}</p>
+                      <p className="text-sm leading-relaxed">{contact.value}</p>
+                    </div>
+                  </motion.a>
+                ))}
               </div>
             </motion.div>
             
@@ -204,7 +214,7 @@ const Footer = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
               <h4 className="text-xl font-bold text-white mb-6 relative">
                 Quick Links
@@ -242,7 +252,7 @@ const Footer = () => {
               </nav>
 
               {/* Newsletter Signup */}
-              <div className="mt-8 p-6 bg-gradient-to-br from-slate-800/50 to-slate-700/30 rounded-xl border border-slate-600/30 backdrop-blur-sm">
+              <div className="mt-6 p-4 bg-gradient-to-br from-slate-800/50 to-slate-700/30 rounded-xl border border-slate-600/30 backdrop-blur-sm">
                 <h5 className="text-lg font-semibold text-white mb-3">Stay Updated</h5>
                 <p className="text-gray-400 text-sm mb-4">Get the latest updates on our services and training programs.</p>
                 <div className="flex gap-2">
@@ -266,7 +276,7 @@ const Footer = () => {
         
         {/* Bottom Bar */}
         <div className="border-t border-slate-700/50 bg-slate-900/50 backdrop-blur-sm">
-          <div className="container mx-auto px-4 py-6">
+          <div className="container mx-auto px-4 py-4">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <motion.p 
                 className="text-gray-400 text-center md:text-left"
