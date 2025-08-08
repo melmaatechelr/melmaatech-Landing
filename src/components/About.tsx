@@ -61,7 +61,7 @@ const About = () => {
                 </blockquote>
                 <div className="flex gap-4 justify-center md:justify-start">
                   <a 
-                    href="linkedin.com/in/shaik-charuk-637376146" 
+                    href="https://linkedin.com/in/shaik-charuk-637376146" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     aria-label="LinkedIn Profile"
