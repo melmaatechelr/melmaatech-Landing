@@ -141,46 +141,57 @@ const Training = () => {
 
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-start">
             <div className="space-y-6 sm:space-y-8">
-              {/* Partner Info and Photos - Left Side */}
-              <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg">
-                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">A Vision To Create The Next Generation of Techies</h3>
-                <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6">{partnerInfo.description}</p>
-                <div className="relative w-full aspect-video overflow-hidden rounded-lg sm:rounded-xl group">
-                  <img 
-                    src={`/assets/${images[currentSlide]}`} 
-                    alt={`Training program showcase ${currentSlide + 1}`} 
-                    className="w-full h-full object-cover transition-opacity duration-500" 
-                    loading="lazy"
-                    width="600"
-                    height="400"
-                  />
-                  <button 
-                    onClick={prevSlide} 
-                    className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
-                    aria-label="Previous image"
-                  >
-                    <ChevronLeft />
-                  </button>
-                  <button 
-                    onClick={nextSlide} 
-                    className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
-                    aria-label="Next image"
-                  >
-                    <ChevronRight />
-                  </button>
-                  <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex gap-2">
-                    {images.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setCurrentSlide(idx)}
-                        className={`w-3 h-3 rounded-full transition-colors ${idx === currentSlide ? 'bg-primary' : 'bg-gray-300'} min-w-[44px] min-h-[44px] flex items-center justify-center`}
-                        aria-label={`Go to slide ${idx + 1}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+{/* Partner Info and Photos - Left Side */}
+<div className="bg-gradient-to-br from-white to-slate-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl border border-slate-100">
+  <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+    A Vision To Create The Next Generation of Techies
+  </h3>
+  <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6 leading-relaxed">
+    {partnerInfo.description}
+  </p>
+
+  {/* Image Slider */}
+  <div className="relative w-full aspect-video overflow-hidden rounded-lg sm:rounded-xl group">
+    <img 
+      src={`/assets/${images[currentSlide]}`} 
+      alt={`Training program showcase ${currentSlide + 1}`} 
+      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+      loading="lazy"
+      width="600"
+      height="400"
+    />
+
+    {/* Previous Button */}
+    <button 
+      onClick={prevSlide} 
+      className="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white shadow-md hover:shadow-lg hover:scale-110 transition-all rounded-full p-2 min-w-[40px] min-h-[40px] flex items-center justify-center"
+      aria-label="Previous image"
+    >
+      <ChevronLeft className="w-5 h-5 text-primary" />
+    </button>
+
+    {/* Next Button */}
+    <button 
+      onClick={nextSlide} 
+      className="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white shadow-md hover:shadow-lg hover:scale-110 transition-all rounded-full p-2 min-w-[40px] min-h-[40px] flex items-center justify-center"
+      aria-label="Next image"
+    >
+      <ChevronRight className="w-5 h-5 text-primary" />
+    </button>
+
+    {/* Dots Navigation */}
+    <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
+      {images.map((_, idx) => (
+        <button
+          key={idx}
+          onClick={() => setCurrentSlide(idx)}
+          className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentSlide ? 'bg-primary scale-125' : 'bg-gray-300 hover:bg-gray-400'}`}
+          aria-label={`Go to slide ${idx + 1}`}
+        />
+      ))}
+    </div>
+  </div>
+</div>
 
             {/* Training Categories - Right Side with Highlight Box */}
             <div className="relative">
