@@ -12,7 +12,6 @@
 
 Simply visit the [Lovable Project](https://lovable.dev/projects/fb4d0346-cc49-4ff5-a613-7cedd74f6d68) and start prompting.
 
-Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
