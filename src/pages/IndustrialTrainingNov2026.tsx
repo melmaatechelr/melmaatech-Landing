@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "../components/layout/Header";
 import Footer from "../components/Footer";
+import TrainingEnquiry from "@/components/TrainingEnquiry";
 import { applyPageMetadata, applyStructuredData } from "@/lib/seo";
 import {
   ArrowRight, BookOpen, Briefcase, CheckCircle2, Clock,
@@ -109,9 +110,9 @@ const IndustrialTrainingNov2026: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flagship-page training-detail">
       <Header />
-      <main id="main-content">
+      <main id="main-content" tabIndex={-1}>
         {/* FLAGSHIP HERO */}
         <section className="relative overflow-hidden bg-slate-950 pt-24 pb-14 sm:pt-28 sm:pb-20" aria-label="Industrial training program introduction">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-indigo-900/60 via-slate-950 to-slate-950" aria-hidden="true" />
@@ -124,36 +125,20 @@ const IndustrialTrainingNov2026: React.FC = () => {
               <span className="text-white font-medium">Industrial Training · November 2026</span>
             </nav>
             <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6 sm:gap-10 lg:gap-14 items-center">
-              <figure className="relative max-w-2xl lg:ml-auto w-full order-1 lg:order-2">
+              <figure className="relative max-w-lg mx-auto w-full order-2">
                 <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-cyan-400/25 via-blue-500/10 to-violet-500/25 blur-2xl" aria-hidden="true" />
                 <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-slate-900 shadow-2xl">
-                  <img
-                    src="/assets/melmaa-tech-industrial-training-november-2026.webp"
-                    srcSet="/assets/melmaa-tech-industrial-training-november-2026-480.webp 480w, /assets/melmaa-tech-industrial-training-november-2026-800.webp 800w, /assets/melmaa-tech-industrial-training-november-2026-1280.webp 1280w, /assets/melmaa-tech-industrial-training-november-2026.webp 1920w"
-                    sizes="(max-width: 1023px) 1px, (max-width: 1280px) 48vw, 560px"
-                    alt="Melmaa Tech Industrial Training Program for Diploma Students, November 2026"
-                    className="hidden lg:block mx-auto max-h-[min(78vh,780px)] w-full object-contain"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
-                    width="1920"
-                    height="2880"
-                  />
-                  <img
-                    src="/assets/melmaa-tech-industrial-training-november-2026-800.webp"
-                    srcSet="/assets/melmaa-tech-industrial-training-november-2026-480.webp 480w, /assets/melmaa-tech-industrial-training-november-2026-800.webp 800w"
-                    sizes="100vw"
-                    alt="Melmaa Tech Industrial Training poster for Diploma Students, November 2026"
-                    className="block lg:hidden w-full h-auto"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
-                    width="800"
-                    height="1200"
-                  />
+                  <a href="/assets/melmaa-tech-industrial-training-november-2026.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the full Industrial Training poster in a new tab" className="block">
+                    <img src="/assets/melmaa-tech-industrial-training-november-2026-800.webp"
+                      srcSet="/assets/melmaa-tech-industrial-training-november-2026-480.webp 480w, /assets/melmaa-tech-industrial-training-november-2026-800.webp 800w, /assets/melmaa-tech-industrial-training-november-2026-1280.webp 1280w, /assets/melmaa-tech-industrial-training-november-2026.webp 1920w"
+                      sizes="(min-width: 1024px) 460px, (min-width: 640px) 512px, calc(100vw - 32px)"
+                      alt="Full Stack Java with AI industrial training program for diploma students"
+                      className="w-full h-auto object-contain" loading="eager" fetchPriority="high" decoding="async" width="1920" height="2880" />
+                  </a>
                 </div>
+                <figcaption className="text-sm text-slate-300 mt-3 text-center">Program overview · Open the poster to read in full</figcaption>
               </figure>
-              <div className="max-w-2xl order-2 lg:order-1">
+              <div className="max-w-2xl order-1">
                 <span className="inline-flex items-center gap-2 rounded-full border border-indigo-300/25 bg-indigo-400/10 px-4 py-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.14em] text-indigo-200 mb-6">
                   <span className="h-2 w-2 rounded-full bg-cyan-300" /> Melmaa Tech · Industry Training
                 </span>
@@ -167,7 +152,7 @@ const IndustrialTrainingNov2026: React.FC = () => {
                     <a href="tel:+917997280049"><Phone className="w-4 h-4" />Talk to an advisor <ArrowRight className="w-4 h-4" /></a>
                   </Button>
                   <Button variant="outline" className="min-h-12 border-white/30 bg-white/5 text-white hover:bg-white/10" asChild>
-                    <Link to="/contact">Explore the program</Link>
+                    <a href="#curriculum">Explore the curriculum</a>
                   </Button>
                 </div>
                 <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300">
@@ -179,12 +164,15 @@ const IndustrialTrainingNov2026: React.FC = () => {
             </div>
           </div>
         </section>
+        <nav aria-label="On this page" className="program-nav"><div className="container flex gap-2 overflow-x-auto">
+          {[["overview", "Overview"], ["curriculum", "Curriculum"], ["projects", "Projects"], ["sadhana-ecet", "Sadhana ECET"], ["training-faq", "FAQs"], ["training-enquiry", "Enquire"]].map(([id, label]) => <a key={id} href={`#${id}`} className="whitespace-nowrap px-4 py-3 rounded-lg text-sm font-semibold">{label}</a>)}
+        </div></nav>
         {/* INTRODUCTION */}
-        <section className="py-12 sm:py-16 bg-gradient-to-b from-gray-50 to-white" aria-label="Program introduction">
+        <section className="py-12 sm:py-16 bg-gradient-to-b from-gray-50 to-white" id="overview" aria-label="Program introduction">
           <div className="container max-w-4xl">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">About the Training Program</h2>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed text-center">
-              Melmaa Tech Industrial Training Program is a <strong>6-month industry-oriented training program</strong> for Diploma students, focused on Full Stack Java development, practical projects, modern development tools, AI tools, career guidance, and hands-on learning. We do not just teach — we build real engineers.
+              Melmaa Tech Industrial Training Program is a <strong>6-month industry-oriented training program</strong> for Diploma students, focused on Full Stack Java development, practical projects, modern development tools, AI tools, career guidance, and hands-on learning. Explore the curriculum below and ask our team about the program details.
             </p>
           </div>
         </section>
@@ -230,7 +218,7 @@ const IndustrialTrainingNov2026: React.FC = () => {
         </section>
 
         {/* TECHNOLOGIES */}
-        <section className="py-12 sm:py-16 bg-white" aria-label="Technologies you will learn">
+        <section className="py-12 sm:py-16 bg-white" id="curriculum" aria-label="Technologies you will learn">
           <div className="container">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 text-center">Technologies You Will Learn</h2>
             <p className="text-center text-gray-500 mb-10 max-w-2xl mx-auto text-sm sm:text-base">A comprehensive curriculum covering backend, frontend, databases, tools, and cutting-edge AI technologies.</p>
@@ -251,11 +239,11 @@ const IndustrialTrainingNov2026: React.FC = () => {
         </section>
 
         {/* PROJECTS */}
-        <section className="py-12 sm:py-16 bg-gradient-to-b from-gray-50 to-white" aria-label="Projects and practical learning">
+        <section className="py-12 sm:py-16 bg-gradient-to-b from-gray-50 to-white" id="projects" aria-label="Projects and practical learning">
           <div className="container">
             <div className="text-center mb-10 max-w-3xl mx-auto">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Projects and Practical Learning</h2>
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">We focus on <strong>real-time project development</strong> rather than theory-only learning. You will build actual software products that demonstrate your abilities to employers.</p>
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">We focus on <strong>real-time project development</strong> rather than theory-only learning. The program covers Java applications, websites and a personal portfolio. These are curriculum project categories, not a gallery of completed student work.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
               {projects.map(({ icon: Icon, title, desc }) => (
@@ -266,10 +254,24 @@ const IndustrialTrainingNov2026: React.FC = () => {
                 </div>
               ))}
             </div>
-            <p className="text-center text-xs sm:text-sm text-gray-400 mt-6 italic">Build Real Projects - Not Just Theory!</p>
+            <p className="text-center text-xs sm:text-sm text-gray-400 mt-6 italic">Discuss project scope and deliverables with the training team.</p>
           </div>
         </section>
 
+        <section className="py-16 bg-slate-950 text-white" aria-labelledby="training-gallery-title">
+          <div className="container grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-center">
+            <div>
+              <p className="text-xs font-semibold tracking-[.16em] text-indigo-200 mb-4">FROM OUR TRAINING GALLERY</p>
+              <h2 id="training-gallery-title" className="text-3xl sm:text-4xl mb-5">A closer look at learning together.</h2>
+              <p className="text-slate-300 leading-relaxed mb-6">Explore a photograph from our existing training gallery and talk to the team about learning with Melmaa Tech.</p>
+              <a href="#training-enquiry" className="inline-flex items-center gap-2 text-white font-semibold border-b border-indigo-300 py-3">Ask about the next batch <ArrowRight size={18} /></a>
+            </div>
+            <figure>
+              <a href="/assets/crr2.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open training gallery photograph in a new tab"><img src="/assets/crr2.jpg" alt="Group photograph in a classroom from the Melmaa Tech training gallery" width="1600" height="900" loading="lazy" decoding="async" className="w-full rounded-2xl border border-white/20" /></a>
+              <figcaption className="mt-3 text-sm text-slate-400">Training gallery · Previous photograph, not the November 2026 batch</figcaption>
+            </figure>
+          </div>
+        </section>
         {/* WHAT YOU LEARN */}
         <section className="py-12 sm:py-16 bg-white" aria-label="What students will learn">
           <div className="container max-w-5xl">
@@ -343,7 +345,7 @@ const IndustrialTrainingNov2026: React.FC = () => {
         </section>
 
         {/* PROGRAM FAQ */}
-        <section className="py-12 sm:py-16 bg-white" aria-labelledby="training-faq-title">
+        <section id="training-faq" className="py-12 sm:py-16 bg-white" aria-labelledby="training-faq-title">
           <div className="container max-w-3xl">
             <h2 id="training-faq-title" className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">Industrial Training FAQs</h2>
             <div className="space-y-3">
@@ -356,7 +358,7 @@ const IndustrialTrainingNov2026: React.FC = () => {
                 { question: "When does the batch start?", answer: "The batch is scheduled for November 2026. Contact Melmaa Tech to confirm the exact joining date." },
               ].map(({ question, answer }) => (
                 <details key={question} className="group rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 open:bg-white open:shadow-sm">
-                  <summary className="cursor-pointer list-none pr-8 font-semibold text-gray-900 marker:hidden">{question}</summary>
+                  <summary className="cursor-pointer font-semibold text-gray-900 min-h-11">{question}</summary>
                   <p className="pt-3 text-sm sm:text-base leading-relaxed text-gray-600">{answer}</p>
                 </details>
               ))}
@@ -375,7 +377,7 @@ const IndustrialTrainingNov2026: React.FC = () => {
                 <a href="tel:+917997280049" aria-label="Call Melmaa Tech to enroll"><Phone className="w-4 h-4" />Enroll Now</a>
               </Button>
               <Button variant="outline" className="gap-2 border-white text-white hover:bg-white/10 font-semibold text-base px-8 py-3 min-h-[48px]" asChild>
-                <Link to="/contact" aria-label="Visit contact page to enquire">Enquire About Training <ArrowRight className="w-4 h-4" /></Link>
+                <Link to="/contact?interest=industrial-training" aria-label="Visit contact page to enquire">Enquire About Training <ArrowRight className="w-4 h-4" /></Link>
               </Button>
             </div>
             <p className="text-white/60 text-sm mt-6 flex flex-wrap justify-center gap-4">
@@ -394,7 +396,7 @@ const IndustrialTrainingNov2026: React.FC = () => {
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <Link to="/trainings" className="flex items-center gap-1.5 text-primary hover:underline font-medium"><BookOpen className="w-3.5 h-3.5" />All Trainings</Link>
               <span className="text-gray-300">|</span>
-              <Link to="/contact" className="flex items-center gap-1.5 text-primary hover:underline font-medium"><Phone className="w-3.5 h-3.5" />Contact Us</Link>
+              <Link to="/contact?interest=industrial-training" className="flex items-center gap-1.5 text-primary hover:underline font-medium"><Phone className="w-3.5 h-3.5" />Contact Us</Link>
               <span className="text-gray-300">|</span>
               <a href="https://ecet.melmaa.tech/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-primary hover:underline font-medium"><ExternalLink className="w-3.5 h-3.5" />Sadhana ECET</a>
               <span className="text-gray-300">|</span>
@@ -402,7 +404,9 @@ const IndustrialTrainingNov2026: React.FC = () => {
             </div>
           </div>
         </section>
+        <div className="container py-16 sm:py-24"><TrainingEnquiry /></div>
       </main>
+      <div className="mobile-enquiry-bar" aria-label="Training quick contact"><a href="tel:+917997280049" className="bg-white text-indigo-800 border border-indigo-200"><Phone size={16} />Call the team</a><a href="#training-enquiry" className="bg-indigo-700 text-white">Enquire about training<ArrowRight size={16} /></a></div>
       <Footer />
     </div>
   );

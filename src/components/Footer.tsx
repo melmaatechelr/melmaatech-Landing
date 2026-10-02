@@ -44,9 +44,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
+    <footer className="relative bg-slate-950 text-white overflow-hidden">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full filter blur-3xl opacity-70 animate-pulse" />
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tl from-secondary/20 to-primary/20 rounded-full filter blur-3xl opacity-70 animate-pulse" style={{ animationDelay: '2s' }} />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]" />
@@ -68,7 +68,7 @@ const Footer = () => {
               >
                 {/* Logo and Company Name */}
                 <div className="flex items-center gap-3 justify-center lg:justify-start">
-                  <div className="relative">
+                  <div className="relative rounded-xl bg-white p-2">
                     <img 
                       src="/assets/MelmaatechLogo.PNG" 
                       alt="Melmaa Tech" 
@@ -120,6 +120,7 @@ const Footer = () => {
                     <motion.a
                       key={social.name}
                       href={social.url}
+                      aria-label={`${social.name} (opens in a new tab)`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white/10 backdrop-blur-sm text-white ${social.color} transition-all duration-300 hover:scale-110 hover:shadow-lg min-w-[44px] min-h-[44px] flex items-center justify-center`}
@@ -151,7 +152,7 @@ const Footer = () => {
                       <a
                         href={link.href}
                         onClick={(e) => {
-                          if (link.href.startsWith('/#')) {
+                          if (link.href.startsWith('/#') && window.location.pathname === '/') {
                             e.preventDefault();
                             const sectionId = link.href.substring(2);
                             const element = document.getElementById(sectionId);

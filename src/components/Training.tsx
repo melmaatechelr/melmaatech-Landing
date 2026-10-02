@@ -225,9 +225,8 @@ const Training = () => {
                         Visit {partnerInfo.name} <ArrowRight size={16} />
                       </a>
                     </Button>
-                    <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10 min-h-[44px] text-sm sm:text-base">
-                      <a href={partnerInfo.website} target="_blank" rel="noopener noreferrer">
-                        Contact for Training</a>
+                    <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10 min-h-[44px] text-sm sm:text-base" asChild>
+                      <Link to="/contact?interest=industrial-training">Enquire about Industrial Training</Link>
                     </Button>
                   </div>
                 </div>

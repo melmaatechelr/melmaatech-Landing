@@ -105,10 +105,10 @@ const TrainingsPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flagship-page">
       <Header />
 
-      <main>
+      <main id="main-content" tabIndex={-1}>
         {/* ── HERO ── */}
         <section
           className="pt-24 pb-14 sm:pt-28 sm:pb-16 bg-gradient-to-br from-primary/10 via-white to-secondary/10"
@@ -188,6 +188,7 @@ const TrainingsPage: React.FC = () => {
 
                   {/* Right details panel */}
                   <div className="p-8 sm:p-10">
+                    <img src="/assets/crr2.jpg" alt="Group photograph from the Melmaa Tech training gallery" width="1600" height="900" loading="lazy" decoding="async" className="rounded-xl w-full mb-6" />
                     <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">Program Overview</h4>
                     <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">{prog.description}</p>
                     <ul className="space-y-2.5">

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
+import TrainingEnquiry from '@/components/TrainingEnquiry';
 import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 import { motion } from 'framer-motion';
@@ -32,7 +34,6 @@ import {
   Award
 } from "lucide-react";
 import { fadeInUp, staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
-import { toast } from "@/lib/toast";
 import { applyPageMetadata } from "@/lib/seo";
 
 const contactSchema = z.object({
@@ -78,12 +79,12 @@ const contactMethods = [
   },
   {
     icon: MessageSquare,
-    title: "Live Chat",
+    title: "WhatsApp",
     details: "Chat with our team",
-    description: "Get instant support",
+    description: "Send your questions to the team",
     href: "https://wa.me/message/OOSBDBV3X7ZNM1",
     color: "from-orange-500 to-red-500",
-    available: "Online Now"
+    available: "Message Us"
   }
 ];
 
@@ -137,6 +138,9 @@ const officeHours = [
 ];
 
 const Contact = () => {
+  const [emailDraft, setEmailDraft] = useState<{body: string; href: string} | null>(null);
+  const [searchParams] = useSearchParams();
+  const isTrainingEnquiry = searchParams.get("interest") === "industrial-training";
   useEffect(() => applyPageMetadata({
     title: "Contact Melmaa Tech | Eluru, Andhra Pradesh",
     description: "Contact Melmaa Tech in Eluru, Andhra Pradesh about software development and digital solutions. Call +91 7997280049 or email support@melmaa.com.",
@@ -165,9 +169,7 @@ const Contact = () => {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    const email = new URL("mailto:support@melmaa.com");
-    email.searchParams.set("subject", `Website enquiry: ${data.subject}`);
-    email.searchParams.set("body", [
+    const body = [
       `Name: ${data.name}`,
       `Email: ${data.email}`,
       `Phone: ${data.phone}`,
@@ -177,15 +179,16 @@ const Contact = () => {
       "",
       "Message:",
       data.message,
-    ].join("\n"));
-    window.location.href = email.toString();
-    toast.info("Review the enquiry in your email app and send it to complete your message.");
+    ].join("\n");
+    setEmailDraft({ body, href: `mailto:support@melmaa.com?subject=${encodeURIComponent(`Website enquiry: ${data.subject}`)}&body=${encodeURIComponent(body)}` });
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 flagship-page">
       <Header />
       
+      <main id="main-content" tabIndex={-1}>
+      {isTrainingEnquiry ? <div className="container pt-32 pb-20"><Link to="/trainings/industrial-training-november-2026" className="inline-block mb-6 text-indigo-700 font-semibold">← Back to the November 2026 program</Link><h1 className="text-3xl sm:text-5xl mb-8">Industrial Training enquiry</h1><TrainingEnquiry /></div> : <>
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
@@ -296,7 +299,7 @@ const Contact = () => {
                 
                 <CardContent>
                     <Form {...form}>
-                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                      <form onSubmit={form.handleSubmit(onSubmit)} onChange={() => setEmailDraft(null)} className="space-y-6">
                         <div className="grid md:grid-cols-2 gap-4">
                           <FormField
                             control={form.control}
@@ -305,7 +308,7 @@ const Contact = () => {
                               <FormItem>
                                 <FormLabel>Full Name *</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="John Babu" {...field} className="h-12" />
+                                  <Input autoComplete="name" placeholder="Your full name" {...field} className="h-12" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -319,7 +322,7 @@ const Contact = () => {
                               <FormItem>
                                 <FormLabel>Email Address *</FormLabel>
                                 <FormControl>
-                                  <Input type="email" placeholder="johnbabu@example.com" {...field} className="h-12" />
+                                  <Input autoComplete="email" type="email" placeholder="johnbabu@example.com" {...field} className="h-12" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -335,7 +338,7 @@ const Contact = () => {
                               <FormItem>
                                 <FormLabel>Phone Number *</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="+91 9876543210" {...field} className="h-12" />
+                                  <Input type="tel" autoComplete="tel" placeholder="+91 9876543210" {...field} className="h-12" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -349,7 +352,7 @@ const Contact = () => {
                               <FormItem>
                                 <FormLabel>Company Name</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="Your Company Name" {...field} className="h-12" />
+                                  <Input autoComplete="organization" placeholder="Your Company Name" {...field} className="h-12" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -431,8 +434,13 @@ const Contact = () => {
                         />
                         
                         <Button type="submit" className="w-full h-12 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-lg font-semibold">
-                          <Send className="w-5 h-5 mr-2" />Continue in Email
+                          <Send className="w-5 h-5 mr-2" />Prepare email enquiry
                         </Button>
+                        {emailDraft && <div className="rounded-xl border border-indigo-200 bg-indigo-50 p-4 space-y-3">
+                          <p role="status" className="text-sm text-indigo-900">Your draft is ready. Open your email app to send it, or copy the text and email support@melmaa.com.</p>
+                          <Textarea aria-label="Prepared project enquiry" readOnly value={emailDraft.body} rows={8} />
+                          <Button asChild><a href={emailDraft.href}>Open email app</a></Button>
+                        </div>}
                       </form>
                     </Form>
                 </CardContent>
@@ -530,7 +538,7 @@ const Contact = () => {
                   <Button
                     variant="outline"
                     className="w-full justify-between"
-                    onClick={() => window.open('https://shift.melmaa.tech', '_blank')}
+                    onClick={() => window.location.href = '/trainings'}
                   >
                     <div className="flex items-center gap-2">
                       <Building2 className="w-4 h-4" />
@@ -545,6 +553,8 @@ const Contact = () => {
         </div>
       </section>
 
+      </>}
+      </main>
       <Footer />
     </div>
   );

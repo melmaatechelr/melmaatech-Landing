@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { getCalApi } from "@calcom/embed-react";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Link, useLocation } from "react-router-dom";
+import { Sheet, SheetContent, SheetTitle, SheetDescription, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X, Sparkles, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -19,6 +19,7 @@ const navigation = [
 ];
 
 export default function Header() {
+  const { pathname } = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -132,11 +133,12 @@ export default function Header() {
       animate={{ y: 0 }}
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        isScrolled
+        isScrolled || pathname !== '/'
           ? "bg-white/90 backdrop-blur-xl border-b border-primary/10 shadow-lg shadow-primary/5"
           : "bg-transparent"
       )}
     >
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -274,10 +276,6 @@ export default function Header() {
           {/* Enhanced Mobile Menu */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
                 <Button 
                   variant="ghost" 
                   size="icon" 
@@ -308,13 +306,14 @@ export default function Header() {
                     )}
                   </AnimatePresence>
                 </Button>
-              </motion.div>
             </SheetTrigger>
             <SheetContent 
               side="right" 
               className="w-72 sm:w-80 bg-gradient-to-br from-white via-white to-primary/5 backdrop-blur-xl border-l border-primary/10" 
               aria-label="Mobile navigation menu"
             >
+              <SheetTitle className="sr-only">Melmaa Tech navigation</SheetTitle>
+              <SheetDescription className="sr-only">Explore services, training programs, careers and contact information.</SheetDescription>
               <div className="flex flex-col space-y-6 sm:space-y-8 mt-8 sm:mt-12">
                 {/* Mobile Logo */}
                 <div className="flex items-center gap-3 pb-4 sm:pb-6 border-b border-primary/10">

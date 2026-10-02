@@ -7,10 +7,22 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
+    const previousTitle = document.title;
+    const robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+    const previousRobots = robots?.content;
+    const tag = robots ?? document.createElement('meta');
+    tag.name = 'robots';
+    tag.content = 'noindex, nofollow';
+    if (!robots) document.head.appendChild(tag);
+    document.title = 'Page not found | Melmaa Tech';
+    const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    canonical?.remove();
+    return () => {
+      document.title = previousTitle;
+      if (robots) robots.content = previousRobots ?? 'index, follow';
+      else tag.remove();
+      if (canonical) document.head.appendChild(canonical);
+    };
   }, [location.pathname]);
 
   return (

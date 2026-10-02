@@ -44,12 +44,14 @@ export function applyPageMetadata(metadata: PageMetadata): () => void {
   document.title = metadata.title;
 
   setMeta("description", metadata.description, "name");
+  setMeta("robots", "index, follow", "name");
   setMeta("og:title", metadata.title, "property");
   setMeta("og:description", metadata.description, "property");
   setMeta("og:url", metadata.canonical, "property");
   setMeta("og:type", metadata.type ?? "website", "property");
   setMeta("og:site_name", "Melmaa Tech", "property");
   setMeta("og:image", metadata.image ?? "https://www.melmaa.tech/assets/live-og.png", "property");
+  setMeta("og:image:alt", metadata.title, "property");
   setMeta("og:image:width", String(metadata.imageWidth ?? 1200), "property");
   setMeta("og:image:height", String(metadata.imageHeight ?? 630), "property");
   setMeta("twitter:card", "summary_large_image", "name");

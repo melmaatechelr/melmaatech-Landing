@@ -274,6 +274,7 @@ const Careers = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <Header />
+      <main id="main-content" tabIndex={-1} className="flagship-page">
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
@@ -675,6 +676,7 @@ const Careers = () => {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );

@@ -5,6 +5,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Shared polish is scoped away from the homepage opening. */
+.flagship-page, .flagship-content { --primary: 239 65% 48%; --ring: 239 65% 48%; }
+.flagship-page main section, .flagship-content section { scroll-margin-top: 7rem; }
+.flagship-page main h2, .flagship-content h2 { letter-spacing: -0.035em; text-wrap: balance; }
+.flagship-page main h3, .flagship-content h3 { letter-spacing: -0.02em; }
+.flagship-page main p, .flagship-content p { text-wrap: pretty; }
+.flagship-page main .rounded-xl, .flagship-content .rounded-xl { border-radius: 1rem; }
+.flagship-page main .shadow-sm, .flagship-content .shadow-sm { box-shadow: 0 4px 24px -12px rgb(15 23 42 / 18%); }
+.flagship-page main button, .flagship-page main a[class*="inline-flex"] { min-height: 44px; }
+.program-nav { border-bottom: 1px solid #e2e8f0; background: #f8fafc; padding-block: .75rem; color: #334155; }
+.program-nav a:hover, .program-nav a:focus-visible { background: #e0e7ff; color: #3730a3; }
+.eyebrow { color: #4338ca; font-size: .75rem; letter-spacing: .14em; font-weight: 700; }
+.enquiry-panel { display: grid; gap: 2rem; padding: clamp(1.25rem, 4vw, 3rem); border: 1px solid #e2e8f0; border-radius: 1.5rem; background: linear-gradient(135deg, #eef2ff, #fff 55%); scroll-margin-top: 7rem; }
+.enquiry-form { display: grid; gap: 1rem; padding: clamp(1rem, 3vw, 2rem); background: white; border: 1px solid #e2e8f0; border-radius: 1rem; box-shadow: 0 12px 40px -24px #64748b; }
+.enquiry-form label { display: block; font-size: .875rem; font-weight: 600; color: #334155; }
+.enquiry-form label input, .enquiry-form label select, .enquiry-form label textarea { margin-top: .4rem; }
+.enquiry-form input, .enquiry-form textarea, .enquiry-form select { display: block; width: 100%; min-width: 0; min-height: 48px; padding: .7rem .8rem; font-size: 1rem; font-weight: 400; border: 1px solid #cbd5e1; border-radius: .6rem; background: #fff; color: #0f172a; }
+.enquiry-form textarea { resize: vertical; }
+.mobile-enquiry-bar { display: none; }
+@media (min-width: 1024px) { .enquiry-panel { grid-template-columns: .9fr 1.1fr; align-items: start; gap: 3rem; } }
+@media (max-width: 767px) {
+  .training-detail { padding-bottom: calc(82px + env(safe-area-inset-bottom)); }
+  .mobile-enquiry-bar { display: flex; gap: .5rem; position: fixed; inset: auto 0 0; z-index: 40; padding: .75rem 1rem calc(.75rem + env(safe-area-inset-bottom)); background: rgb(255 255 255 / 96%); border-top: 1px solid #e2e8f0; box-shadow: 0 -4px 24px rgb(15 23 42 / 6%); }
+  .mobile-enquiry-bar a { display: flex; flex: 1; align-items: center; justify-content: center; gap: .5rem; min-height: 48px; border-radius: .65rem; font-size: .8rem; font-weight: 600; }
+  .training-detail :focus-visible { scroll-margin-bottom: 110px; }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
