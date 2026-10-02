@@ -188,7 +188,7 @@ const TrainingsPage: React.FC = () => {
 
                   {/* Right details panel */}
                   <div className="p-8 sm:p-10">
-                    <img src="/assets/crr2.jpg" alt="Group photograph from the Melmaa Tech training gallery" width="1600" height="900" loading="lazy" decoding="async" className="rounded-xl w-full mb-6" />
+                    <img src="/assets/melmaa-tech-industrial-training-nov-2025-may-2026.png" alt="Melmaa Tech Industrial Training Program, November 2025 to May 2026: student groups and trainer" width="2000" height="1600" loading="lazy" decoding="async" className="rounded-xl w-full h-auto mb-6" />
                     <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">Program Overview</h4>
                     <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">{prog.description}</p>
                     <ul className="space-y-2.5">

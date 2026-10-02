@@ -15,6 +15,7 @@ const publicAssets = [
   "shaikcharuk.jpg",
   "crr1.jpg",
   "crr2.jpg",
+  "melmaa-tech-industrial-training-nov-2025-may-2026.png",
   "crr3.jpg",
   "gud1.jpg",
   "melmaa-tech-industrial-training-november-2026.webp",
