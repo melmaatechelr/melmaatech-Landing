@@ -1,0 +1,72 @@
+[
+  {
+    "path": "/careers",
+    "title": "Career Opportunities at Melmaa Tech | Careers",
+    "description": "View current role listings and career information from Melmaa Tech. Contact the team to confirm openings and application details.",
+    "image": "https://www.melmaa.tech/assets/live-og.png",
+    "imageAlt": "Melmaa Tech digital solutions",
+    "imageWidth": 1200,
+    "imageHeight": 630
+  },
+  {
+    "path": "/contact",
+    "title": "Contact Melmaa Tech | Eluru, Andhra Pradesh",
+    "description": "Contact Melmaa Tech in Eluru, Andhra Pradesh about software development and digital solutions. Call +91 7997280049 or email support@melmaa.com.",
+    "image": "https://www.melmaa.tech/assets/live-og.png",
+    "imageAlt": "Melmaa Tech digital solutions",
+    "imageWidth": 1200,
+    "imageHeight": 630
+  },
+  {
+    "path": "/trainings",
+    "title": "Training Programs for Students | Melmaa Tech",
+    "description": "Explore Melmaa Tech training programs, including industrial training, IT courses, internships, campus recruitment and career development.",
+    "image": "https://www.melmaa.tech/assets/live-og.png",
+    "imageAlt": "Melmaa Tech training programs",
+    "imageWidth": 1200,
+    "imageHeight": 630,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.melmaa.tech/" },
+          { "@type": "ListItem", "position": 2, "name": "Trainings", "item": "https://www.melmaa.tech/trainings" }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/trainings/industrial-training-november-2026",
+    "title": "Industrial Training for Diploma Students | Full Stack Java | Melmaa Tech",
+    "description": "Join Melmaa Tech's six-month Industrial Training Program for Diploma students, starting November 2026. Learn Full Stack Java with AI through hands-on projects.",
+    "image": "https://www.melmaa.tech/assets/melmaa-tech-industrial-training-november-2026.webp",
+    "imageAlt": "Melmaa Tech Industrial Training Program for Diploma Students, November 2026",
+    "imageWidth": 1920,
+    "imageHeight": 2880,
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Industrial Training - November 2026",
+        "description": "A six-month industry-oriented training program for Diploma students covering Full Stack Java with AI, hands-on projects, career guidance and placement-oriented support.",
+        "provider": { "@type": "Organization", "name": "Melmaa Tech", "url": "https://www.melmaa.tech/" },
+        "url": "https://www.melmaa.tech/trainings/industrial-training-november-2026",
+        "courseMode": ["online", "in-person"],
+        "educationalCredentialAwarded": "Certificate of Completion",
+        "timeRequired": "P6M",
+        "audience": { "@type": "Audience", "audienceType": "Diploma Students" },
+        "teaches": ["Full Stack Java", "Core Java", "Advanced Java", "Java Frameworks", "MySQL", "Oracle", "Supabase", "HTML", "CSS", "JavaScript", "AI Tools", "Git", "GitHub"]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.melmaa.tech/" },
+          { "@type": "ListItem", "position": 2, "name": "Trainings", "item": "https://www.melmaa.tech/trainings" },
+          { "@type": "ListItem", "position": 3, "name": "Industrial Training - November 2026", "item": "https://www.melmaa.tech/trainings/industrial-training-november-2026" }
+        ]
+      }
+    ]
+  }
+]

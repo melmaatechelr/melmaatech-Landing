@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 import { motion } from 'framer-motion';
@@ -20,7 +20,6 @@ import {
   MapPin, 
   Send, 
   Clock, 
-  CheckCircle,
   MessageSquare,
   Users,
   Headphones,
@@ -34,6 +33,7 @@ import {
 } from "lucide-react";
 import { fadeInUp, staggerContainer, slideInLeft, slideInRight } from "@/lib/animations";
 import { toast } from "@/lib/toast";
+import { applyPageMetadata } from "@/lib/seo";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -110,13 +110,13 @@ const budgetRanges = [
 const whyChooseUs = [
   {
     icon: Users,
-    title: "Expert Team",
-    description: "6+ years of experience with 25+ skilled professionals"
+    title: "Development Team",
+    description: "A technology team working across software, web, mobile and digital services."
   },
   {
     icon: Zap,
-    title: "Fast Delivery",
-    description: "97% on-time delivery rate with agile methodology"
+    title: "Collaborative Delivery",
+    description: "Work with our team to shape scope, priorities and the right technology approach."
   },
   {
     icon: Shield,
@@ -125,8 +125,8 @@ const whyChooseUs = [
   },
   {
     icon: Award,
-    title: "Client Satisfaction",
-    description: "98% client satisfaction rate with ongoing support"
+    title: "Ongoing Support",
+    description: "Contact our team about support and next steps for your digital project."
   }
 ];
 
@@ -137,8 +137,11 @@ const officeHours = [
 ];
 
 const Contact = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  useEffect(() => applyPageMetadata({
+    title: "Contact Melmaa Tech | Eluru, Andhra Pradesh",
+    description: "Contact Melmaa Tech in Eluru, Andhra Pradesh about software development and digital solutions. Call +91 7997280049 or email support@melmaa.com.",
+    canonical: "https://www.melmaa.tech/contact",
+  }), []);
 
   useEffect(() => {
     (async function () {
@@ -162,24 +165,21 @@ const Contact = () => {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
-    
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      console.log('Contact form submitted:', data);
-      setIsSubmitted(true);
-      toast.success("Thank you for your message! We'll get back to you within 24 hours.");
-      form.reset();
-      
-      // Reset success state after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
-    } catch (error) {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    const email = new URL("mailto:support@melmaa.com");
+    email.searchParams.set("subject", `Website enquiry: ${data.subject}`);
+    email.searchParams.set("body", [
+      `Name: ${data.name}`,
+      `Email: ${data.email}`,
+      `Phone: ${data.phone}`,
+      `Company: ${data.company || "Not provided"}`,
+      `Project type: ${data.projectType}`,
+      `Budget: ${data.budget}`,
+      "",
+      "Message:",
+      data.message,
+    ].join("\n"));
+    window.location.href = email.toString();
+    toast.info("Review the enquiry in your email app and send it to complete your message.");
   };
 
   return (
@@ -288,34 +288,13 @@ const Contact = () => {
             >
               <Card className="border-0 shadow-2xl bg-white/90 backdrop-blur-sm">
                 <CardHeader className="pb-8">
-                  <CardTitle className="text-2xl text-center">
-                    {isSubmitted ? "Message Sent!" : "Tell Us About Your Project"}
-                  </CardTitle>
+                  <CardTitle className="text-2xl text-center">Tell Us About Your Project</CardTitle>
                   <CardDescription className="text-center">
-                    {isSubmitted ? "We'll get back to you soon!" : "Fill out the form below and we'll get back to you within 24 hours"}
+                    Fill out the form, then review and send it from your email app.
                   </CardDescription>
                 </CardHeader>
                 
                 <CardContent>
-                  {isSubmitted ? (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="text-center py-8"
-                    >
-                      <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                      <h3 className="text-xl font-semibold mb-2">Thank you!</h3>
-                      <p className="text-muted-foreground mb-6">
-                        We've received your message and will get back to you within 24 hours.
-                      </p>
-                      <Button
-                        onClick={() => setIsSubmitted(false)}
-                        variant="outline"
-                      >
-                        Send Another Message
-                      </Button>
-                    </motion.div>
-                  ) : (
                     <Form {...form}>
                       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                         <div className="grid md:grid-cols-2 gap-4">
@@ -451,26 +430,11 @@ const Contact = () => {
                           )}
                         />
                         
-                        <Button
-                          type="submit"
-                          disabled={isSubmitting}
-                          className="w-full h-12 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-lg font-semibold"
-                        >
-                          {isSubmitting ? (
-                            <>
-                              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2" />
-                              Sending...
-                            </>
-                          ) : (
-                            <>
-                              <Send className="w-5 h-5 mr-2" />
-                              Send Message
-                            </>
-                          )}
+                        <Button type="submit" className="w-full h-12 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-lg font-semibold">
+                          <Send className="w-5 h-5 mr-2" />Continue in Email
                         </Button>
                       </form>
                     </Form>
-                  )}
                 </CardContent>
               </Card>
             </motion.div>

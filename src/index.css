@@ -140,16 +140,6 @@
     }
   }
 
-  /* Optimize font loading */
-  @font-face {
-    font-family: 'Inter';
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Poppins';
-    font-display: swap;
-  }
 }
 
 @layer components {
@@ -190,8 +180,6 @@
   /* Image optimization */
   img {
     @apply max-w-full h-auto;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
   }
 
   /* Better mobile touch targets */

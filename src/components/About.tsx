@@ -1,39 +1,19 @@
 import React from 'react';
-import { CheckCircle, Users, Award, Clock, Target, Linkedin, Twitter, Facebook, Instagram, ArrowRight, MapPin } from "lucide-react";
+import { CheckCircle, Users, Linkedin, Twitter, Facebook, Instagram, ArrowRight, MapPin, Code2, GraduationCap } from "lucide-react";
 import { motion } from "framer-motion";
 
 const aboutPoints = [
-  "15+ Expert Software development team with 6+ years experience",
-  "10 + SEO & SMM team for branding and marketing",
-  "Agile development methodology with continuous delivery",
-  "Modern tech stack: React, Node.js, Python, Cloud platforms",
-  "End-to-end development from MVP to enterprise scale",
-];
-
-const stats = [
-  { icon: Users, label: "Happy Clients", value: "56+" },
-  { icon: Award, label: "Software Projects", value: "109+" },
-  { icon: Clock, label: "Years Experience", value: "6+" },
-  { icon: Target, label: "On Time Delivery", value: "97%" },
+  "Custom software and web application development",
+  "Mobile app development and enterprise solutions",
+  "Digital marketing and brand design services",
+  "Modern development using technologies such as React, Node.js and Python",
+  "Professional training and hands-on technology programs",
 ];
 
 const About = () => {
   return (
     <section id="about" className="py-24 bg-gradient-to-b from-white via-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center p-2 sm:p-4" role="group" aria-label={`${stat.label}: ${stat.value}`}>
-              <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full mb-3 sm:mb-4">
-                <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" aria-hidden="true" />
-              </div>
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">{stat.value}</div>
-              <div className="text-xs sm:text-sm md:text-base text-gray-600 leading-tight">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-
         <div className="grid md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
           
           {/* Image / Visual Side */}
@@ -79,128 +59,27 @@ const About = () => {
       </div>
 
 
-    {/* Journey Section */}
-        <div className="relative mb-16 sm:mb-20 overflow-hidden">
-          {/* Background Elements */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5 rounded-2xl sm:rounded-3xl" />
-          <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-2xl animate-pulse" />
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
-          
-          <div className="relative z-10 text-center py-12 sm:py-16 px-4 sm:px-8">
-            {/* Animated Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 text-primary text-xs sm:text-sm font-semibold mb-6 sm:mb-8 backdrop-blur-sm"
-            >
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              Our Story
-            </motion.div>
-
-            {/* Main Heading with Gradient */}
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-4 sm:mb-6 leading-tight"
-            >
-              <span className="block text-gray-900 mb-2 sm:mb-4">Our Journey</span>
-              <span className="block bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient-x">
-                From Nature to Nation
-              </span>
-              <span className="block text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mt-2 sm:mt-4">
-                through Innovation
-              </span>
-            </motion.h1>
-
-            {/* Journey Timeline */}
-            <div className="max-w-5xl mx-auto mt-12 sm:mt-16">
-              <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
-                
-                {/* 2019 - Herbal Cosmetics */}
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  className="relative"
-                >
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl border border-primary/10 hover:shadow-2xl transition-all duration-500 group">
-                    <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                      1
-                    </div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                      <span className="text-green-600 font-bold text-lg">2019 - Present</span>
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-primary transition-colors">
-                      Herbal Cosmetics Excellence
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4">
-                      Since 2019, we've proudly built our presence in the <strong className="text-green-600">herbal cosmetics industry</strong>, backed by our own manufacturing unit.
-                    </p>
-                    <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 bg-green-100 rounded-full flex items-center justify-center">
-                          <span className="text-green-600 font-bold text-xs sm:text-sm">94%</span>
-                        </div>
-                        <span className="text-sm text-gray-600">Customer Satisfaction</span>
-                      </div>
-                    </div>
-                    <a 
-                      href="https://www.melmaa.com/shop" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors font-semibold group-hover:translate-x-2 transition-transform duration-300"
-                    >
-                      Visit Our Shop
-                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
-                    </a>
-                  </div>
-                </motion.div>
-
-                {/* Digital Transformation */}
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="relative"
-                >
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl border border-secondary/10 hover:shadow-2xl transition-all duration-500 group">
-                    <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                      2
-                    </div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
-                      <span className="text-primary font-bold text-lg">Digital Evolution</span>
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-secondary transition-colors">
-                      Melmaa Tech Launch
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4">
-                      Driven by a vision to serve customers across the nation, we embraced <strong className="text-primary">digital transformation</strong> and launched <strong className="text-secondary">Melmaa Tech</strong>.
-                    </p>
-                    <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-3 sm:mb-4">
-                      <div className="text-center">
-                        <div className="text-lg sm:text-2xl font-bold text-primary">15+</div>
-                        <div className="text-xs sm:text-sm text-gray-600">Developers</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-lg sm:text-2xl font-bold text-secondary">6+</div>
-                        <div className="text-xs sm:text-sm text-gray-600">SaaS Apps</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-lg sm:text-2xl font-bold text-green-600">50+</div>
-                        <div className="text-xs sm:text-sm text-gray-600">Clients</div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
+    {/* Services and training */}
+        <section className="py-12 sm:py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">Software, Digital Services and Training</h2>
+              <p className="text-gray-600 leading-relaxed">Melmaa Tech brings technology services and practical learning together for businesses and students.</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-5 sm:gap-8">
+              <div className="rounded-2xl border border-primary/15 bg-white p-6 sm:p-8 shadow-sm">
+                <Code2 className="w-9 h-9 text-primary mb-4" aria-hidden="true" />
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Technology Services</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Custom software, web and mobile application development, enterprise solutions and digital services tailored to project needs.</p>
+              </div>
+              <div className="rounded-2xl border border-secondary/15 bg-white p-6 sm:p-8 shadow-sm">
+                <GraduationCap className="w-9 h-9 text-secondary mb-4" aria-hidden="true" />
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Professional Training</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Industrial and IT training, internships, campus recruitment preparation and career development programs for learners.</p>
               </div>
             </div>
           </div>
-        </div>
-
+        </section>
         {/* Founder's Corner */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }}

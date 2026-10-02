@@ -4,9 +4,12 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Public contains unrelated large files; publish only the explicit allowlist in the build script.
+  publicDir: false,
   server: {
     host: "::",
     port: 8080,
+    historyApiFallback: true,
   },
   build: {
     outDir: 'dist',

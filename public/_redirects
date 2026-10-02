@@ -1,5 +1,11 @@
-/*    /index.html   200
-
-{
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
-}
+https://melmaa.tech/trainings/industrial-training-november-2027 https://www.melmaa.tech/trainings/industrial-training-november-2026 301!
+https://www.melmaa.tech/trainings/industrial-training-november-2027 /trainings/industrial-training-november-2026 301!
+https://melmaa.tech/* https://www.melmaa.tech/:splat 301!
+/careers/ /careers 301!
+/contact/ /contact 301!
+/trainings/ /trainings 301!
+/trainings/industrial-training-november-2026/ /trainings/industrial-training-november-2026 301!
+/careers /careers/index.html 200
+/contact /contact/index.html 200
+/trainings /trainings/index.html 200
+/trainings/industrial-training-november-2026 /trainings/industrial-training-november-2026/index.html 200

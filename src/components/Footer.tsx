@@ -1,8 +1,7 @@
 import React from 'react';
-import { Instagram, Linkedin, MessageCircle, Mail, Phone, MapPin, ArrowRight, Heart, ExternalLink, Send } from 'lucide-react';
+import { Instagram, Linkedin, MessageCircle, Mail, Phone, MapPin, ArrowRight, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 
 const Footer = () => {
@@ -32,17 +31,16 @@ const Footer = () => {
   const quickLinks = [
     { name: 'About', href: '/#about' },
     { name: 'Services', href: '/#services' },
-    { name: 'Training', href: '/#training' },
+    { name: 'Trainings', href: '/trainings' },
     { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' }
   ];
 
   const services = [
-    'Web Development',
-    'Mobile Apps',
-    'Enterprise Software',
-    'Digital Marketing',
-    'Logo Design'
+    { name: 'Web Development', id: 'web-development' },
+    { name: 'Mobile Apps', id: 'mobile-apps' },
+    { name: 'Enterprise Software', id: 'enterprise-software' },
+    { name: 'Logo Design', id: 'logo-design' }
   ];
 
   return (
@@ -187,9 +185,10 @@ const Footer = () => {
                 </h4>
                 <ul className="space-y-2 sm:space-y-3">
                   {services.map((service, index) => (
-                    <li key={service}>
+                    <li key={service.id}>
                       <motion.a
-                        href="#services"
+                        href={`/#services`}
+                        aria-label={service.name}
                         className="text-sm sm:text-base text-slate-300 hover:text-secondary transition-all duration-300 flex items-center gap-2 group justify-center lg:justify-start"
                         whileHover={{ x: 5 }}
                         initial={{ opacity: 0, x: -20 }}
@@ -197,7 +196,7 @@ const Footer = () => {
                         transition={{ duration: 0.3, delay: index * 0.1 }}
                       >
                         <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-secondary opacity-60 group-hover:opacity-100 transition-opacity" />
-                        <span>{service}</span>
+                        <span>{service.name}</span>
                       </motion.a>
                     </li>
                   ))}
@@ -218,37 +217,22 @@ const Footer = () => {
                   <div className="absolute -bottom-2 left-1/2 lg:left-0 transform -translate-x-1/2 lg:translate-x-0 w-12 h-1 bg-gradient-to-r from-primary to-secondary rounded-full" />
                 </h4>
                 <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  Subscribe to get the latest updates on our services, tech insights, and exclusive offers.
+                  Contact us for updates on our services, technology insights, and training programs.
                 </p>
                 <div className="space-y-3 sm:space-y-4">
                   <div className="flex gap-2">
-                    <Input
-                      type="email"
-                      placeholder="Enter your email"
-                      className="flex-1 bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder:text-slate-400 focus:border-primary focus:ring-primary/20 text-sm sm:text-base"
-                    />
-                    <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 px-3 sm:px-4 min-w-[44px] min-h-[44px]">
-                      <Send className="w-4 h-4" />
+                    <Button asChild className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 px-4 min-h-[44px]">
+                      <a href="mailto:support@melmaa.com?subject=Melmaa%20Tech%20updates">
+                        <Mail className="w-4 h-4 mr-2" /> Email our team
+                      </a>
                     </Button>
                   </div>
                   <p className="text-xs text-slate-400 flex items-center gap-2 justify-center lg:justify-start">
                     <div className="w-2 h-2 rounded-full bg-green-400" />
-                    We respect your privacy. Unsubscribe anytime.
+                    Reach us directly by email.
                   </p>
                 </div>
 
-                {/* Trust Badges */}
-                <div className="pt-3 sm:pt-4">
-                  <p className="text-xs sm:text-sm text-slate-400 mb-2 sm:mb-3">Trusted by 56+ clients worldwide</p>
-                  <div className="flex items-center gap-3 sm:gap-4 justify-center lg:justify-start">
-                    <div className="px-2 sm:px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs text-slate-300">
-                      ISO Certified
-                    </div>
-                    <div className="px-2 sm:px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs text-slate-300">
-                      6+ Years
-                    </div>
-                  </div>
-                </div>
               </motion.div>
             </div>
           </div>
@@ -269,22 +253,6 @@ const Footer = () => {
               <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-red-400 animate-pulse mx-1" /> 
               in India. All rights reserved.
             </motion.p>
-            <motion.div 
-              className="flex gap-4 sm:gap-6 text-xs sm:text-sm"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <a href="#" className="text-slate-400 hover:text-primary transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-slate-400 hover:text-secondary transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="text-slate-400 hover:text-primary transition-colors">
-                Cookie Policy
-              </a>
-            </motion.div>
           </div>
         </div>
       </div>

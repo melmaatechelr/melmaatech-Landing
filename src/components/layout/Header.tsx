@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { getCalApi } from "@calcom/embed-react";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X, Sparkles, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -12,7 +13,7 @@ const navigation = [
   { name: 'Home', href: '#home' },
   { name: 'Services', href: '#services' },
   { name: 'About', href: '#about' },
-  { name: 'Trainings', href: '#training' },
+  { name: 'Trainings', href: '/trainings' },
   { name: 'Careers', href: '/careers' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -106,6 +107,25 @@ export default function Header() {
     setMobileMenuOpen(false);
   };
 
+  const sectionLink = (href: string) =>
+    href.startsWith("#") ? (window.location.pathname === "/" ? href : `/${href}`) : href;
+
+  const navigateToSection = (href: string) => {
+    if (href.startsWith("#") && window.location.pathname === "/") {
+      scrollToSection(href);
+      return;
+    }
+    setMobileMenuOpen(false);
+  };
+
+  const isNavActive = (href: string) => {
+    const pathname = window.location.pathname;
+    if (href.startsWith('/')) {
+      return pathname === href || pathname.startsWith(`${href}/`);
+    }
+    return pathname === '/' && activeSection === href.substring(1);
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -148,15 +168,11 @@ export default function Header() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
           {/* Enhanced Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center group"
-          >
-            <button
-              onClick={() => scrollToSection('home')}
+          <Link to="/" className="flex items-center group" aria-label="Melmaa Tech home">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="flex items-center gap-4 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-xl p-2 transition-all duration-300"
-              aria-label="Go to homepage"
             >
               <div className="relative">
                 <img 
@@ -168,20 +184,25 @@ export default function Header() {
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
               </div>
-            </button>
-          </motion.div>
+            </motion.div>
+          </Link>
 
           {/* Enhanced Desktop Navigation */}
           <nav className="hidden lg:flex items-center" role="navigation" aria-label="Main navigation">
             <div className="flex items-center space-x-1 bg-white/10 backdrop-blur-md rounded-xl lg:rounded-2xl p-1.5 lg:p-2 border border-white/20">
               {navigation.map((item, index) => (
-                <motion.button
+                <motion.a
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
+                  href={sectionLink(item.href)}
+                  onClick={(event) => {
+                    if (item.href.startsWith('#')) {
+                      if (window.location.pathname === "/") event.preventDefault();
+                      navigateToSection(item.href);
+                    }
+                  }}
                   className={cn(
                     "relative px-3 lg:px-4 py-2 rounded-lg lg:rounded-xl text-sm font-medium transition-all duration-300 overflow-hidden group min-h-[44px] flex items-center justify-center",
-                    (window.location.pathname === item.href) || 
-                    (window.location.pathname === '/' && activeSection === item.href.substring(1))
+                    isNavActive(item.href)
                       ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
                       : "text-muted-foreground hover:text-foreground hover:bg-white/50"
                   )}
@@ -190,21 +211,18 @@ export default function Header() {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  aria-current={(window.location.pathname === item.href) || 
-                    (window.location.pathname === '/' && activeSection === item.href.substring(1)) ? 'page' : undefined}
+                  aria-current={isNavActive(item.href) ? 'page' : undefined}
                 >
                   {/* Animated background */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    layoutId={(window.location.pathname === item.href) || 
-                      (window.location.pathname === '/' && activeSection === item.href.substring(1)) ? "activeTab" : undefined}
+                    layoutId={isNavActive(item.href) ? "activeTab" : undefined}
                   />
                   
                   {/* Text with sparkle effect */}
                   <span className="relative z-10 flex items-center gap-2">
                     {item.name}
-                    {((window.location.pathname === item.href) || 
-                      (window.location.pathname === '/' && activeSection === item.href.substring(1))) && (
+                    {isNavActive(item.href) && (
                       <motion.div
                         initial={{ scale: 0, rotate: 0 }}
                         animate={{ scale: 1, rotate: 360 }}
@@ -214,7 +232,7 @@ export default function Header() {
                       </motion.div>
                     )}
                   </span>
-                </motion.button>
+                </motion.a>
               ))}
             </div>
           </nav>
@@ -315,12 +333,18 @@ export default function Header() {
 
                 {/* Mobile Navigation */}
                 {navigation.map((item, index) => (
-                  <motion.button
+                  <motion.a
                     key={item.name}
-                    onClick={() => scrollToSection(item.href)}
+                    href={sectionLink(item.href)}
+                    onClick={(event) => {
+                      if (item.href.startsWith('#')) {
+                        if (window.location.pathname === "/") event.preventDefault();
+                        navigateToSection(item.href);
+                      }
+                    }}
                     className={cn(
                       "text-left px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl text-base sm:text-lg font-medium transition-all duration-300 group relative overflow-hidden min-h-[44px] flex items-center",
-                      activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1))
+                      isNavActive(item.href)
                         ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg"
                         : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
                     )}
@@ -329,17 +353,17 @@ export default function Header() {
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     whileHover={{ x: 10, scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    aria-current={activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) ? 'page' : undefined}
+                    aria-current={isNavActive(item.href) ? 'page' : undefined}
                   >
                     {/* Hover effect */}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      layoutId={activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) ? "activeTab" : undefined}
+                      layoutId={isNavActive(item.href) ? "activeTab" : undefined}
                     />
                     
                     <span className="relative z-10 flex items-center justify-between">
                       {item.name}
-                      {activeSection === (item.href.startsWith('/') ? item.href : item.href.substring(1)) && (
+                      {isNavActive(item.href) && (
                         <motion.div
                           initial={{ scale: 0, rotate: 0 }}
                           animate={{ scale: 1, rotate: 360 }}
@@ -349,7 +373,7 @@ export default function Header() {
                         </motion.div>
                       )}
                     </span>
-                  </motion.button>
+                  </motion.a>
                 ))}
 
                 {/* Mobile CTA */}

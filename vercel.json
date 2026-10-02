@@ -1,3 +1,32 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/trainings/industrial-training-november-2027",
+      "has": [{ "type": "host", "value": "melmaa.tech" }],
+      "destination": "https://www.melmaa.tech/trainings/industrial-training-november-2026",
+      "permanent": true
+    },
+    {
+      "source": "/trainings/industrial-training-november-2027",
+      "destination": "/trainings/industrial-training-november-2026",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "melmaa.tech" }],
+      "destination": "https://www.melmaa.tech/:path*",
+      "permanent": true
+    }
+  ],
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/careers", "destination": "/careers/index.html" },
+    { "source": "/contact", "destination": "/contact/index.html" },
+    { "source": "/trainings", "destination": "/trainings/index.html" },
+    {
+      "source": "/trainings/industrial-training-november-2026",
+      "destination": "/trainings/industrial-training-november-2026/index.html"
+    }
+  ]
 }

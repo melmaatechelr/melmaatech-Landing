@@ -113,31 +113,6 @@ export default function HeroSection() {
             </Button>
           </motion.div>
 
-          {/* Stats */}
-          <motion.div
-            variants={fadeInUp}
-            className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-8 max-w-2xl mx-auto px-4"
-          >
-            {[
-              { number: "56+", label: "Happy Clients" },
-              { number: "109+", label: "Software Projects" },
-              { number: "6+", label: "Years Experience" },
-              { number: "97%", label: "On Time Delivery" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                className="text-center p-2 sm:p-3"
-              >
-                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-primary mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-xs sm:text-sm text-muted-foreground leading-tight">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
         </motion.div>
       </div>
 

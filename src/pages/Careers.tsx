@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import Header from '../components/layout/Header';
 import Footer from '../components/Footer';
+import { applyPageMetadata } from '@/lib/seo';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -229,17 +230,14 @@ const benefits = [
   }
 ];
 
-const companyStats = [
-  { icon: Users, label: "Team Members", value: "25+", color: "text-blue-600" },
-  { icon: Briefcase, label: "Projects Delivered", value: "109+", color: "text-green-600" },
-  { icon: Building2, label: "Years in Business", value: "6+", color: "text-purple-600" },
-  { icon: Star, label: "Client Satisfaction", value: "98%", color: "text-orange-600" }
-];
-
 const Careers = () => {
-  const [selectedJob, setSelectedJob] = useState<number | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  useEffect(() => applyPageMetadata({
+    title: "Career Opportunities at Melmaa Tech | Careers",
+    description: "View current role listings and career information from Melmaa Tech. Contact the team to confirm openings and application details.",
+    canonical: "https://www.melmaa.tech/careers",
+  }), []);
 
+  const [selectedJob, setSelectedJob] = useState<number | null>(null);
   const form = useForm<ApplicationFormData>({
     resolver: zodResolver(applicationSchema),
     defaultValues: {
@@ -253,22 +251,24 @@ const Careers = () => {
     },
   });
 
-  const onSubmit = async (data: ApplicationFormData) => {
-    setIsSubmitting(true);
-    
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      console.log('Application submitted:', data);
-      toast.success("Application submitted successfully! We'll get back to you within 48 hours.");
-      form.reset();
-      setSelectedJob(null);
-    } catch (error) {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+  const onSubmit = (data: ApplicationFormData) => {
+    const email = new URL("mailto:support@melmaa.com");
+    email.searchParams.set("subject", `Career application: ${data.position}`);
+    email.searchParams.set("body", [
+      `Name: ${data.fullName}`,
+      `Email: ${data.email}`,
+      `Phone: ${data.phone}`,
+      `Position: ${data.position}`,
+      `Experience: ${data.experience}`,
+      `Portfolio: ${data.portfolio || "Not provided"}`,
+      "",
+      "Cover letter:",
+      data.coverLetter || "Not provided",
+      "",
+      "Please attach your resume before sending.",
+    ].join("\n"));
+    window.location.href = email.toString();
+    toast.info("Review the application in your email app, attach your resume, and send it to complete your application.");
   };
 
   return (
@@ -307,29 +307,9 @@ const Careers = () => {
               variants={fadeInUp}
               className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
             >
-              Join a team of passionate innovators building the future of technology. 
-              We offer exciting opportunities, competitive benefits, and a culture that values growth and innovation.
+              Review the role listings on this page and contact Melmaa Tech to confirm current openings, work arrangements, and application details.
             </motion.p>
 
-            {/* Company Stats */}
-            <motion.div
-              variants={fadeInUp}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
-            >
-              {companyStats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05 }}
-                  className="text-center group"
-                >
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl shadow-lg mb-4 group-hover:shadow-xl transition-all duration-300">
-                    <stat.icon className={`w-8 h-8 ${stat.color}`} />
-                  </div>
-                  <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -683,22 +663,8 @@ const Careers = () => {
                         </div>
                       </div>
 
-                      <Button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full h-14 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-lg font-semibold"
-                      >
-                        {isSubmitting ? (
-                          <>
-                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3" />
-                            Submitting Application...
-                          </>
-                        ) : (
-                          <>
-                            <Send className="w-5 h-5 mr-3" />
-                            Submit Application
-                          </>
-                        )}
+                      <Button type="submit" className="w-full h-14 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-lg font-semibold">
+                        <Send className="w-5 h-5 mr-3" />Continue in Email
                       </Button>
                     </form>
                   </Form>

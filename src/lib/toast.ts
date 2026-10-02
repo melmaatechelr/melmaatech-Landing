@@ -30,6 +30,22 @@ export const toast = {
       },
     });
   },
+
+  info: (message: string) => {
+    hotToast(message, {
+      duration: 5000,
+      position: 'top-right',
+      icon: '✉️',
+      style: {
+        background: '#1E293B',
+        color: '#fff',
+        borderRadius: '12px',
+        padding: '16px',
+        fontSize: '14px',
+        fontWeight: '500',
+      },
+    });
+  },
   
   loading: (message: string) => {
     return hotToast.loading(message, {
